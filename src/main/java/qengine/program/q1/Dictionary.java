@@ -22,12 +22,12 @@ public class Dictionary {
     }
 
     public void convertToDico() {
-        final int[] i = {0};
-        List<String> uniquesplitstatment = Dictionary.getInstance().allStatementsSplit.stream().distinct().collect(Collectors.toList());
-        uniquesplitstatment.forEach((element) -> {
-            dico.put(i[0], element);
-            System.out.println(i[0] + ", " + element);
-            i[0] += 1;
+        final int[] dicoIndex = {0};
+        List<String> elements = Dictionary.getInstance().allStatementsSplit.stream().distinct().collect(Collectors.toList());
+        elements.forEach((element) -> {
+            dico.put(dicoIndex[0], element);
+            System.out.println(dicoIndex[0] + ", " + element);
+            dicoIndex[0] += 1;
         });
     }
 
