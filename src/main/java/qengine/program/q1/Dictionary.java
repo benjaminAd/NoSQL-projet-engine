@@ -1,7 +1,4 @@
 package qengine.program.q1;
-
-import org.eclipse.rdf4j.model.Statement;
-
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
@@ -12,12 +9,10 @@ public class Dictionary {
     private static Dictionary instance = null;
 
     public HashMap<Integer, String> dico;
-    public List<Statement> table;
     public List<String> allStatementsSplit;
 
     private Dictionary() {
         this.dico = new HashMap<>();
-        this.table = new ArrayList<>();
         this.allStatementsSplit = new ArrayList<>();
     }
 
@@ -26,7 +21,6 @@ public class Dictionary {
         List<String> elements = Dictionary.getInstance().allStatementsSplit.stream().distinct().collect(Collectors.toList());
         elements.forEach((element) -> {
             dico.put(dicoIndex[0], element);
-            System.out.println(dicoIndex[0] + ", " + element);
             dicoIndex[0] += 1;
         });
     }
