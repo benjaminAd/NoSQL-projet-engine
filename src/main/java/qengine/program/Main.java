@@ -19,6 +19,7 @@ import org.eclipse.rdf4j.query.parser.sparql.SPARQLParser;
 import org.eclipse.rdf4j.rio.RDFFormat;
 import org.eclipse.rdf4j.rio.RDFParser;
 import org.eclipse.rdf4j.rio.Rio;
+import qengine.program.q1.Dictionary;
 
 /**
  * Programme simple lisant un fichier de requête et un fichier de données.
@@ -139,6 +140,7 @@ final class Main {
 
 			// Parsing et traitement de chaque triple par le handler
 			rdfParser.parse(dataReader, baseURI);
+			Dictionary.getInstance().convertToDico();
 		}
 	}
 }
