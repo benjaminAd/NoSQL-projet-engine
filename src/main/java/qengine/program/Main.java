@@ -19,8 +19,8 @@ import java.io.IOException;
 import java.io.Reader;
 import java.nio.file.Files;
 import java.nio.file.Paths;
-import java.util.Iterator;
-import java.util.List;
+import java.util.*;
+import java.util.stream.Collectors;
 import java.util.stream.Stream;
 
 /**
@@ -55,7 +55,7 @@ final class Main {
     /**
      * Fichier contenant des données rdf
      */
-    static final String dataFile = workingDir + "sample_data.nt";
+    static final String dataFile = workingDir + "100K.nt";
 
     // ========================================================================
 
@@ -156,6 +156,7 @@ final class Main {
 
             // Parsing et traitement de chaque triple par le handler
             rdfParser.parse(dataReader, baseURI);
+            OPS.getInstance().sortedByKey();
             OPS.getInstance().tree.forEach((root, children) -> {
                 children.forEach((sibling, lastChild) -> {
                     System.out.println("<" + root + "," + sibling + "," + lastChild + ">");

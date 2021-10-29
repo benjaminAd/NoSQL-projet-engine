@@ -20,7 +20,7 @@ public class Dictionary {
     }
 
     public void convertToDico() {
-        final int[] dicoIndex = {0};
+        final int[] dicoIndex = {1};
         List<String> elements = Dictionary.getInstance().allStatementsSplit.stream().distinct().collect(Collectors.toList());
         elements.forEach((element) -> {
             dico.put(element, dicoIndex[0]);
