@@ -1,14 +1,11 @@
 package qengine.program.index;
 
-import qengine.program.utils.Triplet;
-
-import java.util.ArrayList;
-import java.util.List;
+import java.util.HashMap;
 
 public class MyIndex {
-    public List<Triplet> triplets;
+    public HashMap<String, HashMap<String, String>> tree;
 
     public MyIndex() {
-        this.triplets = new ArrayList<>();
+        tree = new HashMap<>();
     }
 }
