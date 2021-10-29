@@ -3,7 +3,7 @@ package qengine.program.index;
 import java.util.HashMap;
 
 public class MyIndex {
-    public HashMap<String, HashMap<String, String>> tree;
+    public HashMap<Integer, HashMap<Integer, Integer>> tree;
 
     public MyIndex() {
         tree = new HashMap<>();
