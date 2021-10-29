@@ -1,16 +1,12 @@
 package qengine.program.index.OPS;
 
-import qengine.program.utils.Triplet;
+import qengine.program.index.MyIndex;
 
-import java.util.ArrayList;
-import java.util.List;
-
-public class OPS {
+public class OPS extends MyIndex {
     private static OPS instance = null;
-    public List<Triplet> triplets;
 
     private OPS() {
-        this.triplets = new ArrayList<>();
+        super();
     }
 
     public static OPS getInstance() {
