@@ -10,7 +10,7 @@ public class Dictionary {
     private static Dictionary instance = null;
 
     public HashMap<String, Integer> dico;
-    public HashMap<Integer,String> dicoFromIndex;
+    private final HashMap<Integer,String> dicoFromIndex;
     public List<String> allStatementsSplit;
 
     private Dictionary() {
@@ -27,6 +27,10 @@ public class Dictionary {
             dicoFromIndex.put(dicoIndex[0],element);
             dicoIndex[0] += 1;
         });
+    }
+
+    public String getElementFromIndex(int index){
+        return this.dicoFromIndex.get(index);
     }
 
     public static Dictionary getInstance() {
