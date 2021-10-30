@@ -12,7 +12,6 @@ public class MyIndex {
     }
 
     public void sortedByKey(){
-        TreeMap<Integer, Map<Integer, Integer>> copy = new TreeMap<>(tree);
-        tree = copy;
+        tree = new TreeMap<>(tree);
     }
 }
