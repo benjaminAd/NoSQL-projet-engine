@@ -157,9 +157,9 @@ final class Main {
             // Parsing et traitement de chaque triple par le handler
             rdfParser.parse(dataReader, baseURI);
             OPS.getInstance().sortedByKey();
-            OPS.getInstance().tree.forEach((root, children) -> {
-                children.forEach((sibling, lastChild) -> {
-                    System.out.println("<" + root + "," + sibling + "," + lastChild + ">");
+            OPS.getInstance().tree.forEach((object, children) -> {
+                children.forEach((property, subject) -> {
+                    System.out.println("<" + object + "," + property + "," + subject + ">");
                 });
             });
         }
