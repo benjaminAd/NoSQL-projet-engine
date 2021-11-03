@@ -33,6 +33,10 @@ public class Dictionary {
         return this.dicoFromIndex.get(index);
     }
 
+    public Integer getIndexFromElement(String element){
+        return this.dico.get(element);
+    }
+
     public static Dictionary getInstance() {
         if (instance == null) {
             instance = new Dictionary();
