@@ -17,7 +17,10 @@ public class IndexHandler extends AbstractRDFHandler {
 
     @Override
     public void handleStatement(Statement st) throws RDFHandlerException {
-        HashMap<Integer, Integer> OPShash_map = new HashMap<>();
+
+        Dictionary dictionary = Dictionary.getInstance();
+
+       /* HashMap<Integer, Integer> OPShash_map = new HashMap<>();
         HashMap<Integer, Integer> OSPhash_map = new HashMap<>();
         HashMap<Integer, Integer> POShash_map = new HashMap<>();
         HashMap<Integer, Integer> PSOhash_map = new HashMap<>();
@@ -40,6 +43,14 @@ public class IndexHandler extends AbstractRDFHandler {
         SOP.getInstance().tree.put(Dictionary.getInstance().dico.get(st.getObject().stringValue()), SOPhash_map);
 
         SPOhash_map.put(Dictionary.getInstance().dico.get(st.getPredicate().stringValue()), Dictionary.getInstance().dico.get(st.getSubject().stringValue()));
-        SPO.getInstance().tree.put(Dictionary.getInstance().dico.get(st.getObject().stringValue()), SPOhash_map);
+        SPO.getInstance().tree.put(Dictionary.getInstance().dico.get(st.getObject().stringValue()), SPOhash_map);*/
+
+        OPS.getInstance().addStatementToIndex(dictionary.getIndexFromElement(st.getObject().stringValue()), dictionary.getIndexFromElement(st.getPredicate().stringValue()), dictionary.getIndexFromElement(st.getSubject().stringValue()));
+        OSP.getInstance().addStatementToIndex(dictionary.getIndexFromElement(st.getObject().stringValue()), dictionary.getIndexFromElement(st.getSubject().stringValue()), dictionary.getIndexFromElement(st.getPredicate().stringValue()));
+        POS.getInstance().addStatementToIndex(dictionary.getIndexFromElement(st.getPredicate().stringValue()), dictionary.getIndexFromElement(st.getObject().stringValue()), dictionary.getIndexFromElement(st.getSubject().stringValue()));
+        PSO.getInstance().addStatementToIndex(dictionary.getIndexFromElement(st.getPredicate().stringValue()), dictionary.getIndexFromElement(st.getSubject().stringValue()), dictionary.getIndexFromElement(st.getObject().stringValue()));
+        SOP.getInstance().addStatementToIndex(dictionary.getIndexFromElement(st.getSubject().stringValue()), dictionary.getIndexFromElement(st.getObject().stringValue()), dictionary.getIndexFromElement(st.getPredicate().stringValue()));
+        SPO.getInstance().addStatementToIndex(dictionary.getIndexFromElement(st.getSubject().stringValue()), dictionary.getIndexFromElement(st.getPredicate().stringValue()), dictionary.getIndexFromElement(st.getObject().stringValue()));
+
     }
 }
