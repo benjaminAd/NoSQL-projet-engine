@@ -11,6 +11,11 @@ import org.eclipse.rdf4j.rio.RDFParser;
 import org.eclipse.rdf4j.rio.Rio;
 import qengine.program.index.OPS.OPS;
 import qengine.program.index.IndexHandler;
+import qengine.program.index.OSP.OSP;
+import qengine.program.index.POS.POS;
+import qengine.program.index.PSO.PSO;
+import qengine.program.index.SOP.SOP;
+import qengine.program.index.SPO.SPO;
 import qengine.program.q1.Dictionary;
 
 import java.io.FileNotFoundException;
@@ -55,7 +60,7 @@ final class Main {
     /**
      * Fichier contenant des données rdf
      */
-    static final String dataFile = workingDir + "100K.nt";
+    static final String dataFile = workingDir + "sample_data.nt";
 
     // ========================================================================
 
@@ -156,10 +161,64 @@ final class Main {
 
             // Parsing et traitement de chaque triple par le handler
             rdfParser.parse(dataReader, baseURI);
+
+            System.out.println("----OPS--------");
             OPS.getInstance().sortedByKey();
             OPS.getInstance().tree.forEach((object, children) -> {
-                children.forEach((property, subject) -> {
-                    System.out.println("<" + object + "," + property + "," + subject + ">");
+                children.forEach((map) -> {
+                    map.forEach((property, subject) -> {
+                        System.out.println("<" + object + "," + property + "," + subject + ">");
+                    });
+                });
+            });
+
+            System.out.println("----OSP-------");
+            OSP.getInstance().sortedByKey();
+            OSP.getInstance().tree.forEach((object, children) -> {
+                children.forEach((map) -> {
+                    map.forEach((property, subject) -> {
+                        System.out.println("<" + object + "," + property + "," + subject + ">");
+                    });
+                });
+            });
+
+            System.out.println("----POS--------");
+            POS.getInstance().sortedByKey();
+            POS.getInstance().tree.forEach((object, children) -> {
+                children.forEach((map) -> {
+                    map.forEach((property, subject) -> {
+                        System.out.println("<" + object + "," + property + "," + subject + ">");
+                    });
+                });
+            });
+
+            System.out.println("----PSO--------");
+            PSO.getInstance().sortedByKey();
+            PSO.getInstance().tree.forEach((object, children) -> {
+                children.forEach((map) -> {
+                    map.forEach((property, subject) -> {
+                        System.out.println("<" + object + "," + property + "," + subject + ">");
+                    });
+                });
+            });
+
+            System.out.println("----SOP--------");
+            SOP.getInstance().sortedByKey();
+            SOP.getInstance().tree.forEach((object, children) -> {
+                children.forEach((map) -> {
+                    map.forEach((property, subject) -> {
+                        System.out.println("<" + object + "," + property + "," + subject + ">");
+                    });
+                });
+            });
+
+            System.out.println("----SPO--------");
+            SPO.getInstance().sortedByKey();
+            SPO.getInstance().tree.forEach((object, children) -> {
+                children.forEach((map) -> {
+                    map.forEach((property, subject) -> {
+                        System.out.println("<" + object + "," + property + "," + subject + ">");
+                    });
                 });
             });
         }
