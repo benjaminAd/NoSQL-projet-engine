@@ -1,4 +1,5 @@
 package qengine.program.q1;
+
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
@@ -8,21 +9,32 @@ public class Dictionary {
 
     private static Dictionary instance = null;
 
-    public HashMap<Integer, String> dico;
+    public HashMap<String, Integer> dico;
+    private final HashMap<Integer,String> dicoFromIndex;
     public List<String> allStatementsSplit;
 
     private Dictionary() {
         this.dico = new HashMap<>();
+        this.dicoFromIndex = new HashMap<>();
         this.allStatementsSplit = new ArrayList<>();
     }
 
     public void convertToDico() {
-        final int[] dicoIndex = {0};
+        final int[] dicoIndex = {1};
         List<String> elements = Dictionary.getInstance().allStatementsSplit.stream().distinct().collect(Collectors.toList());
         elements.forEach((element) -> {
-            dico.put(dicoIndex[0], element);
+            dico.put(element, dicoIndex[0]);
+            dicoFromIndex.put(dicoIndex[0],element);
             dicoIndex[0] += 1;
         });
+    }
+
+    public String getElementFromIndex(int index){
+        return this.dicoFromIndex.get(index);
+    }
+
+    public Integer getIndexFromElement(String element){
+        return this.dico.get(element);
     }
 
     public static Dictionary getInstance() {
