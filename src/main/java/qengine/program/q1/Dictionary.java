@@ -21,7 +21,7 @@ public class Dictionary {
 
     public void convertToDico() {
         int dicoIndex = 1;
-        List<String> elements = Dictionary.getInstance().allStatementsSplit.stream().distinct().collect(Collectors.toList());
+        List<String> elements = allStatementsSplit.stream().distinct().collect(Collectors.toList());
         for (String element : elements) {
             dico.put(element, dicoIndex);
             dicoFromIndex.put(dicoIndex, element);
