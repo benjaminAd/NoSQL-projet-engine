@@ -10,7 +10,7 @@ public class Dictionary {
     private static Dictionary instance = null;
 
     public HashMap<String, Integer> dico;
-    private final HashMap<Integer,String> dicoFromIndex;
+    private final HashMap<Integer, String> dicoFromIndex;
     public List<String> allStatementsSplit;
 
     private Dictionary() {
@@ -20,21 +20,21 @@ public class Dictionary {
     }
 
     public void convertToDico() {
-        final int[] dicoIndex = {1};
+        int dicoIndex = 1;
         List<String> elements = Dictionary.getInstance().allStatementsSplit.stream().distinct().collect(Collectors.toList());
-        elements.forEach((element) -> {
-            dico.put(element, dicoIndex[0]);
-            dicoFromIndex.put(dicoIndex[0],element);
-            dicoIndex[0] += 1;
-        });
+        for (String element : elements) {
+            dico.put(element, dicoIndex);
+            dicoFromIndex.put(dicoIndex, element);
+            dicoIndex += 1;
+        }
         allStatementsSplit.clear();
     }
 
-    public String getElementFromIndex(int index){
+    public String getElementFromIndex(int index) {
         return this.dicoFromIndex.get(index);
     }
 
-    public Integer getIndexFromElement(String element){
+    public Integer getIndexFromElement(String element) {
         return this.dico.get(element);
     }
 
