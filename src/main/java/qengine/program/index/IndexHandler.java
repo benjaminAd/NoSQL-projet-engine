@@ -17,34 +17,7 @@ public class IndexHandler extends AbstractRDFHandler {
 
     @Override
     public void handleStatement(Statement st) throws RDFHandlerException {
-
         Dictionary dictionary = Dictionary.getInstance();
-
-       /* HashMap<Integer, Integer> OPShash_map = new HashMap<>();
-        HashMap<Integer, Integer> OSPhash_map = new HashMap<>();
-        HashMap<Integer, Integer> POShash_map = new HashMap<>();
-        HashMap<Integer, Integer> PSOhash_map = new HashMap<>();
-        HashMap<Integer, Integer> SOPhash_map = new HashMap<>();
-        HashMap<Integer, Integer> SPOhash_map = new HashMap<>();
-
-        OPShash_map.put(Dictionary.getInstance().dico.get(st.getPredicate().stringValue()), Dictionary.getInstance().dico.get(st.getSubject().stringValue()));
-        OPS.getInstance().tree.put(Dictionary.getInstance().dico.get(st.getObject().stringValue()), OPShash_map);
-
-        OSPhash_map.put(Dictionary.getInstance().dico.get(st.getPredicate().stringValue()), Dictionary.getInstance().dico.get(st.getSubject().stringValue()));
-        OSP.getInstance().tree.put(Dictionary.getInstance().dico.get(st.getObject().stringValue()), OSPhash_map);
-
-        POShash_map.put(Dictionary.getInstance().dico.get(st.getPredicate().stringValue()), Dictionary.getInstance().dico.get(st.getSubject().stringValue()));
-        POS.getInstance().tree.put(Dictionary.getInstance().dico.get(st.getObject().stringValue()), POShash_map);
-
-        PSOhash_map.put(Dictionary.getInstance().dico.get(st.getPredicate().stringValue()), Dictionary.getInstance().dico.get(st.getSubject().stringValue()));
-        PSO.getInstance().tree.put(Dictionary.getInstance().dico.get(st.getObject().stringValue()), PSOhash_map);
-
-        SOPhash_map.put(Dictionary.getInstance().dico.get(st.getPredicate().stringValue()), Dictionary.getInstance().dico.get(st.getSubject().stringValue()));
-        SOP.getInstance().tree.put(Dictionary.getInstance().dico.get(st.getObject().stringValue()), SOPhash_map);
-
-        SPOhash_map.put(Dictionary.getInstance().dico.get(st.getPredicate().stringValue()), Dictionary.getInstance().dico.get(st.getSubject().stringValue()));
-        SPO.getInstance().tree.put(Dictionary.getInstance().dico.get(st.getObject().stringValue()), SPOhash_map);*/
-
         OPS.getInstance().addStatementToIndex(dictionary.getIndexFromElement(st.getObject().stringValue()), dictionary.getIndexFromElement(st.getPredicate().stringValue()), dictionary.getIndexFromElement(st.getSubject().stringValue()));
         OSP.getInstance().addStatementToIndex(dictionary.getIndexFromElement(st.getObject().stringValue()), dictionary.getIndexFromElement(st.getSubject().stringValue()), dictionary.getIndexFromElement(st.getPredicate().stringValue()));
         POS.getInstance().addStatementToIndex(dictionary.getIndexFromElement(st.getPredicate().stringValue()), dictionary.getIndexFromElement(st.getObject().stringValue()), dictionary.getIndexFromElement(st.getSubject().stringValue()));

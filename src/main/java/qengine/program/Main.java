@@ -25,7 +25,6 @@ import java.io.Reader;
 import java.nio.file.Files;
 import java.nio.file.Paths;
 import java.util.*;
-import java.util.stream.Collectors;
 import java.util.stream.Stream;
 
 /**
@@ -161,7 +160,6 @@ final class Main {
 
             // Parsing et traitement de chaque triple par le handler
             rdfParser.parse(dataReader, baseURI);
-
             System.out.println("----OPS--------");
             OPS.getInstance().sortedByKey();
             OPS.getInstance().tree.forEach((object, children) -> {
