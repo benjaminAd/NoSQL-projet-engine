@@ -27,6 +27,7 @@ public class Dictionary {
             dicoFromIndex.put(dicoIndex[0],element);
             dicoIndex[0] += 1;
         });
+        allStatementsSplit.clear();
     }
 
     public String getElementFromIndex(int index){
