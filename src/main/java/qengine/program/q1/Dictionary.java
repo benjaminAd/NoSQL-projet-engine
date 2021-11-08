@@ -9,9 +9,9 @@ public class Dictionary {
 
     private static Dictionary instance = null;
 
-    public HashMap<String, Integer> dico;
+    private final HashMap<String, Integer> dico;
     private final HashMap<Integer, String> dicoFromIndex;
-    public List<String> allStatementsSplit;
+    private final List<String> allStatementsSplit;
 
     private Dictionary() {
         this.dico = new HashMap<>();
@@ -28,6 +28,10 @@ public class Dictionary {
             dicoIndex += 1;
         }
         allStatementsSplit.clear();
+    }
+
+    public void add(String s){
+        this.allStatementsSplit.add(s);
     }
 
     public String getElementFromIndex(int index) {

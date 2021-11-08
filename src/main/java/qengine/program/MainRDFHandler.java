@@ -2,6 +2,12 @@ package qengine.program;
 
 import org.eclipse.rdf4j.model.Statement;
 import org.eclipse.rdf4j.rio.helpers.AbstractRDFHandler;
+import qengine.program.index.OPS.OPS;
+import qengine.program.index.OSP.OSP;
+import qengine.program.index.POS.POS;
+import qengine.program.index.PSO.PSO;
+import qengine.program.index.SOP.SOP;
+import qengine.program.index.SPO.SPO;
 import qengine.program.q1.Dictionary;
 
 /**
@@ -18,10 +24,15 @@ public final class MainRDFHandler extends AbstractRDFHandler {
 
     @Override
     public void handleStatement(Statement st) {
-        System.out.println("\n" + st.getSubject() + "\t " + st.getPredicate() + "\t " + st.getObject());
-        Dictionary.getInstance().allStatementsSplit.add(st.getSubject().stringValue());
-        Dictionary.getInstance().allStatementsSplit.add(st.getPredicate().stringValue());
-        Dictionary.getInstance().allStatementsSplit.add(st.getObject().stringValue());
+        Dictionary dictionary = Dictionary.getInstance();
+        String subject = st.getSubject().stringValue();
+        String predicate = st.getPredicate().stringValue();
+        String object = st.getObject().stringValue();
+
+        //Add dictionary
+        dictionary.add(subject);
+        dictionary.add(object);
+        dictionary.add(predicate);
     }
 
     ;
