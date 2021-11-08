@@ -163,7 +163,7 @@ final class Main {
             System.out.println("----OPS--------");
             OPS.getInstance().sortedByKey();
             OPS.getInstance().tree.forEach((object, children) -> {
-                children.forEach((map)->{
+                children.forEach((map) -> {
                     map.forEach((property, subject) -> {
                         System.out.println("<" + object + "," + property + "," + subject + ">");
                     });
@@ -173,7 +173,7 @@ final class Main {
             System.out.println("----OSP-------");
             OSP.getInstance().sortedByKey();
             OSP.getInstance().tree.forEach((object, children) -> {
-                children.forEach((map)->{
+                children.forEach((map) -> {
                     map.forEach((property, subject) -> {
                         System.out.println("<" + object + "," + property + "," + subject + ">");
                     });
@@ -183,7 +183,7 @@ final class Main {
             System.out.println("----POS--------");
             POS.getInstance().sortedByKey();
             POS.getInstance().tree.forEach((object, children) -> {
-                children.forEach((map)->{
+                children.forEach((map) -> {
                     map.forEach((property, subject) -> {
                         System.out.println("<" + object + "," + property + "," + subject + ">");
                     });
@@ -193,7 +193,7 @@ final class Main {
             System.out.println("----PSO--------");
             PSO.getInstance().sortedByKey();
             PSO.getInstance().tree.forEach((object, children) -> {
-                children.forEach((map)->{
+                children.forEach((map) -> {
                     map.forEach((property, subject) -> {
                         System.out.println("<" + object + "," + property + "," + subject + ">");
                     });
@@ -203,7 +203,7 @@ final class Main {
             System.out.println("----SOP--------");
             SOP.getInstance().sortedByKey();
             SOP.getInstance().tree.forEach((object, children) -> {
-                children.forEach((map)->{
+                children.forEach((map) -> {
                     map.forEach((property, subject) -> {
                         System.out.println("<" + object + "," + property + "," + subject + ">");
                     });
@@ -213,7 +213,7 @@ final class Main {
             System.out.println("----SPO--------");
             SPO.getInstance().sortedByKey();
             SPO.getInstance().tree.forEach((object, children) -> {
-                children.forEach((map)->{
+                children.forEach((map) -> {
                     map.forEach((property, subject) -> {
                         System.out.println("<" + object + "," + property + "," + subject + ">");
                     });
