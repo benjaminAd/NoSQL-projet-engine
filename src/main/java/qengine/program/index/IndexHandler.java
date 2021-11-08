@@ -10,6 +10,7 @@ import qengine.program.index.PSO.PSO;
 import qengine.program.index.SOP.SOP;
 import qengine.program.index.SPO.SPO;
 import qengine.program.q1.Dictionary;
+import qengine.program.timers.Timer;
 
 import java.util.HashMap;
 
@@ -17,6 +18,7 @@ public class IndexHandler extends AbstractRDFHandler {
 
     @Override
     public void handleStatement(Statement st) throws RDFHandlerException {
+        long start = System.nanoTime();
         String subject = st.getSubject().stringValue();
         String predicate = st.getPredicate().stringValue();
         String object = st.getObject().stringValue();
@@ -26,6 +28,6 @@ public class IndexHandler extends AbstractRDFHandler {
         POS.getInstance().add(subject, predicate, object);
         SOP.getInstance().add(subject, predicate, object);
         SPO.getInstance().add(subject, predicate, object);
-
+        Timer.getInstance().addTimerToIndexes((System.nanoTime() - start));
     }
 }

@@ -17,6 +17,7 @@ import qengine.program.index.PSO.PSO;
 import qengine.program.index.SOP.SOP;
 import qengine.program.index.SPO.SPO;
 import qengine.program.q1.Dictionary;
+import qengine.program.timers.Timer;
 
 import java.io.FileNotFoundException;
 import java.io.FileReader;
@@ -45,6 +46,7 @@ import java.util.stream.Stream;
  */
 final class Main {
     static final String baseURI = null;
+    static final Timer time = Timer.getInstance();
 
     /**
      * Votre répertoire de travail où vont se trouver les fichiers à lire
@@ -90,6 +92,7 @@ final class Main {
     public static void main(String[] args) throws Exception {
         parseData();
         createIndexes();
+        time.displayTimers();
         parseQueries();
     }
 
@@ -146,7 +149,9 @@ final class Main {
 
             // Parsing et traitement de chaque triple par le handler
             rdfParser.parse(dataReader, baseURI);
+            long start = System.nanoTime();
             Dictionary.getInstance().convertToDico();
+            time.addTimerToDictionary((System.nanoTime() - start));
         }
     }
 
@@ -161,7 +166,9 @@ final class Main {
             // Parsing et traitement de chaque triple par le handler
             rdfParser.parse(dataReader, baseURI);
             System.out.println("----OPS--------");
+            long start = System.nanoTime();
             OPS.getInstance().sortedByKey();
+            time.addTimerToIndexes((System.nanoTime() - start));
             OPS.getInstance().tree.forEach((object, children) -> {
                 children.forEach((map) -> {
                     map.forEach((property, subject) -> {
@@ -171,7 +178,9 @@ final class Main {
             });
 
             System.out.println("----OSP-------");
+            start = System.nanoTime();
             OSP.getInstance().sortedByKey();
+            time.addTimerToIndexes((System.nanoTime() - start));
             OSP.getInstance().tree.forEach((object, children) -> {
                 children.forEach((map) -> {
                     map.forEach((property, subject) -> {
@@ -181,7 +190,9 @@ final class Main {
             });
 
             System.out.println("----POS--------");
+            start = System.nanoTime();
             POS.getInstance().sortedByKey();
+            time.addTimerToIndexes((System.nanoTime() - start));
             POS.getInstance().tree.forEach((object, children) -> {
                 children.forEach((map) -> {
                     map.forEach((property, subject) -> {
@@ -191,7 +202,9 @@ final class Main {
             });
 
             System.out.println("----PSO--------");
+            start = System.nanoTime();
             PSO.getInstance().sortedByKey();
+            time.addTimerToIndexes((System.nanoTime() - start));
             PSO.getInstance().tree.forEach((object, children) -> {
                 children.forEach((map) -> {
                     map.forEach((property, subject) -> {
@@ -201,7 +214,9 @@ final class Main {
             });
 
             System.out.println("----SOP--------");
+            start = System.nanoTime();
             SOP.getInstance().sortedByKey();
+            time.addTimerToIndexes((System.nanoTime() - start));
             SOP.getInstance().tree.forEach((object, children) -> {
                 children.forEach((map) -> {
                     map.forEach((property, subject) -> {
@@ -211,7 +226,9 @@ final class Main {
             });
 
             System.out.println("----SPO--------");
+            start = System.nanoTime();
             SPO.getInstance().sortedByKey();
+            time.addTimerToIndexes((System.nanoTime() - start));
             SPO.getInstance().tree.forEach((object, children) -> {
                 children.forEach((map) -> {
                     map.forEach((property, subject) -> {
