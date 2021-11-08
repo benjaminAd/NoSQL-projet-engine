@@ -1,15 +1,17 @@
 package qengine.program.index;
+import qengine.program.q1.Dictionary;
 
 import java.util.*;
 
-public class MyIndex {
+public abstract class MyIndex {
     public Map<Integer, List<Map<Integer, Integer>>> tree;
+    protected Dictionary dictionary = Dictionary.getInstance();
 
     public MyIndex() {
         tree = new HashMap<>();
     }
 
-    public void addStatementToIndex(Integer a, Integer b, Integer c) {
+    protected void addStatementToIndex(Integer a, Integer b, Integer c) {
         HashMap<Integer, Integer> intermediaire = new HashMap<>();
         intermediaire.put(b, c);
         if (tree.containsKey(a)) {
@@ -25,4 +27,6 @@ public class MyIndex {
     public void sortedByKey() {
         tree = new TreeMap<>(tree);
     }
+
+    protected abstract void add(String subject, String predicate, String object);
 }

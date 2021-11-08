@@ -15,4 +15,11 @@ public class PSO extends MyIndex {
         }
         return instance;
     }
+
+    public void add(String subject,String predicate, String object){
+        int subjectIndex  = dictionary.getIndexFromElement(subject);
+        int predicateIndex = dictionary.getIndexFromElement(predicate);
+        int objectIndex = dictionary.getIndexFromElement(object);
+        this.addStatementToIndex(predicateIndex,subjectIndex,objectIndex);
+    }
 }

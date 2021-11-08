@@ -17,13 +17,15 @@ public class IndexHandler extends AbstractRDFHandler {
 
     @Override
     public void handleStatement(Statement st) throws RDFHandlerException {
-        Dictionary dictionary = Dictionary.getInstance();
-        OPS.getInstance().addStatementToIndex(dictionary.getIndexFromElement(st.getObject().stringValue()), dictionary.getIndexFromElement(st.getPredicate().stringValue()), dictionary.getIndexFromElement(st.getSubject().stringValue()));
-        OSP.getInstance().addStatementToIndex(dictionary.getIndexFromElement(st.getObject().stringValue()), dictionary.getIndexFromElement(st.getSubject().stringValue()), dictionary.getIndexFromElement(st.getPredicate().stringValue()));
-        POS.getInstance().addStatementToIndex(dictionary.getIndexFromElement(st.getPredicate().stringValue()), dictionary.getIndexFromElement(st.getObject().stringValue()), dictionary.getIndexFromElement(st.getSubject().stringValue()));
-        PSO.getInstance().addStatementToIndex(dictionary.getIndexFromElement(st.getPredicate().stringValue()), dictionary.getIndexFromElement(st.getSubject().stringValue()), dictionary.getIndexFromElement(st.getObject().stringValue()));
-        SOP.getInstance().addStatementToIndex(dictionary.getIndexFromElement(st.getSubject().stringValue()), dictionary.getIndexFromElement(st.getObject().stringValue()), dictionary.getIndexFromElement(st.getPredicate().stringValue()));
-        SPO.getInstance().addStatementToIndex(dictionary.getIndexFromElement(st.getSubject().stringValue()), dictionary.getIndexFromElement(st.getPredicate().stringValue()), dictionary.getIndexFromElement(st.getObject().stringValue()));
+        String subject = st.getSubject().stringValue();
+        String predicate = st.getPredicate().stringValue();
+        String object = st.getObject().stringValue();
+        OPS.getInstance().add(subject, predicate, object);
+        OSP.getInstance().add(subject, predicate, object);
+        PSO.getInstance().add(subject, predicate, object);
+        POS.getInstance().add(subject, predicate, object);
+        SOP.getInstance().add(subject, predicate, object);
+        SPO.getInstance().add(subject, predicate, object);
 
     }
 }
