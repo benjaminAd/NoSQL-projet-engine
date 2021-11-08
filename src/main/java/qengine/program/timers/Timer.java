@@ -3,6 +3,7 @@ package qengine.program.timers;
 public class Timer {
     private long timerIndexes;
     private long timerDictionnary;
+    private int million = 1000000;
     private static Timer instance = null;
 
     private Timer() {
@@ -19,8 +20,8 @@ public class Timer {
     }
 
     private void convertToMs() {
-        this.timerDictionnary = this.timerDictionnary / 1000000;
-        this.timerIndexes = this.timerIndexes / 1000000;
+        this.timerDictionnary = this.timerDictionnary / this.million;
+        this.timerIndexes = this.timerIndexes / this.million;
     }
 
     public static Timer getInstance() {
