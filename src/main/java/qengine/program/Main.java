@@ -163,7 +163,7 @@ final class Main {
             // On utilise notre implémentation de handler
             rdfParser.setRDFHandler(new IndexHandler());
 
-            // Parsing et traitement de chaque triple par le handler
+            // Parsing et traitement de chaque triplet par le handler
             rdfParser.parse(dataReader, baseURI);
             System.out.println("----OPS--------");
             long start = System.nanoTime();
@@ -171,8 +171,8 @@ final class Main {
             time.addTimerToIndexes((System.nanoTime() - start));
             OPS.getInstance().tree.forEach((object, children) -> {
                 children.forEach((map) -> {
-                    map.forEach((property, subject) -> {
-                        System.out.println("<" + object + "," + property + "," + subject + ">");
+                    map.forEach((predicate, subject) -> {
+                        System.out.println("<" + object + "," + predicate + "," + subject + ">");
                     });
                 });
             });
@@ -183,8 +183,8 @@ final class Main {
             time.addTimerToIndexes((System.nanoTime() - start));
             OSP.getInstance().tree.forEach((object, children) -> {
                 children.forEach((map) -> {
-                    map.forEach((property, subject) -> {
-                        System.out.println("<" + object + "," + property + "," + subject + ">");
+                    map.forEach((subject, predicate) -> {
+                        System.out.println("<" + object + "," + subject + "," + predicate + ">");
                     });
                 });
             });
@@ -193,10 +193,10 @@ final class Main {
             start = System.nanoTime();
             POS.getInstance().sortedByKey();
             time.addTimerToIndexes((System.nanoTime() - start));
-            POS.getInstance().tree.forEach((object, children) -> {
+            POS.getInstance().tree.forEach((predicate, children) -> {
                 children.forEach((map) -> {
-                    map.forEach((property, subject) -> {
-                        System.out.println("<" + object + "," + property + "," + subject + ">");
+                    map.forEach((object, subject) -> {
+                        System.out.println("<" + predicate + "," + object + "," + subject + ">");
                     });
                 });
             });
@@ -205,10 +205,10 @@ final class Main {
             start = System.nanoTime();
             PSO.getInstance().sortedByKey();
             time.addTimerToIndexes((System.nanoTime() - start));
-            PSO.getInstance().tree.forEach((object, children) -> {
+            PSO.getInstance().tree.forEach((predicate, children) -> {
                 children.forEach((map) -> {
-                    map.forEach((property, subject) -> {
-                        System.out.println("<" + object + "," + property + "," + subject + ">");
+                    map.forEach((subject, object) -> {
+                        System.out.println("<" + predicate + "," + subject + "," + object + ">");
                     });
                 });
             });
@@ -217,10 +217,10 @@ final class Main {
             start = System.nanoTime();
             SOP.getInstance().sortedByKey();
             time.addTimerToIndexes((System.nanoTime() - start));
-            SOP.getInstance().tree.forEach((object, children) -> {
+            SOP.getInstance().tree.forEach((subject, children) -> {
                 children.forEach((map) -> {
-                    map.forEach((property, subject) -> {
-                        System.out.println("<" + object + "," + property + "," + subject + ">");
+                    map.forEach((object, predicate) -> {
+                        System.out.println("<" + subject + "," + object + "," + predicate + ">");
                     });
                 });
             });
@@ -229,10 +229,10 @@ final class Main {
             start = System.nanoTime();
             SPO.getInstance().sortedByKey();
             time.addTimerToIndexes((System.nanoTime() - start));
-            SPO.getInstance().tree.forEach((object, children) -> {
+            SPO.getInstance().tree.forEach((subject, children) -> {
                 children.forEach((map) -> {
-                    map.forEach((property, subject) -> {
-                        System.out.println("<" + object + "," + property + "," + subject + ">");
+                    map.forEach((predicate, object) -> {
+                        System.out.println("<" + subject + "," + predicate + "," + object + ">");
                     });
                 });
             });
