@@ -3,6 +3,7 @@ package qengine.program.q1;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 import java.util.stream.Collectors;
 
 public class Dictionary {
@@ -11,7 +12,7 @@ public class Dictionary {
 
     private final HashMap<String, Integer> dico;
     private final HashMap<Integer, String> dicoFromIndex;
-//  Une liste de tout les éléments de chaque triplets
+    //  Une liste de tout les éléments de chaque triplets
     private final List<String> allStatementsSplit;
 
     private Dictionary() {
@@ -20,7 +21,7 @@ public class Dictionary {
         this.allStatementsSplit = new ArrayList<>();
     }
 
-//  Création du dictionnaire
+    //  Création du dictionnaire
     public void convertToDico() {
         int dicoIndex = 1;
         List<String> elements = allStatementsSplit.stream().distinct().collect(Collectors.toList());
@@ -32,7 +33,7 @@ public class Dictionary {
         allStatementsSplit.clear();
     }
 
-    public void add(String s){
+    public void add(String s) {
         this.allStatementsSplit.add(s);
     }
 
@@ -49,5 +50,17 @@ public class Dictionary {
             instance = new Dictionary();
         }
         return instance;
+    }
+
+    @Override
+    public String toString() {
+        StringBuilder st = new StringBuilder();
+        for (Map.Entry<String, Integer> entry : dico.entrySet()) {
+            st.append("<").append("\"").append(entry.getKey()).append("\"").append(",").append(entry.getValue()).append(">");
+            if (!entry.getKey().equals(dico.entrySet().toArray()[dico.entrySet().size() - 1])) {
+                st.append("\n");
+            }
+        }
+        return st.toString();
     }
 }

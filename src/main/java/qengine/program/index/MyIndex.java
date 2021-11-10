@@ -1,4 +1,5 @@
 package qengine.program.index;
+
 import qengine.program.q1.Dictionary;
 
 import java.util.*;
@@ -11,7 +12,7 @@ public abstract class MyIndex {
         tree = new HashMap<>();
     }
 
-//  Ajout des indices à l'arbre
+    //  Ajout des indices à l'arbre
     protected void addStatementToIndex(Integer a, Integer b, Integer c) {
         HashMap<Integer, Integer> intermediaire = new HashMap<>();
         intermediaire.put(b, c);
@@ -29,6 +30,22 @@ public abstract class MyIndex {
         tree = new TreeMap<>(tree);
     }
 
-//  Ajout d'un triplet selon l'index
+    //  Ajout d'un triplet selon l'index
     protected abstract void add(String subject, String predicate, String object);
+
+    @Override
+    public String toString() {
+        StringBuilder st = new StringBuilder();
+        for (Map.Entry<Integer, List<Map<Integer, Integer>>> entry : tree.entrySet()) {
+            for (Map<Integer, Integer> integerIntegerMap : entry.getValue()) {
+                for (Map.Entry<Integer, Integer> entry1 : integerIntegerMap.entrySet()) {
+                    st.append("<").append(entry.getKey()).append(",").append(entry1.getKey()).append(",").append(entry1.getValue()).append(">");
+                    if (!entry1.getKey().equals(integerIntegerMap.entrySet().toArray()[integerIntegerMap.entrySet().size() - 1])) {
+                        st.append("\n");
+                    }
+                }
+            }
+        }
+        return st.toString();
+    }
 }
