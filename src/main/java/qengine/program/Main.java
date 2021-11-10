@@ -93,7 +93,15 @@ final class Main {
         parseData();
         createIndexes();
         time.displayTimers();
-        parseQueries();
+        System.out.println("Voici le dictionnaire \n " + Dictionary.getInstance());
+        System.out.println("Voici les indexes :");
+        System.out.println("--- OPS --- \n" + OPS.getInstance());
+        System.out.println("--- OSP --- \n" + OSP.getInstance());
+        System.out.println("--- PSO --- \n" + PSO.getInstance());
+        System.out.println("--- POS --- \n" + POS.getInstance());
+        System.out.println("--- SOP --- \n" + SOP.getInstance());
+        System.out.println("--- SPO --- \n" + SPO.getInstance());
+//        parseQueries();
     }
 
     // ========================================================================
@@ -146,16 +154,15 @@ final class Main {
 
             // On utilise notre implémentation de handler
             rdfParser.setRDFHandler(new MainRDFHandler());
-
+            long start = System.nanoTime();
             // Parsing et traitement de chaque triple par le handler
             rdfParser.parse(dataReader, baseURI);
-            long start = System.nanoTime();
             Dictionary.getInstance().convertToDico();
             time.addTimerToDictionary((System.nanoTime() - start));
         }
     }
 
-//    Parse les données et créer les différents index
+    //    Parse les données et créer les différents index
     private static void createIndexes() throws FileNotFoundException, IOException {
         try (Reader dataReader = new FileReader(dataFile)) {
             // On va parser des données au format ntriples
@@ -163,83 +170,16 @@ final class Main {
 
             // On utilise notre implémentation de handler
             rdfParser.setRDFHandler(new IndexHandler());
-
+            long start = System.nanoTime();
             // Parsing et traitement de chaque triplet par le handler
             rdfParser.parse(dataReader, baseURI);
-
-            /*Affichage des différents index -- Sera enlevé après le premier rendu*/
-
-            System.out.println("----OPS--------");
-            long start = System.nanoTime();
             OPS.getInstance().sortedByKey();
-            time.addTimerToIndexes((System.nanoTime() - start));
-            OPS.getInstance().tree.forEach((object, children) -> {
-                children.forEach((map) -> {
-                    map.forEach((predicate, subject) -> {
-                        System.out.println("<" + object + "," + predicate + "," + subject + ">");
-                    });
-                });
-            });
-
-            System.out.println("----OSP-------");
-            start = System.nanoTime();
             OSP.getInstance().sortedByKey();
-            time.addTimerToIndexes((System.nanoTime() - start));
-            OSP.getInstance().tree.forEach((object, children) -> {
-                children.forEach((map) -> {
-                    map.forEach((subject, predicate) -> {
-                        System.out.println("<" + object + "," + subject + "," + predicate + ">");
-                    });
-                });
-            });
-
-            System.out.println("----POS--------");
-            start = System.nanoTime();
             POS.getInstance().sortedByKey();
-            time.addTimerToIndexes((System.nanoTime() - start));
-            POS.getInstance().tree.forEach((predicate, children) -> {
-                children.forEach((map) -> {
-                    map.forEach((object, subject) -> {
-                        System.out.println("<" + predicate + "," + object + "," + subject + ">");
-                    });
-                });
-            });
-
-            System.out.println("----PSO--------");
-            start = System.nanoTime();
             PSO.getInstance().sortedByKey();
-            time.addTimerToIndexes((System.nanoTime() - start));
-            PSO.getInstance().tree.forEach((predicate, children) -> {
-                children.forEach((map) -> {
-                    map.forEach((subject, object) -> {
-                        System.out.println("<" + predicate + "," + subject + "," + object + ">");
-                    });
-                });
-            });
-
-            System.out.println("----SOP--------");
-            start = System.nanoTime();
             SOP.getInstance().sortedByKey();
-            time.addTimerToIndexes((System.nanoTime() - start));
-            SOP.getInstance().tree.forEach((subject, children) -> {
-                children.forEach((map) -> {
-                    map.forEach((object, predicate) -> {
-                        System.out.println("<" + subject + "," + object + "," + predicate + ">");
-                    });
-                });
-            });
-
-            System.out.println("----SPO--------");
-            start = System.nanoTime();
             SPO.getInstance().sortedByKey();
             time.addTimerToIndexes((System.nanoTime() - start));
-            SPO.getInstance().tree.forEach((subject, children) -> {
-                children.forEach((map) -> {
-                    map.forEach((predicate, object) -> {
-                        System.out.println("<" + subject + "," + predicate + "," + object + ">");
-                    });
-                });
-            });
         }
     }
 }
