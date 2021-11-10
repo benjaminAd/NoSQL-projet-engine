@@ -11,6 +11,7 @@ public class Dictionary {
 
     private final HashMap<String, Integer> dico;
     private final HashMap<Integer, String> dicoFromIndex;
+//  Une liste de tout les éléments de chaque triplets
     private final List<String> allStatementsSplit;
 
     private Dictionary() {
@@ -19,6 +20,7 @@ public class Dictionary {
         this.allStatementsSplit = new ArrayList<>();
     }
 
+//  Création du dictionnaire
     public void convertToDico() {
         int dicoIndex = 1;
         List<String> elements = allStatementsSplit.stream().distinct().collect(Collectors.toList());

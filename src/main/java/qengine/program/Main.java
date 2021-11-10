@@ -155,6 +155,7 @@ final class Main {
         }
     }
 
+//    Parse les données et créer les différents index
     private static void createIndexes() throws FileNotFoundException, IOException {
         try (Reader dataReader = new FileReader(dataFile)) {
             // On va parser des données au format ntriples
@@ -165,6 +166,9 @@ final class Main {
 
             // Parsing et traitement de chaque triplet par le handler
             rdfParser.parse(dataReader, baseURI);
+
+            /*Affichage des différents index -- Sera enlevé après le premier rendu*/
+
             System.out.println("----OPS--------");
             long start = System.nanoTime();
             OPS.getInstance().sortedByKey();

@@ -11,6 +11,7 @@ public abstract class MyIndex {
         tree = new HashMap<>();
     }
 
+//  Ajout des indices à l'arbre
     protected void addStatementToIndex(Integer a, Integer b, Integer c) {
         HashMap<Integer, Integer> intermediaire = new HashMap<>();
         intermediaire.put(b, c);
@@ -28,5 +29,6 @@ public abstract class MyIndex {
         tree = new TreeMap<>(tree);
     }
 
+//  Ajout d'un triplet selon l'index
     protected abstract void add(String subject, String predicate, String object);
 }
