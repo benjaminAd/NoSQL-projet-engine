@@ -2,6 +2,9 @@ package qengine.program.index.SPO;
 
 import qengine.program.index.MyIndex;
 
+import java.util.List;
+import java.util.Map;
+
 public class SPO extends MyIndex {
     private static SPO instance = null;
 
@@ -21,5 +24,11 @@ public class SPO extends MyIndex {
         int predicateIndex = dictionary.getIndexFromElement(predicate);
         int objectIndex = dictionary.getIndexFromElement(object);
         this.addStatementToIndex(subjectIndex,predicateIndex,objectIndex);
+    }
+
+    @Override
+    public Map<Integer, List<Map<Integer, Integer>>> getRes(int subject, int predicate, int object) {
+        //TODO
+        return null;
     }
 }

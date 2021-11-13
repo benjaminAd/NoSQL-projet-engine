@@ -2,6 +2,9 @@ package qengine.program.index.OSP;
 
 import qengine.program.index.MyIndex;
 
+import java.util.List;
+import java.util.Map;
+
 public class OSP extends MyIndex {
     private static OSP instance = null;
 
@@ -21,5 +24,11 @@ public class OSP extends MyIndex {
         int predicateIndex = dictionary.getIndexFromElement(predicate);
         int objectIndex = dictionary.getIndexFromElement(object);
         this.addStatementToIndex(objectIndex,subjectIndex,predicateIndex);
+    }
+
+    @Override
+    public Map<Integer, List<Map<Integer, Integer>>> getRes(int subject, int predicate, int object) {
+        //TODO
+        return null;
     }
 }

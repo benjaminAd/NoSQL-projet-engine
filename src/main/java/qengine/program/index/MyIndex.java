@@ -16,15 +16,21 @@ public abstract class MyIndex {
     protected void addStatementToIndex(Integer a, Integer b, Integer c) {
         HashMap<Integer, Integer> intermediaire = new HashMap<>();
         intermediaire.put(b, c);
-        if (tree.containsKey(a)) {
-            tree.get(a).add(intermediaire);
+        addElementToMap(a, tree, intermediaire);
+
+    }
+
+    protected Map<Integer, List<Map<Integer, Integer>>> addElementToMap(Integer a, Map<Integer, List<Map<Integer, Integer>>> map,Map<Integer, Integer> intermediaire) {
+        if (map.containsKey(a)) {
+            map.get(a).add(intermediaire);
         } else {
             List<Map<Integer, Integer>> intermediairelist = new ArrayList<>();
             intermediairelist.add(intermediaire);
-            tree.put(a, intermediairelist);
+            map.put(a, intermediairelist);
         }
-
+        return map;
     }
+
 
     public void sortedByKey() {
         tree = new TreeMap<>(tree);
@@ -32,6 +38,8 @@ public abstract class MyIndex {
 
     //  Ajout d'un triplet selon l'index
     protected abstract void add(String subject, String predicate, String object);
+
+    public abstract Map<Integer, List<Map<Integer, Integer>>> getRes(int subject, int predicate, int object);
 
     @Override
     public String toString() {

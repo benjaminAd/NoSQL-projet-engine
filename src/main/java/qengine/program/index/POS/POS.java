@@ -2,6 +2,9 @@ package qengine.program.index.POS;
 
 import qengine.program.index.MyIndex;
 
+import java.util.List;
+import java.util.Map;
+
 public class POS extends MyIndex {
     private static POS instance = null;
 
@@ -21,5 +24,11 @@ public class POS extends MyIndex {
         int predicateIndex = dictionary.getIndexFromElement(predicate);
         int objectIndex = dictionary.getIndexFromElement(object);
         this.addStatementToIndex(predicateIndex,objectIndex,subjectIndex);
+    }
+
+    @Override
+    public Map<Integer, List<Map<Integer, Integer>>> getRes(int subject, int predicate, int object) {
+        //TODO
+        return null;
     }
 }
