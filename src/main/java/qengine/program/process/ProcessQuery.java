@@ -80,7 +80,7 @@ public class ProcessQuery {
     }
 
     private void firstRes() {
-//        res = index.getRes(subjectIndex, predicateIndex, objectIndex);
+        res = index.getRes(subjectIndex, predicateIndex, objectIndex);
     }
 
 
