@@ -9,10 +9,7 @@ import qengine.program.index.POS.POS;
 import qengine.program.index.PSO.PSO;
 import qengine.program.index.SOP.SOP;
 import qengine.program.index.SPO.SPO;
-import qengine.program.q1.Dictionary;
 import qengine.program.timers.Timer;
-
-import java.util.HashMap;
 
 public class IndexHandler extends AbstractRDFHandler {
 

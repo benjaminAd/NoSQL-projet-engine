@@ -2,7 +2,6 @@ package qengine.program;
 
 import org.eclipse.rdf4j.query.algebra.Projection;
 import org.eclipse.rdf4j.query.algebra.StatementPattern;
-import org.eclipse.rdf4j.query.algebra.Var;
 import org.eclipse.rdf4j.query.algebra.helpers.AbstractQueryModelVisitor;
 import org.eclipse.rdf4j.query.algebra.helpers.StatementPatternCollector;
 import org.eclipse.rdf4j.query.parser.ParsedQuery;
@@ -10,8 +9,8 @@ import org.eclipse.rdf4j.query.parser.sparql.SPARQLParser;
 import org.eclipse.rdf4j.rio.RDFFormat;
 import org.eclipse.rdf4j.rio.RDFParser;
 import org.eclipse.rdf4j.rio.Rio;
-import qengine.program.index.OPS.OPS;
 import qengine.program.index.IndexHandler;
+import qengine.program.index.OPS.OPS;
 import qengine.program.index.OSP.OSP;
 import qengine.program.index.POS.POS;
 import qengine.program.index.PSO.PSO;
@@ -27,7 +26,8 @@ import java.io.IOException;
 import java.io.Reader;
 import java.nio.file.Files;
 import java.nio.file.Paths;
-import java.util.*;
+import java.util.Iterator;
+import java.util.List;
 import java.util.stream.Stream;
 
 /**
