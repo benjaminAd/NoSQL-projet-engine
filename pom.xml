@@ -4,7 +4,7 @@
 	<modelVersion>4.0.0</modelVersion>
 	<groupId>napd</groupId>
 	<artifactId>qengine</artifactId>
-	<version>0.0.1-SNAPSHOT</version>
+	<version>0.0.3-SNAPSHOT</version>
 	<build>
 		<plugins>
 			<plugin>
@@ -21,7 +21,7 @@
 				<configuration>
 					<archive>
 						<manifest>
-							<mainClass>qengine.Main</mainClass>
+							<mainClass>qengine.program.Main</mainClass>
 						</manifest>
 					</archive>
 				</configuration>
@@ -38,7 +38,7 @@
 							<goal>copy-dependencies</goal>
 						</goals>
 						<configuration>
-							<outputDirectory>${project.build.directory}/allJars</outputDirectory>
+							<outputDirectory>${project.build.directory}/allJars/</outputDirectory>
 							<overWriteReleases>false</overWriteReleases>
 							<overWriteSnapshots>false</overWriteSnapshots>
 							<overWriteIfNewer>true</overWriteIfNewer>
