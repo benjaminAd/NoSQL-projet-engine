@@ -2,6 +2,7 @@ package qengine.program;
 
 import org.eclipse.rdf4j.query.algebra.Projection;
 import org.eclipse.rdf4j.query.algebra.StatementPattern;
+import org.eclipse.rdf4j.query.algebra.Var;
 import org.eclipse.rdf4j.query.algebra.helpers.AbstractQueryModelVisitor;
 import org.eclipse.rdf4j.query.algebra.helpers.StatementPatternCollector;
 import org.eclipse.rdf4j.query.parser.ParsedQuery;
@@ -16,6 +17,7 @@ import qengine.program.index.POS.POS;
 import qengine.program.index.PSO.PSO;
 import qengine.program.index.SOP.SOP;
 import qengine.program.index.SPO.SPO;
+import qengine.program.process.ProcessQuery;
 import qengine.program.q1.Dictionary;
 import qengine.program.timers.Timer;
 
@@ -47,6 +49,7 @@ import java.util.stream.Stream;
 final class Main {
     static final String baseURI = null;
     static final Timer time = Timer.getInstance();
+    static final ProcessQuery processQuery = ProcessQuery.getInstance();
 
     /**
      * Votre répertoire de travail où vont se trouver les fichiers à lire
@@ -70,18 +73,26 @@ final class Main {
      */
     public static void processAQuery(ParsedQuery query) {
         List<StatementPattern> patterns = StatementPatternCollector.process(query.getTupleExpr());
-
-        System.out.println("first pattern : " + patterns.get(0));
-
-        System.out.println("object of the first pattern : " + patterns.get(0).getObjectVar().getValue());
-
-        System.out.println("variables to project : ");
+        processQuery.setFirstTriplets(patterns.get(0));
+        patterns.remove(0);
+        processQuery.solve(patterns);
+//        System.out.println("-- 1 -- first pattern : " + patterns.get(0));
+//
+//        System.out.println("-- 2 -- Subject : " + patterns.get(0).getSubjectVar().getValue());
+//        Var test = patterns.get(0).getSubjectVar();
+//        System.out.println("signature = " + test.getClass());
+//
+//        System.out.println("-- 3 -- Predicate : " + patterns.get(0).getPredicateVar().getValue());
+//
+//        System.out.println("-- 4 -- object of the first pattern : " + patterns.get(0).getObjectVar().getValue());
+//
+//        System.out.println("-- 5 -- variables to project : ");
 
         // Utilisation d'une classe anonyme
         query.getTupleExpr().visit(new AbstractQueryModelVisitor<RuntimeException>() {
 
             public void meet(Projection projection) {
-                System.out.println(projection.getProjectionElemList().getElements());
+                processQuery.setUnknownName(projection.getProjectionElemList().getElements().get(0).getSourceName());
             }
         });
     }
@@ -92,16 +103,16 @@ final class Main {
     public static void main(String[] args) throws Exception {
         parseData();
         createIndexes();
-        time.displayTimers();
-        System.out.println("Voici le dictionnaire \n " + Dictionary.getInstance());
-        System.out.println("Voici les indexes :");
-        System.out.println("--- OPS --- \n" + OPS.getInstance());
-        System.out.println("--- OSP --- \n" + OSP.getInstance());
-        System.out.println("--- PSO --- \n" + PSO.getInstance());
-        System.out.println("--- POS --- \n" + POS.getInstance());
-        System.out.println("--- SOP --- \n" + SOP.getInstance());
-        System.out.println("--- SPO --- \n" + SPO.getInstance());
-//        parseQueries();
+//        time.displayTimers();
+//        System.out.println("Voici le dictionnaire \n " + Dictionary.getInstance());
+//        System.out.println("Voici les indexes :");
+//        System.out.println("--- OPS --- \n" + OPS.getInstance());
+//        System.out.println("--- OSP --- \n" + OSP.getInstance());
+//        System.out.println("--- PSO --- \n" + PSO.getInstance());
+//        System.out.println("--- POS --- \n" + POS.getInstance());
+//        System.out.println("--- SOP --- \n" + SOP.getInstance());
+//        System.out.println("--- SPO --- \n" + SPO.getInstance());
+        parseQueries();
     }
 
     // ========================================================================
