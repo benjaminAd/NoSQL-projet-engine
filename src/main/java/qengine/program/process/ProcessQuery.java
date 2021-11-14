@@ -72,11 +72,15 @@ public class ProcessQuery {
     public void solve(List<StatementPattern> statementPatterns){
         firstRes();
         //TODO --> Résultat des autres patterns
-//        if(!statementPatterns.isEmpty()){
-//            for (StatementPattern statementPattern : statementPatterns) {
-//                otherRes(statementPattern);
-//            }
-//        }
+        if(!statementPatterns.isEmpty()){
+            for (StatementPattern statementPattern : statementPatterns) {
+                otherRes(statementPattern);
+            }
+        }
+    }
+
+    private void otherRes(StatementPattern statementPattern) {
+//        if ()
     }
 
     private void firstRes() {

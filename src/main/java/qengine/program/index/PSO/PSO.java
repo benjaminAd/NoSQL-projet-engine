@@ -2,6 +2,8 @@ package qengine.program.index.PSO;
 
 import qengine.program.index.MyIndex;
 
+import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
@@ -28,7 +30,20 @@ public class PSO extends MyIndex {
 
     @Override
     public Map<Integer, List<Map<Integer, Integer>>> getRes(int subject, int predicate, int object) {
-        //TODO
-        return null;
+        Map<Integer, List<Map<Integer, Integer>>> res = new HashMap<>();
+        List<Map<Integer, Integer>> pairObjPredList = tree.get(predicate);
+
+        for (Map<Integer, Integer> pairObjPred : pairObjPredList) {
+            if (!pairObjPred.containsKey(subject)) continue;
+            res = addElementToMap(predicate, res, pairObjPred);
+            if (res.containsKey(predicate)) res.get(predicate).add(pairObjPred);
+            else {
+                List<Map<Integer, Integer>> list = new ArrayList<>();
+                list.add(pairObjPred);
+                res.put(predicate, list);
+            }
+        }
+
+        return res;
     }
 }

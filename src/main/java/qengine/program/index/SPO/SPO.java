@@ -2,6 +2,8 @@ package qengine.program.index.SPO;
 
 import qengine.program.index.MyIndex;
 
+import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
@@ -28,7 +30,20 @@ public class SPO extends MyIndex {
 
     @Override
     public Map<Integer, List<Map<Integer, Integer>>> getRes(int subject, int predicate, int object) {
-        //TODO
-        return null;
+        Map<Integer, List<Map<Integer, Integer>>> res = new HashMap<>();
+        List<Map<Integer, Integer>> pairPredObjList = tree.get(subject);
+
+        for (Map<Integer, Integer> pairPredObj : pairPredObjList) {
+            if (!pairPredObj.containsKey(predicate)) continue;
+            res = addElementToMap(subject, res, pairPredObj);
+            if (res.containsKey(subject)) res.get(subject).add(pairPredObj);
+            else {
+                List<Map<Integer, Integer>> list = new ArrayList<>();
+                list.add(pairPredObj);
+                res.put(subject, list);
+            }
+        }
+
+        return res;
     }
 }
