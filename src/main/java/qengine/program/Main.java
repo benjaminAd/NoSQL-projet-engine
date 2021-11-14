@@ -76,17 +76,6 @@ final class Main {
         processQuery.setFirstTriplets(patterns.get(0));
         patterns.remove(0);
         processQuery.solve(patterns);
-//        System.out.println("-- 1 -- first pattern : " + patterns.get(0));
-//
-//        System.out.println("-- 2 -- Subject : " + patterns.get(0).getSubjectVar().getValue());
-//        Var test = patterns.get(0).getSubjectVar();
-//        System.out.println("signature = " + test.getClass());
-//
-//        System.out.println("-- 3 -- Predicate : " + patterns.get(0).getPredicateVar().getValue());
-//
-//        System.out.println("-- 4 -- object of the first pattern : " + patterns.get(0).getObjectVar().getValue());
-//
-//        System.out.println("-- 5 -- variables to project : ");
 
         // Utilisation d'une classe anonyme
         query.getTupleExpr().visit(new AbstractQueryModelVisitor<RuntimeException>() {
@@ -103,15 +92,6 @@ final class Main {
     public static void main(String[] args) throws Exception {
         parseData();
         createIndexes();
-//        time.displayTimers();
-//        System.out.println("Voici le dictionnaire \n " + Dictionary.getInstance());
-//        System.out.println("Voici les indexes :");
-//        System.out.println("--- OPS --- \n" + OPS.getInstance());
-//        System.out.println("--- OSP --- \n" + OSP.getInstance());
-//        System.out.println("--- PSO --- \n" + PSO.getInstance());
-//        System.out.println("--- POS --- \n" + POS.getInstance());
-//        System.out.println("--- SOP --- \n" + SOP.getInstance());
-//        System.out.println("--- SPO --- \n" + SPO.getInstance());
         parseQueries();
     }
 
