@@ -69,10 +69,10 @@ public class ProcessQuery {
         }
     }
 
-    public void solve(List<StatementPattern> statementPatterns){
+    public void solve(List<StatementPattern> statementPatterns) {
         firstRes();
         //TODO --> Résultat des autres patterns
-        if(!statementPatterns.isEmpty()){
+        if (!statementPatterns.isEmpty()) {
             for (StatementPattern statementPattern : statementPatterns) {
                 otherRes(statementPattern);
             }
@@ -80,7 +80,12 @@ public class ProcessQuery {
     }
 
     private void otherRes(StatementPattern statementPattern) {
-//        if ()
+        this.getIndex(statementPattern.getSubjectVar().getValue().stringValue(),
+                statementPattern.getPredicateVar().getValue().stringValue(),
+                statementPattern.getObjectVar().getValue().stringValue());
+        Map<Integer, List<Map<Integer, Integer>>> tmp = index.getRes(subjectIndex, predicateIndex, objectIndex);
+
+        // TODO: faire des trucs
     }
 
     private void firstRes() {
