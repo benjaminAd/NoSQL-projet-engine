@@ -80,4 +80,8 @@
 			<version>3.9.0</version>
 		</dependency>
 	</dependencies>
+	<properties>
+		<sonar.organization>benjaminad</sonar.organization>
+		<sonar.host.url>https://sonarcloud.io</sonar.host.url>
+	</properties>
 </project>
