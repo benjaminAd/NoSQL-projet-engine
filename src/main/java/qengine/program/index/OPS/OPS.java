@@ -44,4 +44,10 @@ public class OPS extends MyIndex {
         }
         return res;
     }
+
+    @Override
+    public Map<Integer, List<Map<Integer, Integer>>> compareRes(Map<Integer, List<Map<Integer, Integer>>> res, Map<Integer, List<Map<Integer, Integer>>> tmp) {
+        // TODO
+        return null;
+    }
 }

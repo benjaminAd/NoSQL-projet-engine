@@ -41,6 +41,8 @@ public abstract class MyIndex {
 
     public abstract Map<Integer, List<Map<Integer, Integer>>> getRes(int subject, int predicate, int object);
 
+    public abstract Map<Integer, List<Map<Integer, Integer>>> compareRes(Map<Integer, List<Map<Integer, Integer>>> res, Map<Integer, List<Map<Integer, Integer>>> tmp);
+
     @Override
     public String toString() {
         StringBuilder st = new StringBuilder();
