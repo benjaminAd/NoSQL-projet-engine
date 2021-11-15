@@ -67,7 +67,6 @@ final class Main {
      */
     static final String DATA_FILE = WORKING_DIR + "100K.nt";
 
-    private static Logger logger = Logger.getLogger(Main.class.getName());
     // ========================================================================
 
     /**

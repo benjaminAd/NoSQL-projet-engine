@@ -31,11 +31,4 @@ public class OPS extends MyIndex {
     public List<Integer> getRes(int subject, int predicate, int object) {
         return getResGeneral(object,predicate);
     }
-
-    @Override
-    public Map<Integer, List<Map<Integer, Integer>>> compareRes(Map<Integer, List<Map<Integer, Integer>>> oldres, Map<Integer, List<Map<Integer, Integer>>> tmp) {
-        Map<Integer, List<Map<Integer, Integer>>> res = new HashMap<>();
-
-        return res;
-    }
 }

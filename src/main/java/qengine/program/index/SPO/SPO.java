@@ -30,10 +30,4 @@ public class SPO extends MyIndex {
     public List<Integer> getRes(int subject, int predicate, int object) {
        return getResGeneral(subject,predicate);
     }
-
-    @Override
-    public Map<Integer, List<Map<Integer, Integer>>> compareRes(Map<Integer, List<Map<Integer, Integer>>> res, Map<Integer, List<Map<Integer, Integer>>> tmp) {
-        // TODO
-        return null;
-    }
 }
