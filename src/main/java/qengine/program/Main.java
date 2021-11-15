@@ -2,6 +2,7 @@ package qengine.program;
 
 import org.eclipse.rdf4j.query.algebra.Projection;
 import org.eclipse.rdf4j.query.algebra.StatementPattern;
+import org.eclipse.rdf4j.query.algebra.Str;
 import org.eclipse.rdf4j.query.algebra.helpers.AbstractQueryModelVisitor;
 import org.eclipse.rdf4j.query.algebra.helpers.StatementPatternCollector;
 import org.eclipse.rdf4j.query.parser.ParsedQuery;
@@ -67,6 +68,7 @@ final class Main {
      */
     static final String DATA_FILE = WORKING_DIR + "100K.nt";
 
+    static final StringBuilder resStringBuilder = new StringBuilder();
     // ========================================================================
 
     /**
@@ -78,17 +80,10 @@ final class Main {
             PROCESS_QUERY.setFirstTriplets(patterns.get(0));
             patterns.remove(0);
             PROCESS_QUERY.solve(patterns);
-            System.out.println(PROCESS_QUERY.getRes()+"\n----------------------------------");
+            resStringBuilder.append(PROCESS_QUERY.getRes()).append("\n----------------------------------\n");
         } catch (NullPointerException e) {
-            System.out.println("Un élément dans votre requête n'existe pas dans notre dictionnaire.\n----------------------------------");
+            resStringBuilder.append("Un élément dans votre requête n'existe pas dans notre dictionnaire.\n----------------------------------");
         }
-        // Utilisation d'une classe anonyme
-        query.getTupleExpr().visit(new AbstractQueryModelVisitor<RuntimeException>() {
-
-            public void meet(Projection projection) {
-                PROCESS_QUERY.setUnknownName(projection.getProjectionElemList().getElements().get(0).getSourceName());
-            }
-        });
     }
 
     /**
@@ -98,6 +93,8 @@ final class Main {
         parseData();
         createIndexes();
         parseQueries();
+        TIME.displayTimers();
+        System.out.println(resStringBuilder);
     }
 
     // ========================================================================
