@@ -3,7 +3,6 @@ package qengine.program.index.SOP;
 import qengine.program.index.MyIndex;
 
 import java.util.List;
-import java.util.Map;
 
 public class SOP extends MyIndex {
     private static SOP instance = null;

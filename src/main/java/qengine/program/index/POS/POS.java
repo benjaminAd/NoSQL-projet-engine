@@ -3,7 +3,6 @@ package qengine.program.index.POS;
 import qengine.program.index.MyIndex;
 
 import java.util.List;
-import java.util.Map;
 
 public class POS extends MyIndex {
     private static POS instance = null;

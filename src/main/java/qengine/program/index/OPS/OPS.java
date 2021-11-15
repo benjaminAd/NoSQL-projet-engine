@@ -2,9 +2,7 @@ package qengine.program.index.OPS;
 
 import qengine.program.index.MyIndex;
 
-import java.util.HashMap;
 import java.util.List;
-import java.util.Map;
 
 public class OPS extends MyIndex {
     private static OPS instance = null;

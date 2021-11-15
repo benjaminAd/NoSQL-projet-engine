@@ -3,7 +3,6 @@ package qengine.program.index.OSP;
 import qengine.program.index.MyIndex;
 
 import java.util.List;
-import java.util.Map;
 
 public class OSP extends MyIndex {
     private static OSP instance = null;

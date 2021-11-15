@@ -8,7 +8,7 @@ import java.util.*;
 public abstract class MyIndex {
     public Map<Integer, List<Map<Integer, Integer>>> tree;
     protected Dictionary dictionary = Dictionary.getInstance();
-    protected Timer TIMER = Timer.getInstance();
+    protected static final Timer TIMER = Timer.getInstance();
 
     public MyIndex() {
         TIMER.setTimer();

@@ -3,7 +3,6 @@ package qengine.program.index.PSO;
 import qengine.program.index.MyIndex;
 
 import java.util.List;
-import java.util.Map;
 
 public class PSO extends MyIndex {
     private static PSO instance = null;
