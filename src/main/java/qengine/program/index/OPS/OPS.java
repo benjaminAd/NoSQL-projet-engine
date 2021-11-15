@@ -29,25 +29,14 @@ public class OPS extends MyIndex {
     }
 
     @Override
-    public Map<Integer, List<Map<Integer, Integer>>> getRes(int subject, int predicate, int object) {
-        Map<Integer, List<Map<Integer, Integer>>> res = new HashMap<>();
-        List<Map<Integer, Integer>> pairPredSubList = tree.get(object);
-        for (Map<Integer, Integer> pairPredSubject : pairPredSubList) {
-            if (!pairPredSubject.containsKey(predicate)) continue;
-            res = addElementToMap(object, res, pairPredSubject);
-            if (res.containsKey(object)) res.get(object).add(pairPredSubject);
-            else {
-                List<Map<Integer, Integer>> list = new ArrayList<>();
-                list.add(pairPredSubject);
-                res.put(object, list);
-            }
-        }
-        return res;
+    public List<Integer> getRes(int subject, int predicate, int object) {
+        return getResGeneral(object,predicate);
     }
 
     @Override
-    public Map<Integer, List<Map<Integer, Integer>>> compareRes(Map<Integer, List<Map<Integer, Integer>>> res, Map<Integer, List<Map<Integer, Integer>>> tmp) {
-        // TODO
-        return null;
+    public Map<Integer, List<Map<Integer, Integer>>> compareRes(Map<Integer, List<Map<Integer, Integer>>> oldres, Map<Integer, List<Map<Integer, Integer>>> tmp) {
+        Map<Integer, List<Map<Integer, Integer>>> res = new HashMap<>();
+
+        return res;
     }
 }

@@ -31,6 +31,16 @@ public abstract class MyIndex {
         return map;
     }
 
+    protected List<Integer> getResGeneral(Integer i1,Integer i2){
+        List<Integer> res = new ArrayList<>();
+        List<Map<Integer, Integer>> pairPredSubList = tree.get(i1);
+        for (Map<Integer, Integer> pairPredSubject : pairPredSubList) {
+            if (!pairPredSubject.containsKey(i2)) continue;
+            res.add(pairPredSubject.get(i2));
+        }
+        return res;
+    }
+
 
     public void sortedByKey() {
         tree = new TreeMap<>(tree);
@@ -39,7 +49,7 @@ public abstract class MyIndex {
     //  Ajout d'un triplet selon l'index
     protected abstract void add(String subject, String predicate, String object);
 
-    public abstract Map<Integer, List<Map<Integer, Integer>>> getRes(int subject, int predicate, int object);
+    public abstract List<Integer> getRes(int subject, int predicate, int object);
 
     public abstract Map<Integer, List<Map<Integer, Integer>>> compareRes(Map<Integer, List<Map<Integer, Integer>>> res, Map<Integer, List<Map<Integer, Integer>>> tmp);
 

@@ -59,12 +59,12 @@ final class Main {
     /**
      * Fichier contenant les requêtes sparql
      */
-    static final String queryFile = workingDir + "sample_query.queryset";
+    static final String queryFile = workingDir + "STAR_ALL_workload.queryset";
 
     /**
      * Fichier contenant des données rdf
      */
-    static final String dataFile = workingDir + "sample_data.nt";
+    static final String dataFile = workingDir + "100K.nt";
 
     // ========================================================================
 
@@ -73,10 +73,15 @@ final class Main {
      */
     public static void processAQuery(ParsedQuery query) {
         List<StatementPattern> patterns = StatementPatternCollector.process(query.getTupleExpr());
-        processQuery.setFirstTriplets(patterns.get(0));
-        patterns.remove(0);
-        processQuery.solve(patterns);
-
+        try {
+            processQuery.setFirstTriplets(patterns.get(0));
+            patterns.remove(0);
+            processQuery.solve(patterns);
+            System.out.println(processQuery.getRes());
+            System.out.println("------------------------------------");
+        } catch (NullPointerException e) {
+            System.out.println("Un élément dans votre requête n'existe pas dans notre dictionnaire \n------------------------------------");
+        }
         // Utilisation d'une classe anonyme
         query.getTupleExpr().visit(new AbstractQueryModelVisitor<RuntimeException>() {
 

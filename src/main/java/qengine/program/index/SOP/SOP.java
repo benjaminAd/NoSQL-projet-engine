@@ -29,22 +29,8 @@ public class SOP extends MyIndex {
     }
 
     @Override
-    public Map<Integer, List<Map<Integer, Integer>>> getRes(int subject, int predicate, int object) {
-        Map<Integer, List<Map<Integer, Integer>>> res = new HashMap<>();
-        List<Map<Integer, Integer>> pairObjPredList = tree.get(subject);
-
-        for (Map<Integer, Integer> pairObjPred : pairObjPredList) {
-            if (!pairObjPred.containsKey(predicate)) continue;
-            res = addElementToMap(subject, res, pairObjPred);
-            if (res.containsKey(subject)) res.get(subject).add(pairObjPred);
-            else {
-                List<Map<Integer, Integer>> list = new ArrayList<>();
-                list.add(pairObjPred);
-                res.put(subject, list);
-            }
-        }
-
-        return res;
+    public List<Integer> getRes(int subject, int predicate, int object) {
+        return getResGeneral(subject,object);
     }
 
     @Override

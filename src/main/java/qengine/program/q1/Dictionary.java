@@ -42,7 +42,8 @@ public class Dictionary {
     }
 
     public Integer getIndexFromElement(String element) {
-        return this.dico.get(element);
+        if (this.dico.containsKey(element)) return this.dico.get(element);
+        throw new NullPointerException();
     }
 
     public static Dictionary getInstance() {

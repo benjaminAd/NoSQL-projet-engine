@@ -11,17 +11,23 @@ import qengine.program.index.SOP.SOP;
 import qengine.program.index.SPO.SPO;
 import qengine.program.q1.Dictionary;
 
+import java.util.ArrayList;
 import java.util.List;
 import java.util.Map;
+import java.util.stream.Collectors;
 
 public class ProcessQuery {
     private static ProcessQuery instance = null;
     private String unknownName;
-    private String subjectValue = null, predicateValue = null, objectValue = null;
-    private int subjectIndex = -1, predicateIndex = -1, objectIndex = -1;
+    private String subjectValue = "";
+    private String predicateValue = "";
+    private String objectValue = "";
+    private int subjectIndex = -1;
+    private int predicateIndex = -1;
+    private int objectIndex = -1;
     private Dictionary dictionary = Dictionary.getInstance();
     private MyIndex index;
-    private Map<Integer, List<Map<Integer, Integer>>> res;
+    private List<Integer> res;
 
     private ProcessQuery() {
 
@@ -35,22 +41,50 @@ public class ProcessQuery {
         this.unknownName = unknownName;
     }
 
-    public void setFirstTriplets(StatementPattern statementPattern) {
+    public String getRes() {
+        String result = (res.isEmpty()) ? "Aucune Réponse n'a été trouvé." : displayRes(res.stream().map((element) -> dictionary.getElementFromIndex(element)).collect(Collectors.toList()));
+        res.clear();
+        return result;
+    }
+
+    public String displayRes(List<String> list) {
+        StringBuilder st = new StringBuilder("Voici les résultats de votre requêtes\n");
+        for (int i = 0; i < list.size(); i++) {
+            st.append(list.get(i));
+            if (i != list.size() - 1) st.append("\n");
+        }
+        return st.toString();
+    }
+
+    private void resetValues() {
+        subjectValue = "";
+        predicateValue = "";
+        objectValue = "";
+        subjectIndex = -1;
+        predicateIndex = -1;
+        objectIndex = -1;
+    }
+
+    private void statementToValue(StatementPattern statementPattern) {
         Var subject = statementPattern.getSubjectVar();
         Var predicate = statementPattern.getPredicateVar();
         Var object = statementPattern.getObjectVar();
-        if (!(subject.getName().equals(unknownName))) subjectValue = subject.getValue().stringValue();
-        if (!(predicate.getName().equals(unknownName))) predicateValue = predicate.getValue().stringValue();
-        if (!(object.getName().equals(unknownName))) objectValue = object.getValue().stringValue();
-
+        if (subject.getValue() != null) subjectValue = subject.getValue().stringValue();
+        if (predicate.getValue() != null) predicateValue = predicate.getValue().stringValue();
+        if (object.getValue() != null) objectValue = object.getValue().stringValue();
         getIndex(subjectValue, predicateValue, objectValue);
+    }
+
+    public void setFirstTriplets(StatementPattern statementPattern) {
+        this.statementToValue(statementPattern);
         setIndex();
+
     }
 
     private void getIndex(String subject, String predicate, String object) {
-        if (subject != null) subjectIndex = dictionary.getIndexFromElement(subject);
-        if (predicate != null) predicateIndex = dictionary.getIndexFromElement(predicate);
-        if (object != null) objectIndex = dictionary.getIndexFromElement(object);
+        if (!subject.equals("")) subjectIndex = dictionary.getIndexFromElement(subject);
+        if (!predicate.equals("")) predicateIndex = dictionary.getIndexFromElement(predicate);
+        if (!object.equals("")) objectIndex = dictionary.getIndexFromElement(object);
     }
 
     private void setIndex() {
@@ -71,21 +105,20 @@ public class ProcessQuery {
 
     public void solve(List<StatementPattern> statementPatterns) {
         firstRes();
-        //TODO --> Résultat des autres patterns
+        this.resetValues();
         if (!statementPatterns.isEmpty()) {
             for (StatementPattern statementPattern : statementPatterns) {
                 otherRes(statementPattern);
+                this.resetValues();
+                if (res.isEmpty()) break;
             }
         }
     }
 
     private void otherRes(StatementPattern statementPattern) {
-        this.getIndex(statementPattern.getSubjectVar().getValue().stringValue(),
-                statementPattern.getPredicateVar().getValue().stringValue(),
-                statementPattern.getObjectVar().getValue().stringValue());
-        Map<Integer, List<Map<Integer, Integer>>> tmp = index.getRes(subjectIndex, predicateIndex, objectIndex);
-
-        // TODO: faire des trucs
+        this.statementToValue(statementPattern);
+        List<Integer> tmp = index.getRes(subjectIndex, predicateIndex, objectIndex);
+        res.retainAll(tmp);
     }
 
     private void firstRes() {

@@ -29,22 +29,8 @@ public class PSO extends MyIndex {
     }
 
     @Override
-    public Map<Integer, List<Map<Integer, Integer>>> getRes(int subject, int predicate, int object) {
-        Map<Integer, List<Map<Integer, Integer>>> res = new HashMap<>();
-        List<Map<Integer, Integer>> pairObjPredList = tree.get(predicate);
-
-        for (Map<Integer, Integer> pairObjPred : pairObjPredList) {
-            if (!pairObjPred.containsKey(subject)) continue;
-            res = addElementToMap(predicate, res, pairObjPred);
-            if (res.containsKey(predicate)) res.get(predicate).add(pairObjPred);
-            else {
-                List<Map<Integer, Integer>> list = new ArrayList<>();
-                list.add(pairObjPred);
-                res.put(predicate, list);
-            }
-        }
-
-        return res;
+    public List<Integer> getRes(int subject, int predicate, int object) {
+        return getResGeneral(predicate,subject);
     }
 
     @Override
