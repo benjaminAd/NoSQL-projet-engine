@@ -1,9 +1,6 @@
 package qengine.program;
 
-import org.eclipse.rdf4j.query.algebra.Projection;
 import org.eclipse.rdf4j.query.algebra.StatementPattern;
-import org.eclipse.rdf4j.query.algebra.Str;
-import org.eclipse.rdf4j.query.algebra.helpers.AbstractQueryModelVisitor;
 import org.eclipse.rdf4j.query.algebra.helpers.StatementPatternCollector;
 import org.eclipse.rdf4j.query.parser.ParsedQuery;
 import org.eclipse.rdf4j.query.parser.sparql.SPARQLParser;
@@ -29,7 +26,6 @@ import java.nio.file.Files;
 import java.nio.file.Paths;
 import java.util.Iterator;
 import java.util.List;
-import java.util.logging.Logger;
 import java.util.stream.Stream;
 
 /**
@@ -147,11 +143,9 @@ final class Main {
 
             // On utilise notre implémentation de handler
             rdfParser.setRDFHandler(new MainRDFHandler());
-            long start = System.nanoTime();
             // Parsing et traitement de chaque triple par le handler
             rdfParser.parse(dataReader, BASE_UR);
             Dictionary.getInstance().convertToDico();
-            TIME.addTimerToDictionary((System.nanoTime() - start));
         }
     }
 
@@ -163,7 +157,6 @@ final class Main {
 
             // On utilise notre implémentation de handler
             rdfParser.setRDFHandler(new IndexHandler());
-            long start = System.nanoTime();
             // Parsing et traitement de chaque triplet par le handler
             rdfParser.parse(dataReader, BASE_UR);
             OPS.getInstance().sortedByKey();
@@ -172,7 +165,6 @@ final class Main {
             PSO.getInstance().sortedByKey();
             SOP.getInstance().sortedByKey();
             SPO.getInstance().sortedByKey();
-            TIME.addTimerToIndexes((System.nanoTime() - start));
         }
     }
 }

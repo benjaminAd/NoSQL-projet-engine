@@ -3,7 +3,6 @@ package qengine.program;
 import org.eclipse.rdf4j.model.Statement;
 import org.eclipse.rdf4j.rio.helpers.AbstractRDFHandler;
 import qengine.program.q1.Dictionary;
-import qengine.program.timers.Timer;
 
 /**
  * Le RDFHandler intervient lors du parsing de données et permet d'appliquer un traitement pour chaque élément lu par le parseur.
@@ -19,7 +18,6 @@ public final class MainRDFHandler extends AbstractRDFHandler {
 
     @Override
     public void handleStatement(Statement st) {
-        long start = System.nanoTime();
         Dictionary dictionary = Dictionary.getInstance();
         String subject = st.getSubject().stringValue();
         String predicate = st.getPredicate().stringValue();
@@ -29,7 +27,6 @@ public final class MainRDFHandler extends AbstractRDFHandler {
         dictionary.add(subject);
         dictionary.add(object);
         dictionary.add(predicate);
-        Timer.getInstance().addTimerToDictionary((System.nanoTime() - start));
     }
 
     ;

@@ -1,9 +1,11 @@
 package qengine.program.timers;
 
+import qengine.program.utils.Constants;
+
 public class Timer {
     private long timerIndexes;
     private long timerDictionnary;
-    private int million = 1000000;
+    private long start;
     private static Timer instance = null;
 
     private Timer() {
@@ -11,17 +13,20 @@ public class Timer {
         this.timerIndexes = 0;
     }
 
-    public void addTimerToDictionary(long time) {
-        this.timerDictionnary += time;
+    public void setTimer() {
+        this.start = System.nanoTime();
     }
 
-    public void addTimerToIndexes(long time) {
-        this.timerIndexes += time;
+    public void addTimerToDictionary() {
+        this.timerDictionnary += (System.nanoTime() - start);
     }
 
-    private void convertToMs() {
-        this.timerDictionnary = this.timerDictionnary / this.million;
-        this.timerIndexes = this.timerIndexes / this.million;
+    public void addTimerToIndexes() {
+        this.timerIndexes += (System.nanoTime() - start);
+    }
+
+    private long convertToMs(long timer) {
+        return timer / Constants.CONVERT_NS_TO_MS;
     }
 
     public static Timer getInstance() {
@@ -30,7 +35,6 @@ public class Timer {
     }
 
     public void displayTimers() {
-        convertToMs();
-        System.out.println("Temps de création du dictionnaire : " + this.timerDictionnary + " ms | Temps de création des index : " + this.timerIndexes + " ms");
+        System.out.println("Temps de création du dictionnaire : " + convertToMs(this.timerDictionnary) + " ms | Temps de création des index : " + convertToMs(this.timerIndexes) + " ms");
     }
 }
