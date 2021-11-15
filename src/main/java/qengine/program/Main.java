@@ -82,7 +82,7 @@ final class Main {
             PROCESS_QUERY.solve(patterns);
             resStringBuilder.append(PROCESS_QUERY.getRes()).append("\n----------------------------------\n");
         } catch (NullPointerException e) {
-            resStringBuilder.append("Un élément dans votre requête n'existe pas dans notre dictionnaire.\n----------------------------------");
+            resStringBuilder.append("Un élément dans votre requête n'existe pas dans notre dictionnaire.\n----------------------------------\n");
         }
     }
 
