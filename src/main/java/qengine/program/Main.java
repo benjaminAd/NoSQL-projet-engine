@@ -59,7 +59,7 @@ final class Main {
     /**
      * Fichier contenant les requêtes sparql
      */
-    static final String QUERY_FILE = WORKING_DIR + "sample_query.queryset";
+    static final String QUERY_FILE = WORKING_DIR + "STAR_ALL_workload.queryset";
 
     /**
      * Fichier contenant des données rdf
