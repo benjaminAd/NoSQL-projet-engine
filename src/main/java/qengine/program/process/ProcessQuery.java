@@ -106,6 +106,7 @@ public class ProcessQuery {
         this.resetValues();
         if (!statementPatterns.isEmpty()) {
             for (StatementPattern statementPattern : statementPatterns) {
+                setIndex();
                 otherRes(statementPattern);
                 this.resetValues();
                 if (res.isEmpty()) break;
