@@ -1,19 +1,19 @@
 package qengine.program.index;
 
 import qengine.program.q1.Dictionary;
-import qengine.program.timers.Timer;
+import qengine.program.timers.Timers;
 
 import java.util.*;
 
 public abstract class MyIndex {
     public Map<Integer, List<Map<Integer, Integer>>> tree;
     protected Dictionary dictionary = Dictionary.getInstance();
-    protected static final Timer TIMER = Timer.getInstance();
+    protected static final Timers TIMERS = Timers.getInstance();
 
     public MyIndex() {
-        TIMER.setTimer();
+        TIMERS.setIndexesTimer();
         tree = new HashMap<>();
-        TIMER.addTimerToIndexes();
+        TIMERS.addTimerToIndexes();
     }
 
     //  Ajout des indices à l'arbre
@@ -46,9 +46,9 @@ public abstract class MyIndex {
 
 
     public void sortedByKey() {
-        TIMER.setTimer();
+        TIMERS.setIndexesTimer();
         tree = new TreeMap<>(tree);
-        TIMER.addTimerToIndexes();
+        TIMERS.addTimerToIndexes();
     }
 
     //  Ajout d'un triplet selon l'index

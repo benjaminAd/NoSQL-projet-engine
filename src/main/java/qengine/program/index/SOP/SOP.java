@@ -19,12 +19,12 @@ public class SOP extends MyIndex {
     }
 
     public void add(String subject,String predicate, String object){
-        TIMER.setTimer();
+        TIMERS.setIndexesTimer();
         int subjectIndex  = dictionary.getIndexFromElement(subject);
         int predicateIndex = dictionary.getIndexFromElement(predicate);
         int objectIndex = dictionary.getIndexFromElement(object);
         this.addStatementToIndex(subjectIndex,objectIndex,predicateIndex);
-        TIMER.addTimerToIndexes();
+        TIMERS.addTimerToIndexes();
     }
 
     @Override

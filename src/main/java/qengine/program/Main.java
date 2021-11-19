@@ -16,7 +16,7 @@ import qengine.program.index.SOP.SOP;
 import qengine.program.index.SPO.SPO;
 import qengine.program.process.ProcessQuery;
 import qengine.program.q1.Dictionary;
-import qengine.program.timers.Timer;
+import qengine.program.timers.Timers;
 
 import java.io.FileNotFoundException;
 import java.io.FileReader;
@@ -24,6 +24,7 @@ import java.io.IOException;
 import java.io.Reader;
 import java.nio.file.Files;
 import java.nio.file.Paths;
+import java.util.ArrayList;
 import java.util.Iterator;
 import java.util.List;
 import java.util.stream.Stream;
@@ -46,8 +47,9 @@ import java.util.stream.Stream;
  */
 final class Main {
     static final String BASE_UR = null;
-    static final Timer TIME = Timer.getInstance();
+    static final Timers TIME = Timers.getInstance();
     static final ProcessQuery PROCESS_QUERY = ProcessQuery.getInstance();
+    static List<ParsedQuery> queries = new ArrayList<>();
 
     /**
      * Votre répertoire de travail où vont se trouver les fichiers à lire
@@ -57,7 +59,7 @@ final class Main {
     /**
      * Fichier contenant les requêtes sparql
      */
-    static final String QUERY_FILE = WORKING_DIR + "STAR_ALL_workload.queryset";
+    static final String QUERY_FILE = WORKING_DIR + "sample_query.queryset";
 
     /**
      * Fichier contenant des données rdf
@@ -82,6 +84,10 @@ final class Main {
         }
     }
 
+    public static void processQueries(List<ParsedQuery> queries) {
+        queries.forEach(Main::processAQuery);
+    }
+
     /**
      * Entrée du programme
      */
@@ -89,6 +95,7 @@ final class Main {
         parseData();
         createIndexes();
         parseQueries();
+        processQueries(queries);
         TIME.displayTimers();
         System.out.println(resStringBuilder);
     }
@@ -124,7 +131,8 @@ final class Main {
                 if (line.trim().endsWith("}")) {
                     ParsedQuery query = sparqlParser.parseQuery(queryString.toString(), BASE_UR);
 
-                    processAQuery(query); // Traitement de la requête, à adapter/réécrire pour votre programme
+//                    processAQuery(query); // Traitement de la requête, à adapter/réécrire pour votre programme
+                    queries.add(query);
 
                     queryString.setLength(0); // Reset le buffer de la requête en chaine vide
                 }
@@ -140,7 +148,6 @@ final class Main {
         try (Reader dataReader = new FileReader(DATA_FILE)) {
             // On va parser des données au format ntriples
             RDFParser rdfParser = Rio.createParser(RDFFormat.NTRIPLES);
-
             // On utilise notre implémentation de handler
             rdfParser.setRDFHandler(new MainRDFHandler());
             // Parsing et traitement de chaque triple par le handler
