@@ -1,10 +1,10 @@
 package qengine.program.timers;
 
 public class Timer {
-    private long time = 0;
-    private long start = 0;
+    private double time = 0;
+    private double start = 0;
 
-    public long getTime() {
+    public double getTime() {
         return time;
     }
 

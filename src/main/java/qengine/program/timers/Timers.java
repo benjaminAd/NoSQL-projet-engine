@@ -5,7 +5,6 @@ import qengine.program.utils.Constants;
 public class Timers {
     private final Timer timerIndexes;
     private final Timer timerDictionnary;
-    private long start;
     private static Timers instance = null;
 
     private Timers() {
@@ -21,10 +20,6 @@ public class Timers {
         this.timerIndexes.start();
     }
 
-//    public void setTimer() {
-//        this.start = System.nanoTime();
-//    }
-
     public void addTimerToDictionary() {
         this.timerDictionnary.countTimer();
     }
@@ -33,8 +28,8 @@ public class Timers {
         this.timerIndexes.countTimer();
     }
 
-    private long convertToMs(Timer timer) {
-        return timer.getTime() / Constants.CONVERT_NS_TO_MS;
+    private double convertToSec(Timer timer) {
+        return timer.getTime() / Constants.CONVERT_NS_TO_SEC;
     }
 
     public static Timers getInstance() {
@@ -43,6 +38,6 @@ public class Timers {
     }
 
     public void displayTimers() {
-        System.out.println("Temps de création du dictionnaire : " + convertToMs(this.timerDictionnary) + " ms | Temps de création des index : " + convertToMs(this.timerIndexes) + " ms");
+        System.out.println("Temps de création du dictionnaire : " + convertToSec(this.timerDictionnary) + " sec | Temps de création des index : " + convertToSec(this.timerIndexes) + " sec");
     }
 }

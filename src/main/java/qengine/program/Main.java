@@ -64,7 +64,7 @@ final class Main {
     /**
      * Fichier contenant des données rdf
      */
-    static final String DATA_FILE = WORKING_DIR + "100K.nt";
+    static final String DATA_FILE = WORKING_DIR + "sample_data.nt";
 
     static final StringBuilder resStringBuilder = new StringBuilder();
     // ========================================================================
@@ -87,6 +87,11 @@ final class Main {
     public static void processQueries(List<ParsedQuery> queries) {
         queries.forEach(Main::processAQuery);
     }
+
+    /*
+    - Sauvegarder le dictionnaire (pour pas que l'on le recrée à chaque fois)
+    - Revenir sur une structure d'index Hashmap<Integer, Hashmap<Integer, Integer>>
+     */
 
     /**
      * Entrée du programme
