@@ -41,6 +41,6 @@ public class Timers {
     }
 
     public void displayTimers() {
-        logger.info("Temps de création du dictionnaire : " + convertToSec(this.timerDictionnary) + " sec | Temps de création des index : " + convertToSec(this.timerIndexes) + " sec");
+        logger.info("Temps de création du dictionnaire : {} sec \nTemps de création des index : {} sec.\n", convertToSec(this.timerDictionnary), convertToSec(this.timerIndexes));
     }
 }
