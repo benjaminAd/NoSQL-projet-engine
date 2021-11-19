@@ -88,9 +88,8 @@ final class Main {
         queries.forEach(Main::processAQuery);
     }
 
-    /*
+    /* Remarque du prof
     - Sauvegarder le dictionnaire (pour pas que l'on le recrée à chaque fois)
-    - Revenir sur une structure d'index Hashmap<Integer, Hashmap<Integer, Integer>>
      */
 
     /**
@@ -136,7 +135,6 @@ final class Main {
                 if (line.trim().endsWith("}")) {
                     ParsedQuery query = sparqlParser.parseQuery(queryString.toString(), BASE_UR);
 
-//                    processAQuery(query); // Traitement de la requête, à adapter/réécrire pour votre programme
                     queries.add(query);
 
                     queryString.setLength(0); // Reset le buffer de la requête en chaine vide
@@ -161,7 +159,7 @@ final class Main {
         }
     }
 
-    //    Parse les données et créer les différents index
+    // Parse les données et créer les différents index
     private static void createIndexes() throws FileNotFoundException, IOException {
         try (Reader dataReader = new FileReader(DATA_FILE)) {
             // On va parser des données au format ntriples
