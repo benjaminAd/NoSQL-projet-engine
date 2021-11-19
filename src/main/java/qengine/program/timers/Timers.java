@@ -1,11 +1,14 @@
 package qengine.program.timers;
 
 import qengine.program.utils.Constants;
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
 
 public class Timers {
     private final Timer timerIndexes;
     private final Timer timerDictionnary;
     private static Timers instance = null;
+    private static final Logger logger = LogManager.getLogger(Timers.class);
 
     private Timers() {
         this.timerDictionnary = new Timer();
@@ -38,6 +41,6 @@ public class Timers {
     }
 
     public void displayTimers() {
-        System.out.println("Temps de création du dictionnaire : " + convertToSec(this.timerDictionnary) + " sec | Temps de création des index : " + convertToSec(this.timerIndexes) + " sec");
+        logger.info("Temps de création du dictionnaire : " + convertToSec(this.timerDictionnary) + " sec | Temps de création des index : " + convertToSec(this.timerIndexes) + " sec");
     }
 }

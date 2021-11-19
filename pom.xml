@@ -15,6 +15,7 @@
 					<target>8</target>
 				</configuration>
 			</plugin>
+
 			<plugin>
 				<groupId>org.apache.maven.plugins</groupId>
 				<artifactId>maven-jar-plugin</artifactId>
@@ -26,6 +27,7 @@
 					</archive>
 				</configuration>
 			</plugin>
+
 			<plugin>
 				<groupId>org.apache.maven.plugins</groupId>
 				<artifactId>maven-dependency-plugin</artifactId>
@@ -49,7 +51,6 @@
 		</plugins>
 	</build>
 
-
 	<dependencyManagement>
 		<dependencies>
 			<dependency>
@@ -62,9 +63,7 @@
 		</dependencies>
 	</dependencyManagement>
 
-
 	<dependencies>
-
 
 		<dependency>
 			<groupId>org.eclipse.rdf4j</groupId>
@@ -72,14 +71,27 @@
 			<type>pom</type>
 		</dependency>
 
-
 		<dependency>
 			<groupId>org.apache.jena</groupId>
 			<artifactId>apache-jena</artifactId>
 			<type>pom</type>
 			<version>3.9.0</version>
 		</dependency>
+
+		<dependency>
+			<groupId>org.apache.logging.log4j</groupId>
+			<artifactId>log4j-api</artifactId>
+			<version>2.14.1</version>
+		</dependency>
+
+		<dependency>
+			<groupId>org.apache.logging.log4j</groupId>
+			<artifactId>log4j-core</artifactId>
+			<version>2.14.1</version>
+		</dependency>
+
 	</dependencies>
+
 	<properties>
 		<sonar.organization>benjaminad</sonar.organization>
 		<sonar.host.url>https://sonarcloud.io</sonar.host.url>

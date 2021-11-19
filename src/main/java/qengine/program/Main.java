@@ -1,5 +1,6 @@
 package qengine.program;
 
+import org.apache.log4j.PropertyConfigurator;
 import org.eclipse.rdf4j.query.algebra.StatementPattern;
 import org.eclipse.rdf4j.query.algebra.helpers.StatementPatternCollector;
 import org.eclipse.rdf4j.query.parser.ParsedQuery;
@@ -18,16 +19,16 @@ import qengine.program.process.ProcessQuery;
 import qengine.program.q1.Dictionary;
 import qengine.program.timers.Timers;
 
-import java.io.FileNotFoundException;
-import java.io.FileReader;
-import java.io.IOException;
-import java.io.Reader;
+import java.io.*;
 import java.nio.file.Files;
 import java.nio.file.Paths;
 import java.util.ArrayList;
 import java.util.Iterator;
 import java.util.List;
 import java.util.stream.Stream;
+
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
 
 /**
  * Programme simple lisant un fichier de requête et un fichier de données.
@@ -50,6 +51,7 @@ final class Main {
     static final Timers TIME = Timers.getInstance();
     static final ProcessQuery PROCESS_QUERY = ProcessQuery.getInstance();
     static List<ParsedQuery> queries = new ArrayList<>();
+    private static final Logger logger = LogManager.getLogger(Main.class);
 
     /**
      * Votre répertoire de travail où vont se trouver les fichiers à lire
@@ -96,12 +98,15 @@ final class Main {
      * Entrée du programme
      */
     public static void main(String[] args) throws Exception {
+        String log4ConfPath = System.getProperty("user.dir") + File.separator + "src" + File.separator + "main" + File.separator + "resources" + File.separator + "log4j.properties";
+        PropertyConfigurator.configure(log4ConfPath);
+
         parseData();
         createIndexes();
         parseQueries();
         processQueries(queries);
         TIME.displayTimers();
-        System.out.println(resStringBuilder);
+        logger.info(resStringBuilder);
     }
 
     // ========================================================================
