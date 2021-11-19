@@ -31,4 +31,9 @@ public class PSO extends MyIndex {
     public List<Integer> getRes(int subject, int predicate, int object) {
         return getResGeneral(predicate,subject);
     }
+
+    @Override
+    public String toString() {
+        return "PSO";
+    }
 }

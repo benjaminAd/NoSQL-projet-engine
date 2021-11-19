@@ -31,4 +31,9 @@ public class SOP extends MyIndex {
     public List<Integer> getRes(int subject, int predicate, int object) {
         return getResGeneral(subject,object);
     }
+
+    @Override
+    public String toString() {
+        return "SOP";
+    }
 }
