@@ -6,7 +6,7 @@ import qengine.program.timers.Timers;
 import java.util.*;
 
 public abstract class MyIndex {
-    public Map<Integer, Map<Integer, List<Integer>>> tree;
+    private Map<Integer, Map<Integer, List<Integer>>> tree;
     protected Dictionary dictionary = Dictionary.getInstance();
     protected static final Timers TIMERS = Timers.getInstance();
 

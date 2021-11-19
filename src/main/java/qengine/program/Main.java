@@ -64,7 +64,7 @@ final class Main {
     /**
      * Fichier contenant des données rdf
      */
-    static final String DATA_FILE = WORKING_DIR + "sample_data.nt";
+    static final String DATA_FILE = WORKING_DIR + "100K.nt";
 
     static final StringBuilder resStringBuilder = new StringBuilder();
     // ========================================================================
