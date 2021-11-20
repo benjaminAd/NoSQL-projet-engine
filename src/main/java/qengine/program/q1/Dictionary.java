@@ -2,11 +2,8 @@ package qengine.program.q1;
 
 import qengine.program.timers.Timers;
 
-import java.util.ArrayList;
 import java.util.HashMap;
-import java.util.List;
 import java.util.Map;
-import java.util.stream.Collectors;
 
 public class Dictionary {
 
@@ -14,35 +11,24 @@ public class Dictionary {
 
     private final HashMap<String, Integer> dico;
     private final HashMap<Integer, String> dicoFromIndex;
-    //  Une liste de tout les éléments de chaque triplets
-    private final List<String> allStatementsSplit;
+    private int dicoIndex = 1;
     private static final Timers TIMERS = Timers.getInstance();
 
     private Dictionary() {
         TIMERS.setDictionaryTimer();
         this.dico = new HashMap<>();
         this.dicoFromIndex = new HashMap<>();
-        this.allStatementsSplit = new ArrayList<>();
         TIMERS.addTimerToDictionary();
     }
 
     //  Création du dictionnaire
-    public void convertToDico() {
-        TIMERS.setDictionaryTimer();
-        int dicoIndex = 1;
-        List<String> elements = allStatementsSplit.stream().distinct().collect(Collectors.toList());
-        for (String element : elements) {
-            dico.put(element, dicoIndex);
-            dicoFromIndex.put(dicoIndex, element);
-            dicoIndex += 1;
-        }
-        allStatementsSplit.clear();
-        TIMERS.addTimerToDictionary();
-    }
-
     public void add(String s) {
         TIMERS.setDictionaryTimer();
-        this.allStatementsSplit.add(s);
+        if (!dico.containsKey(s)) {
+            dico.put(s, dicoIndex);
+            dicoFromIndex.put(dicoIndex, s);
+            dicoIndex += 1;
+        }
         TIMERS.addTimerToDictionary();
     }
 
