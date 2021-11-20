@@ -8,7 +8,6 @@ import org.eclipse.rdf4j.query.parser.sparql.SPARQLParser;
 import org.eclipse.rdf4j.rio.RDFFormat;
 import org.eclipse.rdf4j.rio.RDFParser;
 import org.eclipse.rdf4j.rio.Rio;
-import qengine.program.index.IndexHandler;
 import qengine.program.index.OPS.OPS;
 import qengine.program.index.OSP.OSP;
 import qengine.program.index.POS.POS;
@@ -16,7 +15,6 @@ import qengine.program.index.PSO.PSO;
 import qengine.program.index.SOP.SOP;
 import qengine.program.index.SPO.SPO;
 import qengine.program.process.ProcessQuery;
-import qengine.program.q1.Dictionary;
 import qengine.program.timers.Timers;
 
 import java.io.*;
@@ -102,7 +100,6 @@ final class Main {
         PropertyConfigurator.configure(log4ConfPath);
 
         parseData();
-        createIndexes();
         parseQueries();
         processQueries(queries);
         TIME.displayTimers();
@@ -159,20 +156,6 @@ final class Main {
             // On utilise notre implémentation de handler
             rdfParser.setRDFHandler(new MainRDFHandler());
             // Parsing et traitement de chaque triple par le handler
-            rdfParser.parse(dataReader, BASE_UR);
-            Dictionary.getInstance().convertToDico();
-        }
-    }
-
-    // Parse les données et créer les différents index
-    private static void createIndexes() throws FileNotFoundException, IOException {
-        try (Reader dataReader = new FileReader(DATA_FILE)) {
-            // On va parser des données au format ntriples
-            RDFParser rdfParser = Rio.createParser(RDFFormat.NTRIPLES);
-
-            // On utilise notre implémentation de handler
-            rdfParser.setRDFHandler(new IndexHandler());
-            // Parsing et traitement de chaque triplet par le handler
             rdfParser.parse(dataReader, BASE_UR);
             OPS.getInstance().sortedByKey();
             OSP.getInstance().sortedByKey();
