@@ -1,4 +1,4 @@
-package qengine.program;
+package qengine.program.teamEngine;
 
 import org.apache.log4j.PropertyConfigurator;
 import org.apache.logging.log4j.LogManager;
@@ -16,7 +16,7 @@ import qengine.program.teamEngine.index.POS.POS;
 import qengine.program.teamEngine.index.PSO.PSO;
 import qengine.program.teamEngine.index.SOP.SOP;
 import qengine.program.teamEngine.index.SPO.SPO;
-import qengine.program.process.ProcessQuery;
+import qengine.program.teamEngine.process.ProcessQuery;
 import qengine.program.teamEngine.timers.Timers;
 
 import java.io.*;

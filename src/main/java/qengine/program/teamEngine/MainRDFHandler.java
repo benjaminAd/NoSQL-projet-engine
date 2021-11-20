@@ -1,4 +1,4 @@
-package qengine.program;
+package qengine.program.teamEngine;
 
 import org.eclipse.rdf4j.model.Statement;
 import org.eclipse.rdf4j.rio.helpers.AbstractRDFHandler;
@@ -8,7 +8,7 @@ import qengine.program.teamEngine.index.POS.POS;
 import qengine.program.teamEngine.index.PSO.PSO;
 import qengine.program.teamEngine.index.SOP.SOP;
 import qengine.program.teamEngine.index.SPO.SPO;
-import qengine.program.q1.Dictionary;
+import qengine.program.teamEngine.q1.Dictionary;
 
 /**
  * Le RDFHandler intervient lors du parsing de données et permet d'appliquer un traitement pour chaque élément lu par le parseur.

@@ -18,23 +18,23 @@ public class SOP extends MyIndex {
         return instance;
     }
 
-    public void add(String subject,String predicate, String object){
+    public void add(String subject, String predicate, String object) {
         TIMERS.setIndexesTimer();
-        int subjectIndex  = dictionary.getIndexFromElement(subject);
+        int subjectIndex = dictionary.getIndexFromElement(subject);
         int predicateIndex = dictionary.getIndexFromElement(predicate);
         int objectIndex = dictionary.getIndexFromElement(object);
-        this.addStatementToIndex(subjectIndex,objectIndex,predicateIndex);
+        this.addStatementToIndex(subjectIndex, objectIndex, predicateIndex);
         TIMERS.addTimerToIndexes();
     }
 
     @Override
     public List<Integer> getRes(int subject, int predicate, int object) {
-        return getResGeneral(subject,object);
+        return getResGeneral(subject, object);
     }
 
     @Override
     public List<Integer> secondRes(int subject, int predicate, int object, List<Integer> oldRes) {
-        return getSecondResGeneral(subject,object,oldRes);
+        return getSecondResGeneral(subject, object, oldRes);
     }
 
     @Override

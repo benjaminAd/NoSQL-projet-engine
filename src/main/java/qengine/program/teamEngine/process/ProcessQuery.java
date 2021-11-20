@@ -1,4 +1,4 @@
-package qengine.program.process;
+package qengine.program.teamEngine.process;
 
 import org.eclipse.rdf4j.query.algebra.StatementPattern;
 import org.eclipse.rdf4j.query.algebra.Var;
@@ -9,7 +9,7 @@ import qengine.program.teamEngine.index.POS.POS;
 import qengine.program.teamEngine.index.PSO.PSO;
 import qengine.program.teamEngine.index.SOP.SOP;
 import qengine.program.teamEngine.index.SPO.SPO;
-import qengine.program.q1.Dictionary;
+import qengine.program.teamEngine.q1.Dictionary;
 
 import java.util.List;
 import java.util.stream.Collectors;

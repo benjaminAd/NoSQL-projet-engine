@@ -1,7 +1,7 @@
 package qengine.program.teamEngine.index;
 
-import qengine.program.q1.Dictionary;
-import qengine.program.timers.Timers;
+import qengine.program.teamEngine.q1.Dictionary;
+import qengine.program.teamEngine.timers.Timers;
 
 import java.util.*;
 

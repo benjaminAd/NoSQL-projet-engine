@@ -1,8 +1,8 @@
-package qengine.program.timers;
+package qengine.program.teamEngine.timers;
 
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
-import qengine.program.utils.Constants;
+import qengine.program.teamEngine.utils.Constants;
 
 public class Timers {
     private final Timer timerIndexes;
@@ -15,11 +15,11 @@ public class Timers {
         this.timerIndexes = new Timer();
     }
 
-    public void setDictionaryTimer(){
+    public void setDictionaryTimer() {
         this.timerDictionnary.start();
     }
 
-    public void setIndexesTimer(){
+    public void setIndexesTimer() {
         this.timerIndexes.start();
     }
 
