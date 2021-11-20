@@ -2,12 +2,12 @@ package qengine.program;
 
 import org.eclipse.rdf4j.model.Statement;
 import org.eclipse.rdf4j.rio.helpers.AbstractRDFHandler;
-import qengine.program.index.OPS.OPS;
-import qengine.program.index.OSP.OSP;
-import qengine.program.index.POS.POS;
-import qengine.program.index.PSO.PSO;
-import qengine.program.index.SOP.SOP;
-import qengine.program.index.SPO.SPO;
+import qengine.program.teamEngine.index.OPS.OPS;
+import qengine.program.teamEngine.index.OSP.OSP;
+import qengine.program.teamEngine.index.POS.POS;
+import qengine.program.teamEngine.index.PSO.PSO;
+import qengine.program.teamEngine.index.SOP.SOP;
+import qengine.program.teamEngine.index.SPO.SPO;
 import qengine.program.q1.Dictionary;
 
 /**

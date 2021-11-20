@@ -1,4 +1,4 @@
-package qengine.program.index;
+package qengine.program.teamEngine.index;
 
 import qengine.program.q1.Dictionary;
 import qengine.program.timers.Timers;
@@ -6,7 +6,7 @@ import qengine.program.timers.Timers;
 import java.util.*;
 
 public abstract class MyIndex {
-    private Map<Integer, Map<Integer, List<Integer>>> tree;
+    protected Map<Integer, Map<Integer, List<Integer>>> tree;
     protected Dictionary dictionary = Dictionary.getInstance();
     protected static final Timers TIMERS = Timers.getInstance();
 
@@ -37,9 +37,20 @@ public abstract class MyIndex {
 
     protected List<Integer> getResGeneral(Integer i1, Integer i2) {
         List<Integer> res = new ArrayList<>();
+        for (Map.Entry<Integer, List<Integer>> pair : tree.get(i1).entrySet()) {
+            if (!pair.getKey().equals(i2)) continue;
+            res.addAll(pair.getValue());
+        }
+        return res;
+    }
+
+    protected List<Integer> getSecondResGeneral(Integer i1, Integer i2, List<Integer> oldRes) {
+        List<Integer> res = new ArrayList<>();
         for (Map.Entry<Integer, List<Integer>> pairPredSubject : tree.get(i1).entrySet()) {
-            if (!pairPredSubject.getKey().equals(i2)) continue;
-            res.addAll(pairPredSubject.getValue());
+            if (!i2.equals(pairPredSubject.getKey())) continue;
+            for (Integer subjectFromMap : pairPredSubject.getValue()) {
+                if (oldRes.contains(subjectFromMap)) res.add(subjectFromMap);
+            }
         }
         return res;
     }
@@ -56,11 +67,13 @@ public abstract class MyIndex {
 
     public abstract List<Integer> getRes(int subject, int predicate, int object);
 
+    public abstract List<Integer> secondRes(int subject, int predicate, int object, List<Integer> oldRes);
+
     @Override
     public String toString() {
         StringBuilder st = new StringBuilder();
         for (Map.Entry<Integer, Map<Integer, List<Integer>>> entry : tree.entrySet()) {
-            for(Map.Entry<Integer,List<Integer>> entry1 : entry.getValue().entrySet()){
+            for (Map.Entry<Integer, List<Integer>> entry1 : entry.getValue().entrySet()) {
                 for (Integer integer : entry1.getValue()) {
                     st.append("<").append(entry.getKey()).append(",").append(entry1.getKey()).append(",").append(integer).append(">\n");
 

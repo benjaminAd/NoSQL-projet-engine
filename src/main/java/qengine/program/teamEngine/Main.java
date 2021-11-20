@@ -1,6 +1,8 @@
 package qengine.program;
 
 import org.apache.log4j.PropertyConfigurator;
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
 import org.eclipse.rdf4j.query.algebra.StatementPattern;
 import org.eclipse.rdf4j.query.algebra.helpers.StatementPatternCollector;
 import org.eclipse.rdf4j.query.parser.ParsedQuery;
@@ -8,14 +10,14 @@ import org.eclipse.rdf4j.query.parser.sparql.SPARQLParser;
 import org.eclipse.rdf4j.rio.RDFFormat;
 import org.eclipse.rdf4j.rio.RDFParser;
 import org.eclipse.rdf4j.rio.Rio;
-import qengine.program.index.OPS.OPS;
-import qengine.program.index.OSP.OSP;
-import qengine.program.index.POS.POS;
-import qengine.program.index.PSO.PSO;
-import qengine.program.index.SOP.SOP;
-import qengine.program.index.SPO.SPO;
+import qengine.program.teamEngine.index.OPS.OPS;
+import qengine.program.teamEngine.index.OSP.OSP;
+import qengine.program.teamEngine.index.POS.POS;
+import qengine.program.teamEngine.index.PSO.PSO;
+import qengine.program.teamEngine.index.SOP.SOP;
+import qengine.program.teamEngine.index.SPO.SPO;
 import qengine.program.process.ProcessQuery;
-import qengine.program.timers.Timers;
+import qengine.program.teamEngine.timers.Timers;
 
 import java.io.*;
 import java.nio.file.Files;
@@ -24,9 +26,6 @@ import java.util.ArrayList;
 import java.util.Iterator;
 import java.util.List;
 import java.util.stream.Stream;
-
-import org.apache.logging.log4j.LogManager;
-import org.apache.logging.log4j.Logger;
 
 /**
  * Programme simple lisant un fichier de requête et un fichier de données.
@@ -59,7 +58,7 @@ final class Main {
     /**
      * Fichier contenant les requêtes sparql
      */
-    static final String QUERY_FILE = WORKING_DIR + "STAR_ALL_workload.queryset";
+    static final String QUERY_FILE = WORKING_DIR + "request.queryset";
 
     /**
      * Fichier contenant des données rdf

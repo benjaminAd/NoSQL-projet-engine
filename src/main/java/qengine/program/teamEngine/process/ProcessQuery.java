@@ -2,13 +2,13 @@ package qengine.program.process;
 
 import org.eclipse.rdf4j.query.algebra.StatementPattern;
 import org.eclipse.rdf4j.query.algebra.Var;
-import qengine.program.index.MyIndex;
-import qengine.program.index.OPS.OPS;
-import qengine.program.index.OSP.OSP;
-import qengine.program.index.POS.POS;
-import qengine.program.index.PSO.PSO;
-import qengine.program.index.SOP.SOP;
-import qengine.program.index.SPO.SPO;
+import qengine.program.teamEngine.index.MyIndex;
+import qengine.program.teamEngine.index.OPS.OPS;
+import qengine.program.teamEngine.index.OSP.OSP;
+import qengine.program.teamEngine.index.POS.POS;
+import qengine.program.teamEngine.index.PSO.PSO;
+import qengine.program.teamEngine.index.SOP.SOP;
+import qengine.program.teamEngine.index.SPO.SPO;
 import qengine.program.q1.Dictionary;
 
 import java.util.List;
@@ -23,7 +23,7 @@ public class ProcessQuery {
     private int subjectIndex = -1;
     private int predicateIndex = -1;
     private int objectIndex = -1;
-    private Dictionary dictionary = Dictionary.getInstance();
+    private final Dictionary dictionary = Dictionary.getInstance();
     private MyIndex index;
     private List<Integer> res;
 
@@ -40,7 +40,7 @@ public class ProcessQuery {
     }
 
     public String getRes() {
-        String result = (res.isEmpty()) ? "Aucune Réponse n'a été trouvé." : displayRes(res.stream().map(element -> dictionary.getElementFromIndex(element)).collect(Collectors.toList()).stream().distinct().collect(Collectors.toList()));
+        String result = (res.isEmpty()) ? "Aucune Réponse n'a été trouvé." : displayRes(res.stream().map(dictionary::getElementFromIndex).collect(Collectors.toList()).stream().distinct().collect(Collectors.toList()));
         res.clear();
         return result;
     }
@@ -116,8 +116,7 @@ public class ProcessQuery {
 
     private void otherRes(StatementPattern statementPattern) {
         this.statementToValue(statementPattern);
-        List<Integer> tmp = index.getRes(subjectIndex, predicateIndex, objectIndex);
-        res.retainAll(tmp);
+        res = index.secondRes(subjectIndex, predicateIndex, objectIndex, res);
     }
 
     private void firstRes() {

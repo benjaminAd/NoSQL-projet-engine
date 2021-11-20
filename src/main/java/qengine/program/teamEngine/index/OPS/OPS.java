@@ -1,6 +1,6 @@
-package qengine.program.index.OPS;
+package qengine.program.teamEngine.index.OPS;
 
-import qengine.program.index.MyIndex;
+import qengine.program.teamEngine.index.MyIndex;
 
 import java.util.List;
 
@@ -29,7 +29,12 @@ public class OPS extends MyIndex {
 
     @Override
     public List<Integer> getRes(int subject, int predicate, int object) {
-        return getResGeneral(object,predicate);
+        return getResGeneral(object, predicate);
+    }
+
+    @Override
+    public List<Integer> secondRes(int subject, int predicate, int object, List<Integer> oldRes) {
+        return getSecondResGeneral(object,predicate,oldRes);
     }
 
     @Override

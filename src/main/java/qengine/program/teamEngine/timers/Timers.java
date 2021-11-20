@@ -1,8 +1,8 @@
 package qengine.program.timers;
 
-import qengine.program.utils.Constants;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
+import qengine.program.utils.Constants;
 
 public class Timers {
     private final Timer timerIndexes;
