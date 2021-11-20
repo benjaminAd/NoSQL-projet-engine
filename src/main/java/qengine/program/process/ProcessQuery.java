@@ -40,7 +40,7 @@ public class ProcessQuery {
     }
 
     public String getRes() {
-        String result = (res.isEmpty()) ? "Aucune Réponse n'a été trouvé." : displayRes(res.stream().map(element -> dictionary.getElementFromIndex(element)).collect(Collectors.toList()));
+        String result = (res.isEmpty()) ? "Aucune Réponse n'a été trouvé." : displayRes(res.stream().map(element -> dictionary.getElementFromIndex(element)).collect(Collectors.toList()).stream().distinct().collect(Collectors.toList()));
         res.clear();
         return result;
     }
