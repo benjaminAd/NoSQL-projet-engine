@@ -1,8 +1,8 @@
-package qengine.program.teamEngine.timers;
+package qengine.program.teamengine.timers;
 
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
-import qengine.program.teamEngine.utils.Constants;
+import qengine.program.teamengine.utils.Constants;
 
 public class Timers {
     private final Timer timerIndexes;

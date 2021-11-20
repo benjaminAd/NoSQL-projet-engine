@@ -1,19 +1,19 @@
-package qengine.program.teamEngine.index.OPS;
+package qengine.program.teamengine.index.POS;
 
-import qengine.program.teamEngine.index.MyIndex;
+import qengine.program.teamengine.index.MyIndex;
 
 import java.util.List;
 
-public class OPS extends MyIndex {
-    private static OPS instance = null;
+public class POS extends MyIndex {
+    private static POS instance = null;
 
-    private OPS() {
+    private POS() {
         super();
     }
 
-    public static OPS getInstance() {
+    public static POS getInstance() {
         if (instance == null) {
-            instance = new OPS();
+            instance = new POS();
         }
         return instance;
     }
@@ -23,22 +23,22 @@ public class OPS extends MyIndex {
         int subjectIndex = dictionary.getIndexFromElement(subject);
         int predicateIndex = dictionary.getIndexFromElement(predicate);
         int objectIndex = dictionary.getIndexFromElement(object);
-        this.addStatementToIndex(objectIndex, predicateIndex, subjectIndex);
+        this.addStatementToIndex(predicateIndex, objectIndex, subjectIndex);
         TIMERS.addTimerToIndexes();
     }
 
     @Override
     public List<Integer> getRes(int subject, int predicate, int object) {
-        return getResGeneral(object, predicate);
+        return getResGeneral(predicate, object);
     }
 
     @Override
     public List<Integer> secondRes(int subject, int predicate, int object, List<Integer> oldRes) {
-        return getSecondResGeneral(object, predicate, oldRes);
+        return getSecondResGeneral(predicate, object, oldRes);
     }
 
     @Override
     public String toString() {
-        return "OPS";
+        return "POS";
     }
 }

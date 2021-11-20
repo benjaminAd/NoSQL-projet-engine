@@ -1,6 +1,6 @@
-package qengine.program.teamEngine.q1;
+package qengine.program.teamengine.q1;
 
-import qengine.program.teamEngine.timers.Timers;
+import qengine.program.teamengine.timers.Timers;
 
 import java.util.HashMap;
 import java.util.Map;

@@ -1,6 +1,6 @@
-package qengine.program.teamEngine.index.SPO;
+package qengine.program.teamengine.index.SPO;
 
-import qengine.program.teamEngine.index.MyIndex;
+import qengine.program.teamengine.index.MyIndex;
 
 import java.util.List;
 

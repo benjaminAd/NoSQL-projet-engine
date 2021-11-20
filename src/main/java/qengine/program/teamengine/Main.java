@@ -1,4 +1,4 @@
-package qengine.program.teamEngine;
+package qengine.program.teamengine;
 
 import org.apache.log4j.PropertyConfigurator;
 import org.apache.logging.log4j.LogManager;
@@ -10,14 +10,14 @@ import org.eclipse.rdf4j.query.parser.sparql.SPARQLParser;
 import org.eclipse.rdf4j.rio.RDFFormat;
 import org.eclipse.rdf4j.rio.RDFParser;
 import org.eclipse.rdf4j.rio.Rio;
-import qengine.program.teamEngine.index.OPS.OPS;
-import qengine.program.teamEngine.index.OSP.OSP;
-import qengine.program.teamEngine.index.POS.POS;
-import qengine.program.teamEngine.index.PSO.PSO;
-import qengine.program.teamEngine.index.SOP.SOP;
-import qengine.program.teamEngine.index.SPO.SPO;
-import qengine.program.teamEngine.process.ProcessQuery;
-import qengine.program.teamEngine.timers.Timers;
+import qengine.program.teamengine.index.OPS.OPS;
+import qengine.program.teamengine.index.OSP.OSP;
+import qengine.program.teamengine.index.POS.POS;
+import qengine.program.teamengine.index.PSO.PSO;
+import qengine.program.teamengine.index.SOP.SOP;
+import qengine.program.teamengine.index.SPO.SPO;
+import qengine.program.teamengine.process.ProcessQuery;
+import qengine.program.teamengine.timers.Timers;
 
 import java.io.*;
 import java.nio.file.Files;
@@ -110,7 +110,7 @@ final class Main {
     /**
      * Traite chaque requête lue dans {@link #QUERY_FILE} avec {@link #processAQuery(ParsedQuery)}.
      */
-    private static void parseQueries() throws FileNotFoundException, IOException {
+    private static void parseQueries() throws IOException {
         /**
          * Try-with-resources
          *
@@ -147,7 +147,7 @@ final class Main {
     /**
      * Traite chaque triple lu dans {@link #DATA_FILE} avec {@link MainRDFHandler}.
      */
-    private static void parseData() throws FileNotFoundException, IOException {
+    private static void parseData() throws IOException {
 
         try (Reader dataReader = new FileReader(DATA_FILE)) {
             // On va parser des données au format ntriples

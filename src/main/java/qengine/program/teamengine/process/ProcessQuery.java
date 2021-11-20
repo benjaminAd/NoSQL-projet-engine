@@ -1,15 +1,15 @@
-package qengine.program.teamEngine.process;
+package qengine.program.teamengine.process;
 
 import org.eclipse.rdf4j.query.algebra.StatementPattern;
 import org.eclipse.rdf4j.query.algebra.Var;
-import qengine.program.teamEngine.index.MyIndex;
-import qengine.program.teamEngine.index.OPS.OPS;
-import qengine.program.teamEngine.index.OSP.OSP;
-import qengine.program.teamEngine.index.POS.POS;
-import qengine.program.teamEngine.index.PSO.PSO;
-import qengine.program.teamEngine.index.SOP.SOP;
-import qengine.program.teamEngine.index.SPO.SPO;
-import qengine.program.teamEngine.q1.Dictionary;
+import qengine.program.teamengine.index.MyIndex;
+import qengine.program.teamengine.index.OPS.OPS;
+import qengine.program.teamengine.index.OSP.OSP;
+import qengine.program.teamengine.index.POS.POS;
+import qengine.program.teamengine.index.PSO.PSO;
+import qengine.program.teamengine.index.SOP.SOP;
+import qengine.program.teamengine.index.SPO.SPO;
+import qengine.program.teamengine.q1.Dictionary;
 
 import java.util.List;
 import java.util.stream.Collectors;

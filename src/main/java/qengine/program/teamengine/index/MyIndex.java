@@ -1,7 +1,7 @@
-package qengine.program.teamEngine.index;
+package qengine.program.teamengine.index;
 
-import qengine.program.teamEngine.q1.Dictionary;
-import qengine.program.teamEngine.timers.Timers;
+import qengine.program.teamengine.q1.Dictionary;
+import qengine.program.teamengine.timers.Timers;
 
 import java.util.*;
 
@@ -10,7 +10,7 @@ public abstract class MyIndex {
     protected Dictionary dictionary = Dictionary.getInstance();
     protected static final Timers TIMERS = Timers.getInstance();
 
-    public MyIndex() {
+    protected MyIndex() {
         TIMERS.setIndexesTimer();
         tree = new HashMap<>();
         TIMERS.addTimerToIndexes();

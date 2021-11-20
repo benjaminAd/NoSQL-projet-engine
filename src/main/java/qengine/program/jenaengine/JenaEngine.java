@@ -1,9 +1,8 @@
-package qengine.program.jenaEngine;
+package qengine.program.jenaengine;
 
 import org.apache.jena.query.*;
 import org.apache.jena.rdf.model.Model;
 import org.apache.jena.rdf.model.ModelFactory;
-import org.eclipse.rdf4j.query.parser.sparql.SPARQLParser;
 
 import java.io.FileNotFoundException;
 import java.io.IOException;
@@ -46,7 +45,7 @@ public class JenaEngine {
         }
     }
 
-    private static void parseQueries() throws FileNotFoundException, IOException {
+    private static void parseQueries() throws IOException {
         /**
          * Try-with-resources
          *
@@ -57,7 +56,6 @@ public class JenaEngine {
          * entièrement dans une collection.
          */
         try (Stream<String> lineStream = Files.lines(Paths.get(QUERY_FILE))) {
-            SPARQLParser sparqlParser = new SPARQLParser();
             Iterator<String> lineIterator = lineStream.iterator();
             StringBuilder queryString = new StringBuilder();
 
