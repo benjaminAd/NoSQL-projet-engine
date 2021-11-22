@@ -1,31 +1,30 @@
-package qengine.program;
+package qengine.program.teamengine;
 
-import org.eclipse.rdf4j.query.algebra.Projection;
+import org.apache.log4j.PropertyConfigurator;
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
 import org.eclipse.rdf4j.query.algebra.StatementPattern;
-import org.eclipse.rdf4j.query.algebra.helpers.AbstractQueryModelVisitor;
 import org.eclipse.rdf4j.query.algebra.helpers.StatementPatternCollector;
 import org.eclipse.rdf4j.query.parser.ParsedQuery;
 import org.eclipse.rdf4j.query.parser.sparql.SPARQLParser;
 import org.eclipse.rdf4j.rio.RDFFormat;
 import org.eclipse.rdf4j.rio.RDFParser;
 import org.eclipse.rdf4j.rio.Rio;
-import qengine.program.index.OPS.OPS;
-import qengine.program.index.IndexHandler;
-import qengine.program.index.OSP.OSP;
-import qengine.program.index.POS.POS;
-import qengine.program.index.PSO.PSO;
-import qengine.program.index.SOP.SOP;
-import qengine.program.index.SPO.SPO;
-import qengine.program.q1.Dictionary;
-import qengine.program.timers.Timer;
+import qengine.program.teamengine.index.ops.OPS;
+import qengine.program.teamengine.index.osp.OSP;
+import qengine.program.teamengine.index.pos.POS;
+import qengine.program.teamengine.index.pso.PSO;
+import qengine.program.teamengine.index.sop.SOP;
+import qengine.program.teamengine.index.spo.SPO;
+import qengine.program.teamengine.process.ProcessQuery;
+import qengine.program.teamengine.timers.Timers;
 
-import java.io.FileNotFoundException;
-import java.io.FileReader;
-import java.io.IOException;
-import java.io.Reader;
+import java.io.*;
 import java.nio.file.Files;
 import java.nio.file.Paths;
-import java.util.*;
+import java.util.ArrayList;
+import java.util.Iterator;
+import java.util.List;
 import java.util.stream.Stream;
 
 /**
@@ -45,24 +44,28 @@ import java.util.stream.Stream;
  * @author Olivier Rodriguez <olivier.rodriguez1@umontpellier.fr>
  */
 final class Main {
-    static final String baseURI = null;
-    static final Timer time = Timer.getInstance();
+    static final String BASE_UR = null;
+    static final Timers TIME = Timers.getInstance();
+    static final ProcessQuery PROCESS_QUERY = ProcessQuery.getInstance();
+    static List<ParsedQuery> queries = new ArrayList<>();
+    private static final Logger logger = LogManager.getLogger(Main.class);
 
     /**
      * Votre répertoire de travail où vont se trouver les fichiers à lire
      */
-    static final String workingDir = "data/";
+    static final String WORKING_DIR = "data/";
 
     /**
      * Fichier contenant les requêtes sparql
      */
-    static final String queryFile = workingDir + "sample_query.queryset";
+    static final String QUERY_FILE = WORKING_DIR + "request.queryset";
 
     /**
      * Fichier contenant des données rdf
      */
-    static final String dataFile = workingDir + "sample_data.nt";
+    static final String DATA_FILE = WORKING_DIR + "100K.nt";
 
+    static final StringBuilder resStringBuilder = new StringBuilder();
     // ========================================================================
 
     /**
@@ -70,46 +73,44 @@ final class Main {
      */
     public static void processAQuery(ParsedQuery query) {
         List<StatementPattern> patterns = StatementPatternCollector.process(query.getTupleExpr());
-
-        System.out.println("first pattern : " + patterns.get(0));
-
-        System.out.println("object of the first pattern : " + patterns.get(0).getObjectVar().getValue());
-
-        System.out.println("variables to project : ");
-
-        // Utilisation d'une classe anonyme
-        query.getTupleExpr().visit(new AbstractQueryModelVisitor<RuntimeException>() {
-
-            public void meet(Projection projection) {
-                System.out.println(projection.getProjectionElemList().getElements());
-            }
-        });
+        try {
+            PROCESS_QUERY.setFirstTriplets(patterns.get(0));
+            patterns.remove(0);
+            PROCESS_QUERY.solve(patterns);
+            resStringBuilder.append(PROCESS_QUERY.getRes()).append("\n----------------------------------\n");
+        } catch (NullPointerException e) {
+            resStringBuilder.append("Un élément dans votre requête n'existe pas dans notre dictionnaire.\n----------------------------------\n");
+        }
     }
+
+    public static void processQueries(List<ParsedQuery> queries) {
+        queries.forEach(Main::processAQuery);
+    }
+
+    /* Remarque du prof
+    - Sauvegarder le dictionnaire (pour pas que l'on le recrée à chaque fois)
+     */
 
     /**
      * Entrée du programme
      */
     public static void main(String[] args) throws Exception {
+        String log4ConfPath = System.getProperty("user.dir") + File.separator + "src" + File.separator + "main" + File.separator + "resources" + File.separator + "log4j.properties";
+        PropertyConfigurator.configure(log4ConfPath);
+
         parseData();
-        createIndexes();
-        time.displayTimers();
-        System.out.println("Voici le dictionnaire \n " + Dictionary.getInstance());
-        System.out.println("Voici les indexes :");
-        System.out.println("--- OPS --- \n" + OPS.getInstance());
-        System.out.println("--- OSP --- \n" + OSP.getInstance());
-        System.out.println("--- PSO --- \n" + PSO.getInstance());
-        System.out.println("--- POS --- \n" + POS.getInstance());
-        System.out.println("--- SOP --- \n" + SOP.getInstance());
-        System.out.println("--- SPO --- \n" + SPO.getInstance());
-//        parseQueries();
+        parseQueries();
+        processQueries(queries);
+        TIME.displayTimers();
+        logger.info(resStringBuilder);
     }
 
     // ========================================================================
 
     /**
-     * Traite chaque requête lue dans {@link #queryFile} avec {@link #processAQuery(ParsedQuery)}.
+     * Traite chaque requête lue dans {@link #QUERY_FILE} avec {@link #processAQuery(ParsedQuery)}.
      */
-    private static void parseQueries() throws FileNotFoundException, IOException {
+    private static void parseQueries() throws IOException {
         /**
          * Try-with-resources
          *
@@ -119,7 +120,7 @@ final class Main {
          * On utilise un stream pour lire les lignes une par une, sans avoir à toutes les stocker
          * entièrement dans une collection.
          */
-        try (Stream<String> lineStream = Files.lines(Paths.get(queryFile))) {
+        try (Stream<String> lineStream = Files.lines(Paths.get(QUERY_FILE))) {
             SPARQLParser sparqlParser = new SPARQLParser();
             Iterator<String> lineIterator = lineStream.iterator();
             StringBuilder queryString = new StringBuilder();
@@ -133,9 +134,9 @@ final class Main {
                 queryString.append(line);
 
                 if (line.trim().endsWith("}")) {
-                    ParsedQuery query = sparqlParser.parseQuery(queryString.toString(), baseURI);
+                    ParsedQuery query = sparqlParser.parseQuery(queryString.toString(), BASE_UR);
 
-                    processAQuery(query); // Traitement de la requête, à adapter/réécrire pour votre programme
+                    queries.add(query);
 
                     queryString.setLength(0); // Reset le buffer de la requête en chaine vide
                 }
@@ -144,42 +145,23 @@ final class Main {
     }
 
     /**
-     * Traite chaque triple lu dans {@link #dataFile} avec {@link MainRDFHandler}.
+     * Traite chaque triple lu dans {@link #DATA_FILE} avec {@link MainRDFHandler}.
      */
-    private static void parseData() throws FileNotFoundException, IOException {
+    private static void parseData() throws IOException {
 
-        try (Reader dataReader = new FileReader(dataFile)) {
+        try (Reader dataReader = new FileReader(DATA_FILE)) {
             // On va parser des données au format ntriples
             RDFParser rdfParser = Rio.createParser(RDFFormat.NTRIPLES);
-
             // On utilise notre implémentation de handler
             rdfParser.setRDFHandler(new MainRDFHandler());
-            long start = System.nanoTime();
             // Parsing et traitement de chaque triple par le handler
-            rdfParser.parse(dataReader, baseURI);
-            Dictionary.getInstance().convertToDico();
-            time.addTimerToDictionary((System.nanoTime() - start));
-        }
-    }
-
-    //    Parse les données et créer les différents index
-    private static void createIndexes() throws FileNotFoundException, IOException {
-        try (Reader dataReader = new FileReader(dataFile)) {
-            // On va parser des données au format ntriples
-            RDFParser rdfParser = Rio.createParser(RDFFormat.NTRIPLES);
-
-            // On utilise notre implémentation de handler
-            rdfParser.setRDFHandler(new IndexHandler());
-            long start = System.nanoTime();
-            // Parsing et traitement de chaque triplet par le handler
-            rdfParser.parse(dataReader, baseURI);
+            rdfParser.parse(dataReader, BASE_UR);
             OPS.getInstance().sortedByKey();
             OSP.getInstance().sortedByKey();
             POS.getInstance().sortedByKey();
             PSO.getInstance().sortedByKey();
             SOP.getInstance().sortedByKey();
             SPO.getInstance().sortedByKey();
-            time.addTimerToIndexes((System.nanoTime() - start));
         }
     }
 }

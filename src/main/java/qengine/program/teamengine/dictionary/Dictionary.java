@@ -1,10 +1,9 @@
-package qengine.program.q1;
+package qengine.program.teamengine.dictionary;
 
-import java.util.ArrayList;
+import qengine.program.teamengine.timers.Timers;
+
 import java.util.HashMap;
-import java.util.List;
 import java.util.Map;
-import java.util.stream.Collectors;
 
 public class Dictionary {
 
@@ -12,29 +11,25 @@ public class Dictionary {
 
     private final HashMap<String, Integer> dico;
     private final HashMap<Integer, String> dicoFromIndex;
-    //  Une liste de tout les éléments de chaque triplets
-    private final List<String> allStatementsSplit;
+    private int dicoIndex = 1;
+    private static final Timers TIMERS = Timers.getInstance();
 
     private Dictionary() {
+        TIMERS.setDictionaryTimer();
         this.dico = new HashMap<>();
         this.dicoFromIndex = new HashMap<>();
-        this.allStatementsSplit = new ArrayList<>();
+        TIMERS.addTimerToDictionary();
     }
 
     //  Création du dictionnaire
-    public void convertToDico() {
-        int dicoIndex = 1;
-        List<String> elements = allStatementsSplit.stream().distinct().collect(Collectors.toList());
-        for (String element : elements) {
-            dico.put(element, dicoIndex);
-            dicoFromIndex.put(dicoIndex, element);
+    public void add(String s) {
+        TIMERS.setDictionaryTimer();
+        if (!dico.containsKey(s)) {
+            dico.put(s, dicoIndex);
+            dicoFromIndex.put(dicoIndex, s);
             dicoIndex += 1;
         }
-        allStatementsSplit.clear();
-    }
-
-    public void add(String s) {
-        this.allStatementsSplit.add(s);
+        TIMERS.addTimerToDictionary();
     }
 
     public String getElementFromIndex(int index) {
@@ -42,7 +37,8 @@ public class Dictionary {
     }
 
     public Integer getIndexFromElement(String element) {
-        return this.dico.get(element);
+        if (this.dico.containsKey(element)) return this.dico.get(element);
+        throw new NullPointerException();
     }
 
     public static Dictionary getInstance() {
