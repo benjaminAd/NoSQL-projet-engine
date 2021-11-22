@@ -10,12 +10,12 @@ import org.eclipse.rdf4j.query.parser.sparql.SPARQLParser;
 import org.eclipse.rdf4j.rio.RDFFormat;
 import org.eclipse.rdf4j.rio.RDFParser;
 import org.eclipse.rdf4j.rio.Rio;
-import qengine.program.teamengine.index.OPS.OPS;
-import qengine.program.teamengine.index.OSP.OSP;
-import qengine.program.teamengine.index.POS.POS;
-import qengine.program.teamengine.index.PSO.PSO;
-import qengine.program.teamengine.index.SOP.SOP;
-import qengine.program.teamengine.index.SPO.SPO;
+import qengine.program.teamengine.index.ops.OPS;
+import qengine.program.teamengine.index.osp.OSP;
+import qengine.program.teamengine.index.pos.POS;
+import qengine.program.teamengine.index.pso.PSO;
+import qengine.program.teamengine.index.sop.SOP;
+import qengine.program.teamengine.index.spo.SPO;
 import qengine.program.teamengine.process.ProcessQuery;
 import qengine.program.teamengine.timers.Timers;
 

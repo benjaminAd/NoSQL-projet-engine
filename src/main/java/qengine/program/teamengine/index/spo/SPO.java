@@ -1,19 +1,19 @@
-package qengine.program.teamengine.index.SOP;
+package qengine.program.teamengine.index.spo;
 
 import qengine.program.teamengine.index.MyIndex;
 
 import java.util.List;
 
-public class SOP extends MyIndex {
-    private static SOP instance = null;
+public class SPO extends MyIndex {
+    private static SPO instance = null;
 
-    private SOP() {
+    private SPO() {
         super();
     }
 
-    public static SOP getInstance() {
+    public static SPO getInstance() {
         if (instance == null) {
-            instance = new SOP();
+            instance = new SPO();
         }
         return instance;
     }
@@ -23,22 +23,22 @@ public class SOP extends MyIndex {
         int subjectIndex = dictionary.getIndexFromElement(subject);
         int predicateIndex = dictionary.getIndexFromElement(predicate);
         int objectIndex = dictionary.getIndexFromElement(object);
-        this.addStatementToIndex(subjectIndex, objectIndex, predicateIndex);
+        this.addStatementToIndex(subjectIndex, predicateIndex, objectIndex);
         TIMERS.addTimerToIndexes();
     }
 
     @Override
     public List<Integer> getRes(int subject, int predicate, int object) {
-        return getResGeneral(subject, object);
+        return getResGeneral(subject, predicate);
     }
 
     @Override
     public List<Integer> secondRes(int subject, int predicate, int object, List<Integer> oldRes) {
-        return getSecondResGeneral(subject, object, oldRes);
+        return getSecondResGeneral(subject, predicate, oldRes);
     }
 
     @Override
     public String toString() {
-        return "SOP";
+        return "SPO";
     }
 }

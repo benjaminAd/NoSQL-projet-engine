@@ -1,4 +1,4 @@
-package qengine.program.teamengine.q1;
+package qengine.program.teamengine.dictionary;
 
 import qengine.program.teamengine.timers.Timers;
 
