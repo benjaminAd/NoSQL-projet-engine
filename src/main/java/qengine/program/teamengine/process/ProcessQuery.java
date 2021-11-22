@@ -27,9 +27,7 @@ public class ProcessQuery {
     private MyIndex index;
     private List<Integer> res;
 
-    private ProcessQuery() {
-
-    }
+    private ProcessQuery() {}
 
     public String getUnknownName() {
         return unknownName;
@@ -39,13 +37,15 @@ public class ProcessQuery {
         this.unknownName = unknownName;
     }
 
+    // Renvoie le résultat
     public String getRes() {
-        String result = (res.isEmpty()) ? "Aucune Réponse n'a été trouvé." : displayRes(res.stream().map(dictionary::getElementFromIndex).collect(Collectors.toList()).stream().distinct().collect(Collectors.toList()));
+        String result = (res.isEmpty()) ? "Aucune Réponse n'a été trouvé." : resFormat(res.stream().map(dictionary::getElementFromIndex).collect(Collectors.toList()).stream().distinct().collect(Collectors.toList()));
         res.clear();
         return result;
     }
 
-    public String displayRes(List<String> list) {
+    // Formate et affiche renvoie le résultat affichable
+    public String resFormat(List<String> list) {
         StringBuilder st = new StringBuilder("Voici les résultats de votre requêtes\n");
         for (int i = 0; i < list.size(); i++) {
             st.append(list.get(i));
@@ -63,6 +63,7 @@ public class ProcessQuery {
         objectIndex = -1;
     }
 
+    // Converti les éléments connus d'un SPO en index
     private void statementToValue(StatementPattern statementPattern) {
         Var subject = statementPattern.getSubjectVar();
         Var predicate = statementPattern.getPredicateVar();
@@ -73,18 +74,20 @@ public class ProcessQuery {
         getIndex(subjectValue, predicateValue, objectValue);
     }
 
+
     public void setFirstTriplets(StatementPattern statementPattern) {
         this.statementToValue(statementPattern);
         setIndex();
-
     }
 
+    // Stocke dans les attributs les indexes à partir de la valeur de chaque OPS
     private void getIndex(String subject, String predicate, String object) {
         if (!subject.equals("")) subjectIndex = dictionary.getIndexFromElement(subject);
         if (!predicate.equals("")) predicateIndex = dictionary.getIndexFromElement(predicate);
         if (!object.equals("")) objectIndex = dictionary.getIndexFromElement(object);
     }
 
+    // Récupère l'instance du bon index via la valeur des ids
     private void setIndex() {
         if (subjectIndex != -1) {
             if (predicateIndex != -1) {
@@ -114,11 +117,14 @@ public class ProcessQuery {
         }
     }
 
+    // Actualise le résultat de la requête avec les autres statements
+    // (en prenant en compte le résultat obtenu par le premier statement)
     private void otherRes(StatementPattern statementPattern) {
         this.statementToValue(statementPattern);
         res = index.secondRes(subjectIndex, predicateIndex, objectIndex, res);
     }
 
+    // Actualise le résultat de la requête avec le premier statement
     private void firstRes() {
         res = index.getRes(subjectIndex, predicateIndex, objectIndex);
     }
