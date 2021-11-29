@@ -1,4 +1,4 @@
-package qengine.program.teamengine.timers;
+package qengine.program.timers;
 
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;

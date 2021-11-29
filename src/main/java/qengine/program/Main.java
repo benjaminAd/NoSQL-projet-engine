@@ -1,4 +1,4 @@
-package qengine.program.teamengine;
+package qengine.program;
 
 import com.beust.jcommander.JCommander;
 import com.beust.jcommander.Parameter;
@@ -14,16 +14,16 @@ import org.eclipse.rdf4j.query.parser.sparql.SPARQLParser;
 import org.eclipse.rdf4j.rio.RDFFormat;
 import org.eclipse.rdf4j.rio.RDFParser;
 import org.eclipse.rdf4j.rio.Rio;
-import qengine.program.teamengine.dictionary.Dictionary;
-import qengine.program.teamengine.index.ops.OPS;
-import qengine.program.teamengine.index.osp.OSP;
-import qengine.program.teamengine.index.pos.POS;
-import qengine.program.teamengine.index.pso.PSO;
-import qengine.program.teamengine.index.sop.SOP;
-import qengine.program.teamengine.index.spo.SPO;
-import qengine.program.teamengine.process.ProcessQuery;
-import qengine.program.teamengine.timers.Timers;
-import qengine.program.teamengine.utils.Constants;
+import qengine.program.dictionary.Dictionary;
+import qengine.program.index.ops.OPS;
+import qengine.program.index.osp.OSP;
+import qengine.program.index.pso.PSO;
+import qengine.program.index.sop.SOP;
+import qengine.program.index.spo.SPO;
+import qengine.program.process.ProcessQuery;
+import qengine.program.index.pos.POS;
+import qengine.program.timers.Timers;
+import qengine.program.utils.Constants;
 
 import java.io.*;
 import java.nio.file.Files;

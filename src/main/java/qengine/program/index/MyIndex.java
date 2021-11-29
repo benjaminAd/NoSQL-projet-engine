@@ -1,13 +1,13 @@
-package qengine.program.teamengine.index;
+package qengine.program.index;
 
-import qengine.program.teamengine.dictionary.Dictionary;
-import qengine.program.teamengine.timers.Timers;
+import qengine.program.dictionary.Dictionary;
+import qengine.program.timers.Timers;
 
 import java.util.*;
 
 public abstract class MyIndex {
     protected Map<Integer, Map<Integer, List<Integer>>> tree;
-    protected Dictionary dictionary = Dictionary.getInstance();
+    protected qengine.program.dictionary.Dictionary dictionary = Dictionary.getInstance();
     protected static final Timers TIMERS = Timers.getInstance();
 
     protected MyIndex() {

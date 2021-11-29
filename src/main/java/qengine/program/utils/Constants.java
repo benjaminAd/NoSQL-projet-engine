@@ -1,4 +1,4 @@
-package qengine.program.teamengine.utils;
+package qengine.program.utils;
 
 public class Constants {
     public static final String ERROR_FILE_EXTENSION = "Les fichiers requête doivent avoir l'extension '.queryset' et le fichier de données '.nt'";

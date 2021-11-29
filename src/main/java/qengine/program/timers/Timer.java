@@ -1,4 +1,4 @@
-package qengine.program.teamengine.timers;
+package qengine.program.timers;
 
 public class Timer {
     private double time = 0;

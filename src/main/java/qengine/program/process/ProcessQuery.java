@@ -1,15 +1,15 @@
-package qengine.program.teamengine.process;
+package qengine.program.process;
 
 import org.eclipse.rdf4j.query.algebra.StatementPattern;
 import org.eclipse.rdf4j.query.algebra.Var;
-import qengine.program.teamengine.dictionary.Dictionary;
-import qengine.program.teamengine.index.MyIndex;
-import qengine.program.teamengine.index.ops.OPS;
-import qengine.program.teamengine.index.osp.OSP;
-import qengine.program.teamengine.index.pos.POS;
-import qengine.program.teamengine.index.pso.PSO;
-import qengine.program.teamengine.index.sop.SOP;
-import qengine.program.teamengine.index.spo.SPO;
+import qengine.program.dictionary.Dictionary;
+import qengine.program.index.MyIndex;
+import qengine.program.index.ops.OPS;
+import qengine.program.index.osp.OSP;
+import qengine.program.index.pos.POS;
+import qengine.program.index.pso.PSO;
+import qengine.program.index.sop.SOP;
+import qengine.program.index.spo.SPO;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -17,7 +17,6 @@ import java.util.stream.Collectors;
 
 public class ProcessQuery {
     private static ProcessQuery instance = null;
-    private String unknownName;
     private String subjectValue = "";
     private String predicateValue = "";
     private String objectValue = "";
