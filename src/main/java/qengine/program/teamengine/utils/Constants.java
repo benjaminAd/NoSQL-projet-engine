@@ -2,6 +2,10 @@ package qengine.program.teamengine.utils;
 
 public class Constants {
     public static final int CONVERT_NS_TO_SEC = 1000000000;
+    public static final String ERROR_FILE_EXTENSION = "Les fichiers requête doivent avoir l'extension '.queryset' et le fichier de données '.nt'";
+    public static final String ERROR_NO_FILE_NO_DIRECTORY = "Vous devez entrer un nom de fichier ou un dossier contenant des fichiers";
+    public static final String ERROR_NO_ARGUMENTS = "Vous devez utiliser au minimum les arguments -query et -data";
+    public static final String ERROR_IO = "Fichier dossier incorrect";
 
     private Constants() {
     }

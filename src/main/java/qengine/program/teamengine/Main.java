@@ -1,8 +1,13 @@
 package qengine.program.teamengine;
 
+import com.beust.jcommander.JCommander;
+import com.beust.jcommander.Parameter;
+
+import org.apache.commons.io.FilenameUtils;
 import org.apache.log4j.PropertyConfigurator;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
+
 import org.eclipse.rdf4j.query.algebra.StatementPattern;
 import org.eclipse.rdf4j.query.algebra.helpers.StatementPatternCollector;
 import org.eclipse.rdf4j.query.parser.ParsedQuery;
@@ -10,6 +15,7 @@ import org.eclipse.rdf4j.query.parser.sparql.SPARQLParser;
 import org.eclipse.rdf4j.rio.RDFFormat;
 import org.eclipse.rdf4j.rio.RDFParser;
 import org.eclipse.rdf4j.rio.Rio;
+
 import qengine.program.teamengine.index.ops.OPS;
 import qengine.program.teamengine.index.osp.OSP;
 import qengine.program.teamengine.index.pos.POS;
@@ -18,6 +24,7 @@ import qengine.program.teamengine.index.sop.SOP;
 import qengine.program.teamengine.index.spo.SPO;
 import qengine.program.teamengine.process.ProcessQuery;
 import qengine.program.teamengine.timers.Timers;
+import qengine.program.teamengine.utils.Constants;
 
 import java.io.*;
 import java.nio.file.Files;
@@ -50,20 +57,14 @@ final class Main {
     static List<ParsedQuery> queries = new ArrayList<>();
     private static final Logger logger = LogManager.getLogger(Main.class);
 
-    /**
-     * Votre répertoire de travail où vont se trouver les fichiers à lire
-     */
-    static final String WORKING_DIR = "data/";
+    @Parameter(names = "-queries")
+    static String QUERIES_FOLDER = "";
 
-    /**
-     * Fichier contenant les requêtes sparql
-     */
-    static final String QUERY_FILE = WORKING_DIR + "request.queryset";
+    @Parameter(names = "-data")
+    static String DATA_FILE = "";
 
-    /**
-     * Fichier contenant des données rdf
-     */
-    static final String DATA_FILE = WORKING_DIR + "100K.nt";
+    @Parameter(names = "-output")
+    static String OUTPUT = "";
 
     static final StringBuilder resStringBuilder = new StringBuilder();
     // ========================================================================
@@ -95,22 +96,48 @@ final class Main {
      * Entrée du programme
      */
     public static void main(String[] args) throws Exception {
+        JCommander.newBuilder()
+                .addObject(new Main())
+                .build()
+                .parse(args);
         String log4ConfPath = System.getProperty("user.dir") + File.separator + "src" + File.separator + "main" + File.separator + "resources" + File.separator + "log4j.properties";
         PropertyConfigurator.configure(log4ConfPath);
-
-        parseData();
-        parseQueries();
+        if (QUERIES_FOLDER.equals("") || DATA_FILE.equals("")) {
+            logger.error(Constants.ERROR_NO_ARGUMENTS);
+            System.exit(1);
+        }
+        try {
+            parseData();
+            parseQueriesFolder();
+        } catch (Exception e) {
+            logger.error(e.getMessage());
+            System.exit(1);
+        }
         processQueries(queries);
         TIME.displayTimers();
         logger.info(resStringBuilder);
     }
 
+    private static void parseQueriesFolder() throws Exception {
+        File folder = new File(QUERIES_FOLDER);
+        if (folder.isFile()) {
+            if (getExtension(folder.getName()).equals("queryset")) parseQueriesFile(folder.getAbsolutePath());
+            else throw new Exception(Constants.ERROR_FILE_EXTENSION);
+        } else if ((folder.isDirectory()) && (folder.listFiles() != null)) {
+            for (final File fileEntry : folder.listFiles()) {
+                if (getExtension(fileEntry.getName()).equals("queryset")) parseQueriesFile(fileEntry.getAbsolutePath());
+            }
+        } else {
+            throw new Exception(Constants.ERROR_NO_FILE_NO_DIRECTORY);
+        }
+    }
+
     // ========================================================================
 
     /**
-     * Traite chaque requête lue dans {@link #QUERY_FILE} avec {@link #processAQuery(ParsedQuery)}.
+     * Traite chaque requête lue dans {@link #QUERIES_FOLDER} avec {@link #processAQuery(ParsedQuery)}.
      */
-    private static void parseQueries() throws IOException {
+    private static void parseQueriesFile(String queries_file) throws IOException {
         /**
          * Try-with-resources
          *
@@ -120,7 +147,7 @@ final class Main {
          * On utilise un stream pour lire les lignes une par une, sans avoir à toutes les stocker
          * entièrement dans une collection.
          */
-        try (Stream<String> lineStream = Files.lines(Paths.get(QUERY_FILE))) {
+        try (Stream<String> lineStream = Files.lines(Paths.get(queries_file))) {
             SPARQLParser sparqlParser = new SPARQLParser();
             Iterator<String> lineIterator = lineStream.iterator();
             StringBuilder queryString = new StringBuilder();
@@ -141,6 +168,8 @@ final class Main {
                     queryString.setLength(0); // Reset le buffer de la requête en chaine vide
                 }
             }
+        } catch (IOException ioException) {
+            throw new IOException(Constants.ERROR_IO);
         }
     }
 
@@ -148,7 +177,7 @@ final class Main {
      * Traite chaque triple lu dans {@link #DATA_FILE} avec {@link MainRDFHandler}.
      */
     private static void parseData() throws IOException {
-
+        if (!getExtension(DATA_FILE).equals("nt")) throw new IOException(Constants.ERROR_FILE_EXTENSION);
         try (Reader dataReader = new FileReader(DATA_FILE)) {
             // On va parser des données au format ntriples
             RDFParser rdfParser = Rio.createParser(RDFFormat.NTRIPLES);
@@ -162,6 +191,12 @@ final class Main {
             PSO.getInstance().sortedByKey();
             SOP.getInstance().sortedByKey();
             SPO.getInstance().sortedByKey();
+        } catch (IOException ioException) {
+            throw new IOException(Constants.ERROR_IO);
         }
+    }
+
+    private static String getExtension(String filename) {
+        return FilenameUtils.getExtension(filename);
     }
 }
