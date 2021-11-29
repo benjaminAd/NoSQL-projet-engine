@@ -30,6 +30,7 @@ import qengine.program.teamengine.utils.Constants;
 
 import java.io.*;
 import java.nio.file.Files;
+import java.nio.file.NoSuchFileException;
 import java.nio.file.Paths;
 import java.util.ArrayList;
 import java.util.Arrays;
@@ -54,23 +55,23 @@ import java.util.stream.Stream;
  * @author Olivier Rodriguez <olivier.rodriguez1@umontpellier.fr>
  */
 final class Main {
-    static final String BASE_UR = null;
+    static final String BASE_URI = null;
     static final Timers TIME = Timers.getInstance();
     static final ProcessQuery PROCESS_QUERY = ProcessQuery.getInstance();
     static List<ParsedQuery> queries = new ArrayList<>();
     private static final Logger logger = LogManager.getLogger(Main.class);
 
     @Parameter(names = "-queries")
-    static String QUERIES_FOLDER = "";
+    static String queriesFolder = "";
 
     @Parameter(names = "-data")
-    static String DATA_FILE = "";
+    static String dataFile = "";
 
     @Parameter(names = "-output")
-    static String OUTPUT = "";
+    static String output = "";
 
     @Parameter(names = "-export_query_result")
-    static String RES_OUTPUT = "";
+    static String resOutput = "";
 
     static final StringBuilder resStringBuilder = new StringBuilder("\nVoici les réponses à vos requêtes : \n \n");
 
@@ -87,7 +88,7 @@ final class Main {
             PROCESS_QUERY.setFirstTriplets(patterns.get(0));
             patterns.remove(0);
             PROCESS_QUERY.solve(patterns);
-            if (!RES_OUTPUT.equals("")) resForCSV.add(PROCESS_QUERY.getResWithCsvFormat());
+            if (!resOutput.equals("")) resForCSV.add(PROCESS_QUERY.getResWithCsvFormat());
             resStringBuilder.append(PROCESS_QUERY.getRes()).append("\n----------------------------------\n");
         } catch (NullPointerException e) {
             resStringBuilder.append("Un élément dans votre requête n'existe pas dans notre dictionnaire.\n----------------------------------\n");
@@ -115,7 +116,7 @@ final class Main {
                 .parse(args);
         String log4ConfPath = System.getProperty("user.dir") + File.separator + "src" + File.separator + "main" + File.separator + "resources" + File.separator + "log4j.properties";
         PropertyConfigurator.configure(log4ConfPath);
-        if (QUERIES_FOLDER.equals("") || DATA_FILE.equals("")) {
+        if (queriesFolder.equals("") || dataFile.equals("")) {
             logger.error(Constants.ERROR_NO_ARGUMENTS);
             System.exit(1);
         }
@@ -128,9 +129,9 @@ final class Main {
         }
         processQueries(queries);
         TIME.addWorkloadTimer();
-        logger.info("Nom du fichier : " + getQueriesFolderFileName(DATA_FILE) + " | Nom du dossier de requête : " + getQueriesFolderFileName(QUERIES_FOLDER) + " | Nombre de triplets rdf : " + Dictionary.getInstance().getNbTriplets() + " | Nombre de requêtes : " + queries.size() + " | Temps de lecture des données : " + TIME.getParsingDataTimer() + "ms | Temps de lecture des requêtes : " + TIME.getQueriesParsingTimer() + "ms | Temps de création dico : " + TIME.getDictionaryTimer() + "ms | nombre d'index : " + PROCESS_QUERY.getNbIndexUsed() + " | Temps de créations des index : " + TIME.getIndexesTimer() + "ms | Temps total d'évaluation des requêtes : " + TIME.getQueriesProcessTimer() + "ms | Temps total : " + TIME.getWorkloadTimer() + "ms");
+        logger.info("Nom du fichier : {} | Nom du dossier de requête : {} | Nombre de triplets rdf : {} | Nombre de requêtes : {} | Temps de lecture des données : {}ms | Temps de lecture des requêtes : {}ms | Temps de création dico : {}ms | nombre d'index : {} | Temps de créations des index : {}ms | Temps total d'évaluation des requêtes : {}ms | Temps total : {}ms", getQueriesFolderFileName(dataFile), getQueriesFolderFileName(queriesFolder), Dictionary.getInstance().getNbTriplets(), queries.size(), TIME.getParsingDataTimer(), TIME.getQueriesParsingTimer(), TIME.getDictionaryTimer(), PROCESS_QUERY.getNbIndexUsed(), TIME.getIndexesTimer(), TIME.getQueriesProcessTimer(), TIME.getWorkloadTimer());
         logger.info(resStringBuilder);
-        if (!OUTPUT.equals("")) {
+        if (!output.equals("")) {
             try {
                 exportToCSV();
             } catch (Exception e) {
@@ -139,7 +140,7 @@ final class Main {
             }
         }
 
-        if (!RES_OUTPUT.equals("")) {
+        if (!resOutput.equals("")) {
             try {
                 exportResToCSV();
             } catch (Exception e) {
@@ -149,18 +150,18 @@ final class Main {
         }
     }
 
-    private static void parseQueriesFolder() throws Exception {
+    private static void parseQueriesFolder() throws NoSuchFileException, IOException {
         TIME.setQueryParsingTimer();
-        File folder = new File(QUERIES_FOLDER);
+        File folder = new File(queriesFolder);
         if (folder.isFile()) {
             if (getExtension(folder.getName()).equals("queryset")) parseQueriesFile(folder.getAbsolutePath());
-            else throw new Exception(Constants.ERROR_FILE_EXTENSION);
+            else throw new IOException(Constants.ERROR_FILE_EXTENSION);
         } else if ((folder.isDirectory()) && (folder.listFiles() != null)) {
             for (final File fileEntry : folder.listFiles()) {
                 if (getExtension(fileEntry.getName()).equals("queryset")) parseQueriesFile(fileEntry.getAbsolutePath());
             }
         } else {
-            throw new Exception(Constants.ERROR_NO_FILE_NO_DIRECTORY);
+            throw new NoSuchFileException(Constants.ERROR_NO_FILE_NO_DIRECTORY);
         }
         TIME.addTimerToQueriesParsing();
     }
@@ -168,9 +169,9 @@ final class Main {
     // ========================================================================
 
     /**
-     * Traite chaque requête lue dans {@link #QUERIES_FOLDER} avec {@link #processAQuery(ParsedQuery)}.
+     * Traite chaque requête lue dans {@link #queriesFolder} avec {@link #processAQuery(ParsedQuery)}.
      */
-    private static void parseQueriesFile(String queries_file) throws IOException {
+    private static void parseQueriesFile(String queriesFile) throws IOException {
         /**
          * Try-with-resources
          *
@@ -180,7 +181,7 @@ final class Main {
          * On utilise un stream pour lire les lignes une par une, sans avoir à toutes les stocker
          * entièrement dans une collection.
          */
-        try (Stream<String> lineStream = Files.lines(Paths.get(queries_file))) {
+        try (Stream<String> lineStream = Files.lines(Paths.get(queriesFile))) {
             SPARQLParser sparqlParser = new SPARQLParser();
             Iterator<String> lineIterator = lineStream.iterator();
             StringBuilder queryString = new StringBuilder();
@@ -194,7 +195,7 @@ final class Main {
                 queryString.append(line);
 
                 if (line.trim().endsWith("}")) {
-                    ParsedQuery query = sparqlParser.parseQuery(queryString.toString(), BASE_UR);
+                    ParsedQuery query = sparqlParser.parseQuery(queryString.toString(), BASE_URI);
                     request.add(queryString.toString());
                     queries.add(query);
 
@@ -207,18 +208,18 @@ final class Main {
     }
 
     /**
-     * Traite chaque triple lu dans {@link #DATA_FILE} avec {@link MainRDFHandler}.
+     * Traite chaque triple lu dans {@link #dataFile} avec {@link MainRDFHandler}.
      */
     private static void parseData() throws IOException {
         TIME.setParsingDataTimer();
-        if (!getExtension(DATA_FILE).equals("nt")) throw new IOException(Constants.ERROR_FILE_EXTENSION);
-        try (Reader dataReader = new FileReader(DATA_FILE)) {
+        if (!getExtension(dataFile).equals("nt")) throw new IOException(Constants.ERROR_FILE_EXTENSION);
+        try (Reader dataReader = new FileReader(dataFile)) {
             // On va parser des données au format ntriples
             RDFParser rdfParser = Rio.createParser(RDFFormat.NTRIPLES);
             // On utilise notre implémentation de handler
             rdfParser.setRDFHandler(new MainRDFHandler());
             // Parsing et traitement de chaque triple par le handler
-            rdfParser.parse(dataReader, BASE_UR);
+            rdfParser.parse(dataReader, BASE_URI);
             OPS.getInstance().sortedByKey();
             OSP.getInstance().sortedByKey();
             POS.getInstance().sortedByKey();
@@ -244,21 +245,21 @@ final class Main {
         }
     }
 
-    private static void exportToCSV() throws Exception {
+    private static void exportToCSV() throws IOException {
         List<String[]> dataCSV = new ArrayList<>(Arrays.asList(
                 new String[]{"data", "queries", "triplets_number_rdf", "queries_number", "data_parsing", "queries_parsing", "dico_creation_times", "indexes_used_number", "indexes_creation_time", "queries_process_time", "workload_time"},
-                new String[]{getQueriesFolderFileName(DATA_FILE), getQueriesFolderFileName(QUERIES_FOLDER), String.valueOf(Dictionary.getInstance().getNbTriplets()), String.valueOf(queries.size()), String.valueOf(TIME.getParsingDataTimer()), String.valueOf(TIME.getQueriesParsingTimer()), String.valueOf(TIME.getDictionaryTimer()), String.valueOf(PROCESS_QUERY.getNbIndexUsed()), String.valueOf(TIME.getIndexesTimer()), String.valueOf(TIME.getQueriesProcessTimer()), String.valueOf(TIME.getWorkloadTimer())}
+                new String[]{getQueriesFolderFileName(dataFile), getQueriesFolderFileName(queriesFolder), String.valueOf(Dictionary.getInstance().getNbTriplets()), String.valueOf(queries.size()), String.valueOf(TIME.getParsingDataTimer()), String.valueOf(TIME.getQueriesParsingTimer()), String.valueOf(TIME.getDictionaryTimer()), String.valueOf(PROCESS_QUERY.getNbIndexUsed()), String.valueOf(TIME.getIndexesTimer()), String.valueOf(TIME.getQueriesProcessTimer()), String.valueOf(TIME.getWorkloadTimer())}
         ));
 
-        try (CSVWriter csvWriter = new CSVWriter(new FileWriter(OUTPUT))) {
+        try (CSVWriter csvWriter = new CSVWriter(new FileWriter(output))) {
             csvWriter.writeAll(dataCSV);
-        } catch (Exception Exception) {
-            throw new Exception(Constants.ERROR_CSV_WRITER);
+        } catch (Exception e) {
+            throw new IOException(Constants.ERROR_CSV_WRITER);
         }
         logger.info(Constants.CSV_CREATED);
     }
 
-    private static void exportResToCSV() throws Exception {
+    private static void exportResToCSV() throws IOException {
         List<String[]> dataCSV = new ArrayList<>();
         dataCSV.add(new String[]{"id_request", "res"});
         int i = 0;
@@ -269,10 +270,10 @@ final class Main {
             }
             i += 1;
         }
-        try (CSVWriter csvWriter = new CSVWriter(new FileWriter(RES_OUTPUT))) {
+        try (CSVWriter csvWriter = new CSVWriter(new FileWriter(resOutput))) {
             csvWriter.writeAll(dataCSV);
-        } catch (Exception Exception) {
-            throw new Exception(Constants.ERROR_CSV_WRITER);
+        } catch (Exception e) {
+            throw new IOException(Constants.ERROR_CSV_WRITER);
         }
         logger.info(Constants.CSV_CREATED);
     }
