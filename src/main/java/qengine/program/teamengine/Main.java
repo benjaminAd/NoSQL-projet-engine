@@ -3,6 +3,7 @@ package qengine.program.teamengine;
 import com.beust.jcommander.JCommander;
 import com.beust.jcommander.Parameter;
 
+import com.opencsv.CSVWriter;
 import org.apache.commons.io.FilenameUtils;
 import org.apache.log4j.PropertyConfigurator;
 import org.apache.logging.log4j.LogManager;
@@ -16,6 +17,7 @@ import org.eclipse.rdf4j.rio.RDFFormat;
 import org.eclipse.rdf4j.rio.RDFParser;
 import org.eclipse.rdf4j.rio.Rio;
 
+import qengine.program.teamengine.dictionary.Dictionary;
 import qengine.program.teamengine.index.ops.OPS;
 import qengine.program.teamengine.index.osp.OSP;
 import qengine.program.teamengine.index.pos.POS;
@@ -30,6 +32,7 @@ import java.io.*;
 import java.nio.file.Files;
 import java.nio.file.Paths;
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.Iterator;
 import java.util.List;
 import java.util.stream.Stream;
@@ -66,7 +69,13 @@ final class Main {
     @Parameter(names = "-output")
     static String OUTPUT = "";
 
-    static final StringBuilder resStringBuilder = new StringBuilder();
+    @Parameter(names = "-export_query_result")
+    static String RES_OUTPUT = "";
+
+    static final StringBuilder resStringBuilder = new StringBuilder("\nVoici les réponses à vos requêtes : \n \n");
+
+    static List<String> resForCSV = new ArrayList<>();
+    static List<String> request = new ArrayList<>();
     // ========================================================================
 
     /**
@@ -78,6 +87,7 @@ final class Main {
             PROCESS_QUERY.setFirstTriplets(patterns.get(0));
             patterns.remove(0);
             PROCESS_QUERY.solve(patterns);
+            if (!RES_OUTPUT.equals("")) resForCSV.add(PROCESS_QUERY.getResWithCsvFormat());
             resStringBuilder.append(PROCESS_QUERY.getRes()).append("\n----------------------------------\n");
         } catch (NullPointerException e) {
             resStringBuilder.append("Un élément dans votre requête n'existe pas dans notre dictionnaire.\n----------------------------------\n");
@@ -85,7 +95,9 @@ final class Main {
     }
 
     public static void processQueries(List<ParsedQuery> queries) {
+        TIME.setQueriesProcessTimer();
         queries.forEach(Main::processAQuery);
+        TIME.addTimerToQueriesProcess();
     }
 
     /* Remarque du prof
@@ -96,6 +108,7 @@ final class Main {
      * Entrée du programme
      */
     public static void main(String[] args) throws Exception {
+        TIME.setWorkloadTimer();
         JCommander.newBuilder()
                 .addObject(new Main())
                 .build()
@@ -114,11 +127,30 @@ final class Main {
             System.exit(1);
         }
         processQueries(queries);
-        TIME.displayTimers();
+        TIME.addWorkloadTimer();
+        logger.info("Nom du fichier : " + getQueriesFolderFileName(DATA_FILE) + " | Nom du dossier de requête : " + getQueriesFolderFileName(QUERIES_FOLDER) + " | Nombre de triplets rdf : " + Dictionary.getInstance().getNbTriplets() + " | Nombre de requêtes : " + queries.size() + " | Temps de lecture des données : " + TIME.getParsingDataTimer() + "ms | Temps de lecture des requêtes : " + TIME.getQueriesParsingTimer() + "ms | Temps de création dico : " + TIME.getDictionaryTimer() + "ms | nombre d'index : " + PROCESS_QUERY.getNbIndexUsed() + " | Temps de créations des index : " + TIME.getIndexesTimer() + "ms | Temps total d'évaluation des requêtes : " + TIME.getQueriesProcessTimer() + "ms | Temps total : " + TIME.getWorkloadTimer() + "ms");
         logger.info(resStringBuilder);
+        if (!OUTPUT.equals("")) {
+            try {
+                exportToCSV();
+            } catch (Exception e) {
+                logger.error(e.getMessage());
+                System.exit(1);
+            }
+        }
+
+        if (!RES_OUTPUT.equals("")) {
+            try {
+                exportResToCSV();
+            } catch (Exception e) {
+                logger.error(e.getMessage());
+                System.exit(1);
+            }
+        }
     }
 
     private static void parseQueriesFolder() throws Exception {
+        TIME.setQueryParsingTimer();
         File folder = new File(QUERIES_FOLDER);
         if (folder.isFile()) {
             if (getExtension(folder.getName()).equals("queryset")) parseQueriesFile(folder.getAbsolutePath());
@@ -130,6 +162,7 @@ final class Main {
         } else {
             throw new Exception(Constants.ERROR_NO_FILE_NO_DIRECTORY);
         }
+        TIME.addTimerToQueriesParsing();
     }
 
     // ========================================================================
@@ -162,7 +195,7 @@ final class Main {
 
                 if (line.trim().endsWith("}")) {
                     ParsedQuery query = sparqlParser.parseQuery(queryString.toString(), BASE_UR);
-
+                    request.add(queryString.toString());
                     queries.add(query);
 
                     queryString.setLength(0); // Reset le buffer de la requête en chaine vide
@@ -177,6 +210,7 @@ final class Main {
      * Traite chaque triple lu dans {@link #DATA_FILE} avec {@link MainRDFHandler}.
      */
     private static void parseData() throws IOException {
+        TIME.setParsingDataTimer();
         if (!getExtension(DATA_FILE).equals("nt")) throw new IOException(Constants.ERROR_FILE_EXTENSION);
         try (Reader dataReader = new FileReader(DATA_FILE)) {
             // On va parser des données au format ntriples
@@ -194,9 +228,52 @@ final class Main {
         } catch (IOException ioException) {
             throw new IOException(Constants.ERROR_IO);
         }
+        TIME.addParsingDataTimer();
     }
 
     private static String getExtension(String filename) {
         return FilenameUtils.getExtension(filename);
+    }
+
+    private static String getQueriesFolderFileName(String file) {
+        File folder = new File(file);
+        if (folder.isDirectory() || folder.isFile()) {
+            return folder.getName();
+        } else {
+            return "NON_DISPONIBLE";
+        }
+    }
+
+    private static void exportToCSV() throws Exception {
+        List<String[]> dataCSV = new ArrayList<>(Arrays.asList(
+                new String[]{"data", "queries", "triplets_number_rdf", "queries_number", "data_parsing", "queries_parsing", "dico_creation_times", "indexes_used_number", "indexes_creation_time", "queries_process_time", "workload_time"},
+                new String[]{getQueriesFolderFileName(DATA_FILE), getQueriesFolderFileName(QUERIES_FOLDER), String.valueOf(Dictionary.getInstance().getNbTriplets()), String.valueOf(queries.size()), String.valueOf(TIME.getParsingDataTimer()), String.valueOf(TIME.getQueriesParsingTimer()), String.valueOf(TIME.getDictionaryTimer()), String.valueOf(PROCESS_QUERY.getNbIndexUsed()), String.valueOf(TIME.getIndexesTimer()), String.valueOf(TIME.getQueriesProcessTimer()), String.valueOf(TIME.getWorkloadTimer())}
+        ));
+
+        try (CSVWriter csvWriter = new CSVWriter(new FileWriter(OUTPUT))) {
+            csvWriter.writeAll(dataCSV);
+        } catch (Exception Exception) {
+            throw new Exception(Constants.ERROR_CSV_WRITER);
+        }
+        logger.info(Constants.CSV_CREATED);
+    }
+
+    private static void exportResToCSV() throws Exception {
+        List<String[]> dataCSV = new ArrayList<>();
+        dataCSV.add(new String[]{"id_request", "res"});
+        int i = 0;
+        for (String resOfAQuery : resForCSV) {
+            String[] res = resOfAQuery.split("\n");
+            for (String statement : res) {
+                dataCSV.add(new String[]{request.get(i), statement});
+            }
+            i += 1;
+        }
+        try (CSVWriter csvWriter = new CSVWriter(new FileWriter(RES_OUTPUT))) {
+            csvWriter.writeAll(dataCSV);
+        } catch (Exception Exception) {
+            throw new Exception(Constants.ERROR_CSV_WRITER);
+        }
+        logger.info(Constants.CSV_CREATED);
     }
 }

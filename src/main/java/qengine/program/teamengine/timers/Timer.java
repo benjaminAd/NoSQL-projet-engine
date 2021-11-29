@@ -9,10 +9,10 @@ public class Timer {
     }
 
     public void start() {
-        start = System.nanoTime();
+        start = System.currentTimeMillis();
     }
 
     public void countTimer() {
-        time += (System.nanoTime() - start);
+        time += (System.currentTimeMillis() - start);
     }
 }

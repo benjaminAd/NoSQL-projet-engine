@@ -14,6 +14,8 @@ public class Dictionary {
     private int dicoIndex = 1;
     private static final Timers TIMERS = Timers.getInstance();
 
+    private int counterTriplets = 0;
+
     private Dictionary() {
         TIMERS.setDictionaryTimer();
         this.dico = new HashMap<>();
@@ -46,6 +48,14 @@ public class Dictionary {
             instance = new Dictionary();
         }
         return instance;
+    }
+
+    public void incrementCounter() {
+        this.counterTriplets += 1;
+    }
+
+    public int getNbTriplets() {
+        return this.counterTriplets;
     }
 
     @Override

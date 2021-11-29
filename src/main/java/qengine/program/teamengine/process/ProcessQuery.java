@@ -1,5 +1,8 @@
 package qengine.program.teamengine.process;
 
+import com.opencsv.CSVWriter;
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
 import org.eclipse.rdf4j.query.algebra.StatementPattern;
 import org.eclipse.rdf4j.query.algebra.Var;
 import qengine.program.teamengine.index.MyIndex;
@@ -10,7 +13,11 @@ import qengine.program.teamengine.index.pso.PSO;
 import qengine.program.teamengine.index.sop.SOP;
 import qengine.program.teamengine.index.spo.SPO;
 import qengine.program.teamengine.dictionary.Dictionary;
+import qengine.program.teamengine.utils.Constants;
 
+import java.io.FileWriter;
+import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.List;
 import java.util.stream.Collectors;
 
@@ -26,8 +33,11 @@ public class ProcessQuery {
     private final Dictionary dictionary = Dictionary.getInstance();
     private MyIndex index;
     private List<Integer> res;
+    private List<MyIndex> indexList = new ArrayList<>();
+    private static final Logger logger = LogManager.getLogger(ProcessQuery.class);
 
-    private ProcessQuery() {}
+    private ProcessQuery() {
+    }
 
     public String getUnknownName() {
         return unknownName;
@@ -44,12 +54,24 @@ public class ProcessQuery {
         return result;
     }
 
+    public String getResWithCsvFormat(){
+        return (res.isEmpty()) ? "Pas de réponse" : resCSVFormat(res.stream().map(dictionary::getElementFromIndex).collect(Collectors.toList()).stream().distinct().collect(Collectors.toList()));
+    }
+
     // Formate et affiche renvoie le résultat affichable
     public String resFormat(List<String> list) {
         StringBuilder st = new StringBuilder("Voici les résultats de votre requêtes\n");
         for (int i = 0; i < list.size(); i++) {
             st.append(list.get(i));
             if (i != list.size() - 1) st.append("\n");
+        }
+        return st.toString();
+    }
+
+    public String resCSVFormat(List<String> list){
+        StringBuilder st = new StringBuilder();
+        for (String s : list) {
+            st.append(s).append("\n");
         }
         return st.toString();
     }
@@ -106,10 +128,12 @@ public class ProcessQuery {
 
     public void solve(List<StatementPattern> statementPatterns) {
         firstRes();
+        indexList.add(index);
         this.resetValues();
         if (!statementPatterns.isEmpty()) {
             for (StatementPattern statementPattern : statementPatterns) {
                 setIndex();
+                indexList.add(index);
                 otherRes(statementPattern);
                 this.resetValues();
                 if (res.isEmpty()) break;
@@ -133,5 +157,9 @@ public class ProcessQuery {
     public static ProcessQuery getInstance() {
         if (instance == null) instance = new ProcessQuery();
         return instance;
+    }
+
+    public int getNbIndexUsed() {
+        return (int) indexList.stream().distinct().count();
     }
 }

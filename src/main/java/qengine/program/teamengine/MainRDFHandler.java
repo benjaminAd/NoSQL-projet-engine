@@ -28,7 +28,7 @@ public final class MainRDFHandler extends AbstractRDFHandler {
         String subject = st.getSubject().stringValue();
         String predicate = st.getPredicate().stringValue();
         String object = st.getObject().stringValue();
-
+        dictionary.incrementCounter();
         //Add dictionary
         dictionary.add(subject);
         dictionary.add(object);
