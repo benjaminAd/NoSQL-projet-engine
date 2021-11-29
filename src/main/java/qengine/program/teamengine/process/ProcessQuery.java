@@ -1,10 +1,10 @@
 package qengine.program.teamengine.process;
 
-import com.opencsv.CSVWriter;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 import org.eclipse.rdf4j.query.algebra.StatementPattern;
 import org.eclipse.rdf4j.query.algebra.Var;
+import qengine.program.teamengine.dictionary.Dictionary;
 import qengine.program.teamengine.index.MyIndex;
 import qengine.program.teamengine.index.ops.OPS;
 import qengine.program.teamengine.index.osp.OSP;
@@ -12,12 +12,8 @@ import qengine.program.teamengine.index.pos.POS;
 import qengine.program.teamengine.index.pso.PSO;
 import qengine.program.teamengine.index.sop.SOP;
 import qengine.program.teamengine.index.spo.SPO;
-import qengine.program.teamengine.dictionary.Dictionary;
-import qengine.program.teamengine.utils.Constants;
 
-import java.io.FileWriter;
 import java.util.ArrayList;
-import java.util.Arrays;
 import java.util.List;
 import java.util.stream.Collectors;
 
@@ -34,17 +30,8 @@ public class ProcessQuery {
     private MyIndex index;
     private List<Integer> res;
     private List<MyIndex> indexList = new ArrayList<>();
-    private static final Logger logger = LogManager.getLogger(ProcessQuery.class);
 
     private ProcessQuery() {
-    }
-
-    public String getUnknownName() {
-        return unknownName;
-    }
-
-    public void setUnknownName(String unknownName) {
-        this.unknownName = unknownName;
     }
 
     // Renvoie le résultat

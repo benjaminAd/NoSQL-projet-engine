@@ -2,7 +2,6 @@ package qengine.program.teamengine.timers;
 
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
-import qengine.program.teamengine.utils.Constants;
 
 public class Timers {
     private final Timer timerIndexes;
@@ -100,8 +99,4 @@ public class Timers {
         if (instance == null) instance = new Timers();
         return instance;
     }
-
-//    public void displayTimers() {
-//        logger.info("Temps de création du dictionnaire : {} sec | Temps de création des index : {} sec.| Temps d'analyse des requêtes : {} sec | Temps de traitements des requêtes : {} sec", convertToms(this.timerDictionnary), convertToms(this.timerIndexes), convertToms(this.timerQueryParsing), convertToms(this.timerQueryProcess));
-//    }
 }

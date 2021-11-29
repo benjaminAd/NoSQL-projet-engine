@@ -2,13 +2,11 @@ package qengine.program.teamengine;
 
 import com.beust.jcommander.JCommander;
 import com.beust.jcommander.Parameter;
-
 import com.opencsv.CSVWriter;
 import org.apache.commons.io.FilenameUtils;
 import org.apache.log4j.PropertyConfigurator;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
-
 import org.eclipse.rdf4j.query.algebra.StatementPattern;
 import org.eclipse.rdf4j.query.algebra.helpers.StatementPatternCollector;
 import org.eclipse.rdf4j.query.parser.ParsedQuery;
@@ -16,7 +14,6 @@ import org.eclipse.rdf4j.query.parser.sparql.SPARQLParser;
 import org.eclipse.rdf4j.rio.RDFFormat;
 import org.eclipse.rdf4j.rio.RDFParser;
 import org.eclipse.rdf4j.rio.Rio;
-
 import qengine.program.teamengine.dictionary.Dictionary;
 import qengine.program.teamengine.index.ops.OPS;
 import qengine.program.teamengine.index.osp.OSP;
@@ -150,7 +147,7 @@ final class Main {
         }
     }
 
-    private static void parseQueriesFolder() throws NoSuchFileException, IOException {
+    private static void parseQueriesFolder() throws IOException {
         TIME.setQueryParsingTimer();
         File folder = new File(queriesFolder);
         if (folder.isFile()) {
