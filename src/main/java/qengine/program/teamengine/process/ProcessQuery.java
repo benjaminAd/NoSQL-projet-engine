@@ -1,7 +1,5 @@
 package qengine.program.teamengine.process;
 
-import org.apache.logging.log4j.LogManager;
-import org.apache.logging.log4j.Logger;
 import org.eclipse.rdf4j.query.algebra.StatementPattern;
 import org.eclipse.rdf4j.query.algebra.Var;
 import qengine.program.teamengine.dictionary.Dictionary;
@@ -29,7 +27,7 @@ public class ProcessQuery {
     private final Dictionary dictionary = Dictionary.getInstance();
     private MyIndex index;
     private List<Integer> res;
-    private List<MyIndex> indexList = new ArrayList<>();
+    private final List<MyIndex> indexList = new ArrayList<>();
 
     private ProcessQuery() {
     }

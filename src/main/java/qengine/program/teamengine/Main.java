@@ -261,10 +261,7 @@ final class Main {
         dataCSV.add(new String[]{"id_request", "res"});
         int i = 0;
         for (String resOfAQuery : resForCSV) {
-            String[] res = resOfAQuery.split("\n");
-            for (String statement : res) {
-                dataCSV.add(new String[]{request.get(i), statement});
-            }
+            dataCSV.add(new String[]{request.get(i), resOfAQuery});
             i += 1;
         }
         try (CSVWriter csvWriter = new CSVWriter(new FileWriter(resOutput))) {
