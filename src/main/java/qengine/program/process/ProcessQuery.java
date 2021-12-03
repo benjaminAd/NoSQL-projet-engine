@@ -42,6 +42,10 @@ public class ProcessQuery {
         return (res.isEmpty()) ? "Pas de réponse" : resCSVFormat(res.stream().map(dictionary::getElementFromIndex).collect(Collectors.toList()).stream().distinct().collect(Collectors.toList()));
     }
 
+    public int getResSize(){
+        return res.size();
+    }
+
     // Formate et affiche renvoie le résultat affichable
     public String resFormat(List<String> list) {
         StringBuilder st = new StringBuilder("Voici les résultats de votre requêtes\n");

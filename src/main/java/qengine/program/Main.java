@@ -73,6 +73,7 @@ final class Main {
     static final StringBuilder resStringBuilder = new StringBuilder("\nVoici les réponses à vos requêtes : \n \n");
 
     static List<String> resForCSV = new ArrayList<>();
+    static List<Integer> resNumberPerQueries = new ArrayList<>();
     static List<String> request = new ArrayList<>();
     // ========================================================================
 
@@ -86,6 +87,7 @@ final class Main {
             patterns.remove(0);
             PROCESS_QUERY.solve(patterns);
             if (!resOutput.equals("")) resForCSV.add(PROCESS_QUERY.getResWithCsvFormat());
+            resNumberPerQueries.add(PROCESS_QUERY.getResSize());
             resStringBuilder.append(PROCESS_QUERY.getRes()).append("\n----------------------------------\n");
         } catch (NullPointerException e) {
             resStringBuilder.append("Un élément dans votre requête n'existe pas dans notre dictionnaire.\n----------------------------------\n");
@@ -145,6 +147,14 @@ final class Main {
                 System.exit(1);
             }
         }
+//        try {
+//            exportResNumberToCSV();
+//        } catch (Exception e) {
+//            logger.error(e.getMessage());
+//            System.exit(1);
+//        }
+        numberOfNoAnswersRequest();
+        numberOfRequestWithAnswer();
     }
 
     private static void parseQueriesFolder() throws IOException {
@@ -270,5 +280,29 @@ final class Main {
             throw new IOException(Constants.ERROR_CSV_WRITER);
         }
         logger.info(Constants.CSV_CREATED);
+    }
+
+    private static void exportResNumberToCSV() throws IOException {
+        List<String[]> dataCSV = new ArrayList<>();
+        dataCSV.add(new String[]{"request", "number res"});
+        int i = 0;
+        for (int number : resNumberPerQueries) {
+            dataCSV.add(new String[]{request.get(i), String.valueOf(number)});
+            i += 1;
+        }
+        try (CSVWriter csvWriter = new CSVWriter(new FileWriter("/Users/benjaminadolphe/Downloads/answers500K.csv"))) {
+            csvWriter.writeAll(dataCSV);
+        } catch (Exception e) {
+            throw new IOException(Constants.ERROR_CSV_WRITER);
+        }
+        logger.info(Constants.CSV_CREATED);
+    }
+
+    private static void numberOfNoAnswersRequest() {
+        logger.info(String.valueOf(resNumberPerQueries.stream().filter(number -> number == 0).count()) + "/" + queries.size());
+    }
+
+    private static void numberOfRequestWithAnswer() {
+        logger.info(resNumberPerQueries.stream().filter(element -> element > 0).count());
     }
 }
