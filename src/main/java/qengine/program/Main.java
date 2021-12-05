@@ -311,7 +311,8 @@ final class Main {
     }
 
     private static void saveRequests(String name) throws IOException {
-        FileWriter myFile = new FileWriter("./data/"+name + ".queryset");
+        if (Integer.parseInt(numberOfRequestWithAnswer()) == 0) return;
+        FileWriter myFile = new FileWriter("./data/" + name + ".queryset");
         for (int i = 0; i < resNumberPerQueries.size(); i++) {
             if (resNumberPerQueries.get(i) > 0) {
                 myFile.write(request.get(i));
