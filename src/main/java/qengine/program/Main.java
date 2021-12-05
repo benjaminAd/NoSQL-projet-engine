@@ -153,8 +153,8 @@ final class Main {
 //            logger.error(e.getMessage());
 //            System.exit(1);
 //        }
-        numberOfNoAnswersRequest();
-        numberOfRequestWithAnswer();
+        logger.info("Nombre de requêtes sans réponses : " + numberOfNoAnswersRequest()+"/"+queries.size());
+        logger.info("Nombre de requêtes avec au moins une réponse : " + numberOfRequestWithAnswer()+"/"+queries.size());
     }
 
     private static void parseQueriesFolder() throws IOException {
@@ -298,11 +298,11 @@ final class Main {
         logger.info(Constants.CSV_CREATED);
     }
 
-    private static void numberOfNoAnswersRequest() {
-        logger.info(String.valueOf(resNumberPerQueries.stream().filter(number -> number == 0).count()) + "/" + queries.size());
+    private static String numberOfNoAnswersRequest() {
+        return String.valueOf(queries.size() - resNumberPerQueries.stream().filter(element -> element > 0).count());
     }
 
-    private static void numberOfRequestWithAnswer() {
-        logger.info(resNumberPerQueries.stream().filter(element -> element > 0).count());
+    private static String numberOfRequestWithAnswer() {
+        return String.valueOf(resNumberPerQueries.stream().filter(element -> element > 0).count());
     }
 }
