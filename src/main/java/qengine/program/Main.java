@@ -91,6 +91,8 @@ final class Main {
             resStringBuilder.append(PROCESS_QUERY.getRes()).append("\n----------------------------------\n");
         } catch (NullPointerException e) {
             resStringBuilder.append("Un élément dans votre requête n'existe pas dans notre dictionnaire.\n----------------------------------\n");
+            resNumberPerQueries.add(0);
+            if (!resOutput.equals("")) resForCSV.add("Pas de réponse");
         }
     }
 
@@ -153,8 +155,9 @@ final class Main {
 //            logger.error(e.getMessage());
 //            System.exit(1);
 //        }
-        logger.info("Nombre de requêtes sans réponses : " + numberOfNoAnswersRequest()+"/"+queries.size());
-        logger.info("Nombre de requêtes avec au moins une réponse : " + numberOfRequestWithAnswer()+"/"+queries.size());
+        logger.info("Nombre de requêtes sans réponses : " + numberOfNoAnswersRequest() + "/" + queries.size());
+        logger.info("Nombre de requêtes avec au moins une réponse : " + numberOfRequestWithAnswer() + "/" + queries.size());
+        saveRequests("first_try2");
     }
 
     private static void parseQueriesFolder() throws IOException {
@@ -192,6 +195,7 @@ final class Main {
             SPARQLParser sparqlParser = new SPARQLParser();
             Iterator<String> lineIterator = lineStream.iterator();
             StringBuilder queryString = new StringBuilder();
+            StringBuilder queryString2 = new StringBuilder();
 
             while (lineIterator.hasNext())
                 /*
@@ -200,12 +204,12 @@ final class Main {
                  */ {
                 String line = lineIterator.next();
                 queryString.append(line);
-
+                queryString2.append(line).append("\n");
                 if (line.trim().endsWith("}")) {
                     ParsedQuery query = sparqlParser.parseQuery(queryString.toString(), BASE_URI);
-                    request.add(queryString.toString());
+                    request.add(queryString2.toString());
                     queries.add(query);
-
+                    queryString2.setLength(0);
                     queryString.setLength(0); // Reset le buffer de la requête en chaine vide
                 }
             }
@@ -304,5 +308,16 @@ final class Main {
 
     private static String numberOfRequestWithAnswer() {
         return String.valueOf(resNumberPerQueries.stream().filter(element -> element > 0).count());
+    }
+
+    private static void saveRequests(String name) throws IOException {
+        FileWriter myFile = new FileWriter("./data/"+name + ".queryset");
+        for (int i = 0; i < resNumberPerQueries.size(); i++) {
+            if (resNumberPerQueries.get(i) > 0) {
+                myFile.write(request.get(i));
+            }
+        }
+        myFile.close();
+        logger.info("Informations enregistrées");
     }
 }
