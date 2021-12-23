@@ -1,0 +1,2105 @@
+
+SELECT ?v0 WHERE {
+	?v0 <http://db.uwaterloo.ca/~galuc/wsdbm/subscribes> <http://db.uwaterloo.ca/~galuc/wsdbm/Website510> .
+	?v0 <http://db.uwaterloo.ca/~galuc/wsdbm/likes> <http://db.uwaterloo.ca/~galuc/wsdbm/Product926> .
+}
+
+SELECT ?v0 WHERE {
+	?v0 <http://db.uwaterloo.ca/~galuc/wsdbm/subscribes> <http://db.uwaterloo.ca/~galuc/wsdbm/Website576> .
+	?v0 <http://db.uwaterloo.ca/~galuc/wsdbm/likes> <http://db.uwaterloo.ca/~galuc/wsdbm/Product3825> .
+}
+
+SELECT ?v0 WHERE {
+	?v0 <http://db.uwaterloo.ca/~galuc/wsdbm/subscribes> <http://db.uwaterloo.ca/~galuc/wsdbm/Website943> .
+	?v0 <http://db.uwaterloo.ca/~galuc/wsdbm/likes> <http://db.uwaterloo.ca/~galuc/wsdbm/Product502> .
+}
+
+SELECT ?v0 WHERE {
+	?v0 <http://db.uwaterloo.ca/~galuc/wsdbm/subscribes> <http://db.uwaterloo.ca/~galuc/wsdbm/Website814> .
+	?v0 <http://db.uwaterloo.ca/~galuc/wsdbm/likes> <http://db.uwaterloo.ca/~galuc/wsdbm/Product4291> .
+}
+
+SELECT ?v0 WHERE {
+	?v0 <http://db.uwaterloo.ca/~galuc/wsdbm/subscribes> <http://db.uwaterloo.ca/~galuc/wsdbm/Website179> .
+	?v0 <http://db.uwaterloo.ca/~galuc/wsdbm/likes> <http://db.uwaterloo.ca/~galuc/wsdbm/Product369> .
+}
+
+SELECT ?v0 WHERE {
+	?v0 <http://db.uwaterloo.ca/~galuc/wsdbm/subscribes> <http://db.uwaterloo.ca/~galuc/wsdbm/Website634> .
+	?v0 <http://db.uwaterloo.ca/~galuc/wsdbm/likes> <http://db.uwaterloo.ca/~galuc/wsdbm/Product4324> .
+}
+
+SELECT ?v0 WHERE {
+	?v0 <http://db.uwaterloo.ca/~galuc/wsdbm/subscribes> <http://db.uwaterloo.ca/~galuc/wsdbm/Website376> .
+	?v0 <http://db.uwaterloo.ca/~galuc/wsdbm/likes> <http://db.uwaterloo.ca/~galuc/wsdbm/Product283> .
+}
+
+SELECT ?v0 WHERE {
+	?v0 <http://db.uwaterloo.ca/~galuc/wsdbm/subscribes> <http://db.uwaterloo.ca/~galuc/wsdbm/Website321> .
+	?v0 <http://db.uwaterloo.ca/~galuc/wsdbm/likes> <http://db.uwaterloo.ca/~galuc/wsdbm/Product1> .
+}
+
+SELECT ?v0 WHERE {
+	?v0 <http://db.uwaterloo.ca/~galuc/wsdbm/subscribes> <http://db.uwaterloo.ca/~galuc/wsdbm/Website789> .
+	?v0 <http://db.uwaterloo.ca/~galuc/wsdbm/likes> <http://db.uwaterloo.ca/~galuc/wsdbm/Product1085> .
+}
+
+SELECT ?v0 WHERE {
+	?v0 <http://db.uwaterloo.ca/~galuc/wsdbm/subscribes> <http://db.uwaterloo.ca/~galuc/wsdbm/Website834> .
+	?v0 <http://db.uwaterloo.ca/~galuc/wsdbm/likes> <http://db.uwaterloo.ca/~galuc/wsdbm/Product123> .
+}
+
+SELECT ?v0 WHERE {
+	?v0 <http://db.uwaterloo.ca/~galuc/wsdbm/subscribes> <http://db.uwaterloo.ca/~galuc/wsdbm/Website931> .
+	?v0 <http://db.uwaterloo.ca/~galuc/wsdbm/likes> <http://db.uwaterloo.ca/~galuc/wsdbm/Product2390> .
+}
+
+SELECT ?v0 WHERE {
+	?v0 <http://db.uwaterloo.ca/~galuc/wsdbm/subscribes> <http://db.uwaterloo.ca/~galuc/wsdbm/Website717> .
+	?v0 <http://db.uwaterloo.ca/~galuc/wsdbm/likes> <http://db.uwaterloo.ca/~galuc/wsdbm/Product4708> .
+}
+
+SELECT ?v0 WHERE {
+	?v0 <http://db.uwaterloo.ca/~galuc/wsdbm/subscribes> <http://db.uwaterloo.ca/~galuc/wsdbm/Website44> .
+	?v0 <http://db.uwaterloo.ca/~galuc/wsdbm/likes> <http://db.uwaterloo.ca/~galuc/wsdbm/Product70> .
+}
+
+SELECT ?v0 WHERE {
+	?v0 <http://db.uwaterloo.ca/~galuc/wsdbm/subscribes> <http://db.uwaterloo.ca/~galuc/wsdbm/Website874> .
+	?v0 <http://db.uwaterloo.ca/~galuc/wsdbm/likes> <http://db.uwaterloo.ca/~galuc/wsdbm/Product4088> .
+}
+
+SELECT ?v0 WHERE {
+	?v0 <http://db.uwaterloo.ca/~galuc/wsdbm/subscribes> <http://db.uwaterloo.ca/~galuc/wsdbm/Website969> .
+	?v0 <http://db.uwaterloo.ca/~galuc/wsdbm/likes> <http://db.uwaterloo.ca/~galuc/wsdbm/Product4029> .
+}
+
+SELECT ?v0 WHERE {
+	?v0 <http://db.uwaterloo.ca/~galuc/wsdbm/subscribes> <http://db.uwaterloo.ca/~galuc/wsdbm/Website182> .
+	?v0 <http://db.uwaterloo.ca/~galuc/wsdbm/likes> <http://db.uwaterloo.ca/~galuc/wsdbm/Product3207> .
+}
+
+SELECT ?v0 WHERE {
+	?v0 <http://db.uwaterloo.ca/~galuc/wsdbm/subscribes> <http://db.uwaterloo.ca/~galuc/wsdbm/Website732> .
+	?v0 <http://db.uwaterloo.ca/~galuc/wsdbm/likes> <http://db.uwaterloo.ca/~galuc/wsdbm/Product3459> .
+}
+
+SELECT ?v0 WHERE {
+	?v0 <http://db.uwaterloo.ca/~galuc/wsdbm/subscribes> <http://db.uwaterloo.ca/~galuc/wsdbm/Website251> .
+	?v0 <http://db.uwaterloo.ca/~galuc/wsdbm/likes> <http://db.uwaterloo.ca/~galuc/wsdbm/Product4354> .
+}
+
+SELECT ?v0 WHERE {
+	?v0 <http://db.uwaterloo.ca/~galuc/wsdbm/subscribes> <http://db.uwaterloo.ca/~galuc/wsdbm/Website938> .
+	?v0 <http://db.uwaterloo.ca/~galuc/wsdbm/likes> <http://db.uwaterloo.ca/~galuc/wsdbm/Product4088> .
+}
+
+SELECT ?v0 WHERE {
+	?v0 <http://db.uwaterloo.ca/~galuc/wsdbm/subscribes> <http://db.uwaterloo.ca/~galuc/wsdbm/Website862> .
+	?v0 <http://db.uwaterloo.ca/~galuc/wsdbm/likes> <http://db.uwaterloo.ca/~galuc/wsdbm/Product3628> .
+}
+
+SELECT ?v0 WHERE {
+	?v0 <http://db.uwaterloo.ca/~galuc/wsdbm/subscribes> <http://db.uwaterloo.ca/~galuc/wsdbm/Website885> .
+	?v0 <http://db.uwaterloo.ca/~galuc/wsdbm/likes> <http://db.uwaterloo.ca/~galuc/wsdbm/Product2201> .
+}
+
+SELECT ?v0 WHERE {
+	?v0 <http://db.uwaterloo.ca/~galuc/wsdbm/subscribes> <http://db.uwaterloo.ca/~galuc/wsdbm/Website278> .
+	?v0 <http://db.uwaterloo.ca/~galuc/wsdbm/likes> <http://db.uwaterloo.ca/~galuc/wsdbm/Product4343> .
+}
+
+SELECT ?v0 WHERE {
+	?v0 <http://db.uwaterloo.ca/~galuc/wsdbm/subscribes> <http://db.uwaterloo.ca/~galuc/wsdbm/Website216> .
+	?v0 <http://db.uwaterloo.ca/~galuc/wsdbm/likes> <http://db.uwaterloo.ca/~galuc/wsdbm/Product1240> .
+}
+
+SELECT ?v0 WHERE {
+	?v0 <http://db.uwaterloo.ca/~galuc/wsdbm/subscribes> <http://db.uwaterloo.ca/~galuc/wsdbm/Website427> .
+	?v0 <http://db.uwaterloo.ca/~galuc/wsdbm/likes> <http://db.uwaterloo.ca/~galuc/wsdbm/Product552> .
+}
+
+SELECT ?v0 WHERE {
+	?v0 <http://db.uwaterloo.ca/~galuc/wsdbm/subscribes> <http://db.uwaterloo.ca/~galuc/wsdbm/Website545> .
+	?v0 <http://db.uwaterloo.ca/~galuc/wsdbm/likes> <http://db.uwaterloo.ca/~galuc/wsdbm/Product2> .
+}
+
+SELECT ?v0 WHERE {
+	?v0 <http://db.uwaterloo.ca/~galuc/wsdbm/subscribes> <http://db.uwaterloo.ca/~galuc/wsdbm/Website390> .
+	?v0 <http://db.uwaterloo.ca/~galuc/wsdbm/likes> <http://db.uwaterloo.ca/~galuc/wsdbm/Product4799> .
+}
+
+SELECT ?v0 WHERE {
+	?v0 <http://db.uwaterloo.ca/~galuc/wsdbm/subscribes> <http://db.uwaterloo.ca/~galuc/wsdbm/Website269> .
+	?v0 <http://db.uwaterloo.ca/~galuc/wsdbm/likes> <http://db.uwaterloo.ca/~galuc/wsdbm/Product4> .
+}
+
+SELECT ?v0 WHERE {
+	?v0 <http://db.uwaterloo.ca/~galuc/wsdbm/subscribes> <http://db.uwaterloo.ca/~galuc/wsdbm/Website397> .
+	?v0 <http://db.uwaterloo.ca/~galuc/wsdbm/likes> <http://db.uwaterloo.ca/~galuc/wsdbm/Product19> .
+}
+
+SELECT ?v0 WHERE {
+	?v0 <http://ogp.me/ns#tag> <http://db.uwaterloo.ca/~galuc/wsdbm/Topic14> .
+	?v0 <http://xmlns.com/foaf/homepage> <http://db.uwaterloo.ca/~galuc/wsdbm/Website130> }
+
+SELECT ?v0 WHERE {
+	?v0 <http://db.uwaterloo.ca/~galuc/wsdbm/subscribes> <http://db.uwaterloo.ca/~galuc/wsdbm/Website570> .
+	?v0 <http://db.uwaterloo.ca/~galuc/wsdbm/likes> <http://db.uwaterloo.ca/~galuc/wsdbm/Product39> .
+}
+
+SELECT ?v0 WHERE {
+	?v0 <http://db.uwaterloo.ca/~galuc/wsdbm/subscribes> <http://db.uwaterloo.ca/~galuc/wsdbm/Website907> .
+	?v0 <http://db.uwaterloo.ca/~galuc/wsdbm/likes> <http://db.uwaterloo.ca/~galuc/wsdbm/Product61> .
+}
+
+SELECT ?v0 WHERE {
+	?v0 <http://db.uwaterloo.ca/~galuc/wsdbm/subscribes> <http://db.uwaterloo.ca/~galuc/wsdbm/Website592> .
+	?v0 <http://db.uwaterloo.ca/~galuc/wsdbm/likes> <http://db.uwaterloo.ca/~galuc/wsdbm/Product700> .
+}
+
+SELECT ?v0 WHERE {
+	?v0 <http://db.uwaterloo.ca/~galuc/wsdbm/subscribes> <http://db.uwaterloo.ca/~galuc/wsdbm/Website783> .
+	?v0 <http://db.uwaterloo.ca/~galuc/wsdbm/likes> <http://db.uwaterloo.ca/~galuc/wsdbm/Product1490> .
+}
+
+SELECT ?v0 WHERE {
+	?v0 <http://db.uwaterloo.ca/~galuc/wsdbm/subscribes> <http://db.uwaterloo.ca/~galuc/wsdbm/Website486> .
+	?v0 <http://db.uwaterloo.ca/~galuc/wsdbm/likes> <http://db.uwaterloo.ca/~galuc/wsdbm/Product1556> .
+}
+
+SELECT ?v0 WHERE {
+	?v0 <http://db.uwaterloo.ca/~galuc/wsdbm/subscribes> <http://db.uwaterloo.ca/~galuc/wsdbm/Website849> .
+	?v0 <http://db.uwaterloo.ca/~galuc/wsdbm/likes> <http://db.uwaterloo.ca/~galuc/wsdbm/Product210> .
+}
+
+SELECT ?v0 WHERE {
+	?v0 <http://db.uwaterloo.ca/~galuc/wsdbm/subscribes> <http://db.uwaterloo.ca/~galuc/wsdbm/Website960> .
+	?v0 <http://db.uwaterloo.ca/~galuc/wsdbm/likes> <http://db.uwaterloo.ca/~galuc/wsdbm/Product4> .
+}
+
+SELECT ?v0 WHERE {
+	?v0 <http://db.uwaterloo.ca/~galuc/wsdbm/subscribes> <http://db.uwaterloo.ca/~galuc/wsdbm/Website781> .
+	?v0 <http://db.uwaterloo.ca/~galuc/wsdbm/likes> <http://db.uwaterloo.ca/~galuc/wsdbm/Product31> .
+}
+
+SELECT ?v0 WHERE {
+	?v0 <http://db.uwaterloo.ca/~galuc/wsdbm/subscribes> <http://db.uwaterloo.ca/~galuc/wsdbm/Website459> .
+	?v0 <http://db.uwaterloo.ca/~galuc/wsdbm/likes> <http://db.uwaterloo.ca/~galuc/wsdbm/Product3037> .
+}
+
+SELECT ?v0 WHERE {
+	?v0 <http://db.uwaterloo.ca/~galuc/wsdbm/subscribes> <http://db.uwaterloo.ca/~galuc/wsdbm/Website876> .
+	?v0 <http://db.uwaterloo.ca/~galuc/wsdbm/likes> <http://db.uwaterloo.ca/~galuc/wsdbm/Product1448> .
+}
+
+SELECT ?v0 WHERE {
+	?v0 <http://db.uwaterloo.ca/~galuc/wsdbm/subscribes> <http://db.uwaterloo.ca/~galuc/wsdbm/Website847> .
+	?v0 <http://db.uwaterloo.ca/~galuc/wsdbm/likes> <http://db.uwaterloo.ca/~galuc/wsdbm/Product1145> .
+}
+
+SELECT ?v0 WHERE {
+	?v0 <http://db.uwaterloo.ca/~galuc/wsdbm/subscribes> <http://db.uwaterloo.ca/~galuc/wsdbm/Website730> .
+	?v0 <http://db.uwaterloo.ca/~galuc/wsdbm/likes> <http://db.uwaterloo.ca/~galuc/wsdbm/Product254> .
+}
+
+SELECT ?v0 WHERE {
+	?v0 <http://db.uwaterloo.ca/~galuc/wsdbm/subscribes> <http://db.uwaterloo.ca/~galuc/wsdbm/Website386> .
+	?v0 <http://db.uwaterloo.ca/~galuc/wsdbm/likes> <http://db.uwaterloo.ca/~galuc/wsdbm/Product2553> .
+}
+
+SELECT ?v0 WHERE {
+	?v0 <http://purl.org/goodrelations/includes> <http://db.uwaterloo.ca/~galuc/wsdbm/Product2553> .
+}
+
+SELECT ?v0 WHERE {
+	?v0 <http://purl.org/goodrelations/includes> <http://db.uwaterloo.ca/~galuc/wsdbm/Product3883> .
+}
+
+SELECT ?v0 WHERE {
+	?v0 <http://purl.org/goodrelations/includes> <http://db.uwaterloo.ca/~galuc/wsdbm/Product3648> .
+}
+
+SELECT ?v0 WHERE {
+	?v0 <http://purl.org/goodrelations/includes> <http://db.uwaterloo.ca/~galuc/wsdbm/Product2743> .
+}
+
+SELECT ?v0 WHERE {
+	?v0 <http://purl.org/goodrelations/includes> <http://db.uwaterloo.ca/~galuc/wsdbm/Product2367> .
+}
+
+SELECT ?v0 WHERE {
+	?v0 <http://purl.org/goodrelations/includes> <http://db.uwaterloo.ca/~galuc/wsdbm/Product1122> .
+}
+
+SELECT ?v0 WHERE {
+	?v0 <http://purl.org/goodrelations/includes> <http://db.uwaterloo.ca/~galuc/wsdbm/Product3317> .
+}
+
+SELECT ?v0 WHERE {
+	?v0 <http://purl.org/goodrelations/includes> <http://db.uwaterloo.ca/~galuc/wsdbm/Product4876> .
+}
+
+SELECT ?v0 WHERE {
+	?v0 <http://purl.org/goodrelations/includes> <http://db.uwaterloo.ca/~galuc/wsdbm/Product4660> .
+}
+
+SELECT ?v0 WHERE {
+	?v0 <http://purl.org/goodrelations/includes> <http://db.uwaterloo.ca/~galuc/wsdbm/Product3802> .
+}
+
+SELECT ?v0 WHERE {
+	?v0 <http://purl.org/goodrelations/includes> <http://db.uwaterloo.ca/~galuc/wsdbm/Product3125> .
+}
+
+SELECT ?v0 WHERE {
+	?v0 <http://purl.org/goodrelations/includes> <http://db.uwaterloo.ca/~galuc/wsdbm/Product703> .
+}
+
+SELECT ?v0 WHERE {
+	?v0 <http://purl.org/goodrelations/includes> <http://db.uwaterloo.ca/~galuc/wsdbm/Product4630> .
+}
+
+SELECT ?v0 WHERE {
+	?v0 <http://purl.org/goodrelations/includes> <http://db.uwaterloo.ca/~galuc/wsdbm/Product2047> .
+}
+
+SELECT ?v0 WHERE {
+	?v0 <http://purl.org/goodrelations/includes> <http://db.uwaterloo.ca/~galuc/wsdbm/Product3100> .
+}
+
+SELECT ?v0 WHERE {
+	?v0 <http://purl.org/goodrelations/includes> <http://db.uwaterloo.ca/~galuc/wsdbm/Product4674> .
+}
+
+SELECT ?v0 WHERE {
+	?v0 <http://purl.org/goodrelations/includes> <http://db.uwaterloo.ca/~galuc/wsdbm/Product4961> .
+}
+
+SELECT ?v0 WHERE {
+	?v0 <http://purl.org/goodrelations/includes> <http://db.uwaterloo.ca/~galuc/wsdbm/Product2970> .
+}
+
+SELECT ?v0 WHERE {
+	?v0 <http://purl.org/goodrelations/includes> <http://db.uwaterloo.ca/~galuc/wsdbm/Product3032> .
+}
+
+SELECT ?v0 WHERE {
+	?v0 <http://purl.org/goodrelations/includes> <http://db.uwaterloo.ca/~galuc/wsdbm/Product4886> .
+}
+
+SELECT ?v0 WHERE {
+	?v0 <http://purl.org/goodrelations/includes> <http://db.uwaterloo.ca/~galuc/wsdbm/Product4352> .
+}
+
+SELECT ?v0 WHERE {
+	?v0 <http://purl.org/goodrelations/includes> <http://db.uwaterloo.ca/~galuc/wsdbm/Product4256> .
+}
+
+SELECT ?v0 WHERE {
+	?v0 <http://purl.org/goodrelations/includes> <http://db.uwaterloo.ca/~galuc/wsdbm/Product1364> .
+}
+
+SELECT ?v0 WHERE {
+	?v0 <http://purl.org/goodrelations/includes> <http://db.uwaterloo.ca/~galuc/wsdbm/Product4437> .
+}
+
+SELECT ?v0 WHERE {
+	?v0 <http://purl.org/goodrelations/includes> <http://db.uwaterloo.ca/~galuc/wsdbm/Product3072> .
+}
+
+SELECT ?v0 WHERE {
+	?v0 <http://purl.org/goodrelations/includes> <http://db.uwaterloo.ca/~galuc/wsdbm/Product701> .
+}
+
+SELECT ?v0 WHERE {
+	?v0 <http://purl.org/goodrelations/includes> <http://db.uwaterloo.ca/~galuc/wsdbm/Product3243> .
+}
+
+SELECT ?v0 WHERE {
+	?v0 <http://purl.org/goodrelations/includes> <http://db.uwaterloo.ca/~galuc/wsdbm/Product4070> .
+}
+
+SELECT ?v0 WHERE {
+	?v0 <http://purl.org/goodrelations/includes> <http://db.uwaterloo.ca/~galuc/wsdbm/Product2811> .
+}
+
+SELECT ?v0 WHERE {
+	?v0 <http://purl.org/goodrelations/includes> <http://db.uwaterloo.ca/~galuc/wsdbm/Product3404> .
+}
+
+SELECT ?v0 WHERE {
+	?v0 <http://purl.org/goodrelations/includes> <http://db.uwaterloo.ca/~galuc/wsdbm/Product3742> .
+}
+
+SELECT ?v0 WHERE {
+	?v0 <http://purl.org/goodrelations/includes> <http://db.uwaterloo.ca/~galuc/wsdbm/Product4330> .
+}
+
+SELECT ?v0 WHERE {
+	?v0 <http://purl.org/goodrelations/includes> <http://db.uwaterloo.ca/~galuc/wsdbm/Product3595> .
+}
+
+SELECT ?v0 WHERE {
+	?v0 <http://purl.org/goodrelations/includes> <http://db.uwaterloo.ca/~galuc/wsdbm/Product4277> .
+}
+
+SELECT ?v0 WHERE {
+	?v0 <http://purl.org/goodrelations/includes> <http://db.uwaterloo.ca/~galuc/wsdbm/Product2761> .
+}
+
+SELECT ?v0 WHERE {
+	?v0 <http://purl.org/goodrelations/includes> <http://db.uwaterloo.ca/~galuc/wsdbm/Product3603> .
+}
+
+SELECT ?v0 WHERE {
+	?v0 <http://purl.org/goodrelations/includes> <http://db.uwaterloo.ca/~galuc/wsdbm/Product2851> .
+}
+
+SELECT ?v0 WHERE {
+	?v0 <http://purl.org/goodrelations/includes> <http://db.uwaterloo.ca/~galuc/wsdbm/Product2796> .
+}
+
+SELECT ?v0 WHERE {
+	?v0 <http://purl.org/goodrelations/includes> <http://db.uwaterloo.ca/~galuc/wsdbm/Product4357> .
+}
+
+SELECT ?v0 WHERE {
+	?v0 <http://purl.org/goodrelations/includes> <http://db.uwaterloo.ca/~galuc/wsdbm/Product2592> .
+}
+
+SELECT ?v0 WHERE {
+	?v0 <http://purl.org/goodrelations/includes> <http://db.uwaterloo.ca/~galuc/wsdbm/Product4564> .
+}
+
+SELECT ?v0 WHERE {
+	?v0 <http://purl.org/goodrelations/includes> <http://db.uwaterloo.ca/~galuc/wsdbm/Product4409> .
+}
+
+SELECT ?v0 WHERE {
+	?v0 <http://purl.org/goodrelations/includes> <http://db.uwaterloo.ca/~galuc/wsdbm/Product1834> .
+}
+
+SELECT ?v0 WHERE {
+	?v0 <http://purl.org/goodrelations/includes> <http://db.uwaterloo.ca/~galuc/wsdbm/Product3907> .
+}
+
+SELECT ?v0 WHERE {
+	?v0 <http://purl.org/goodrelations/includes> <http://db.uwaterloo.ca/~galuc/wsdbm/Product4570> .
+}
+
+SELECT ?v0 WHERE {
+	?v0 <http://purl.org/goodrelations/includes> <http://db.uwaterloo.ca/~galuc/wsdbm/Product3248> .
+}
+
+SELECT ?v0 WHERE {
+	?v0 <http://purl.org/goodrelations/includes> <http://db.uwaterloo.ca/~galuc/wsdbm/Product4523> .
+}
+
+SELECT ?v0 WHERE {
+	?v0 <http://purl.org/goodrelations/includes> <http://db.uwaterloo.ca/~galuc/wsdbm/Product2686> .
+}
+
+SELECT ?v0 WHERE {
+	?v0 <http://purl.org/goodrelations/includes> <http://db.uwaterloo.ca/~galuc/wsdbm/Product3571> .
+}
+
+SELECT ?v0 WHERE {
+	?v0 <http://purl.org/goodrelations/includes> <http://db.uwaterloo.ca/~galuc/wsdbm/Product4408> .
+}
+
+SELECT ?v0 WHERE {
+	?v0 <http://purl.org/goodrelations/includes> <http://db.uwaterloo.ca/~galuc/wsdbm/Product3093> .
+}
+
+SELECT ?v0 WHERE {
+	?v0 <http://purl.org/goodrelations/includes> <http://db.uwaterloo.ca/~galuc/wsdbm/Product3651> .
+}
+
+SELECT ?v0 WHERE {
+	?v0 <http://purl.org/goodrelations/includes> <http://db.uwaterloo.ca/~galuc/wsdbm/Product4127> .
+}
+
+SELECT ?v0 WHERE {
+	?v0 <http://purl.org/goodrelations/includes> <http://db.uwaterloo.ca/~galuc/wsdbm/Product4841> .
+}
+
+SELECT ?v0 WHERE {
+	?v0 <http://purl.org/goodrelations/includes> <http://db.uwaterloo.ca/~galuc/wsdbm/Product3041> .
+}
+
+SELECT ?v0 WHERE {
+	?v0 <http://purl.org/goodrelations/includes> <http://db.uwaterloo.ca/~galuc/wsdbm/Product3895> .
+}
+
+SELECT ?v0 WHERE {
+	?v0 <http://purl.org/goodrelations/includes> <http://db.uwaterloo.ca/~galuc/wsdbm/Product4227> .
+}
+
+SELECT ?v0 WHERE {
+	?v0 <http://purl.org/goodrelations/includes> <http://db.uwaterloo.ca/~galuc/wsdbm/Product3638> .
+}
+
+SELECT ?v0 WHERE {
+	?v0 <http://purl.org/goodrelations/includes> <http://db.uwaterloo.ca/~galuc/wsdbm/Product4613> .
+}
+
+SELECT ?v0 WHERE {
+	?v0 <http://purl.org/goodrelations/includes> <http://db.uwaterloo.ca/~galuc/wsdbm/Product3002> .
+}
+
+SELECT ?v0 WHERE {
+	?v0 <http://purl.org/goodrelations/includes> <http://db.uwaterloo.ca/~galuc/wsdbm/Product4633> .
+}
+
+SELECT ?v0 WHERE {
+	?v0 <http://purl.org/goodrelations/includes> <http://db.uwaterloo.ca/~galuc/wsdbm/Product619> .
+}
+
+SELECT ?v0 WHERE {
+	?v0 <http://purl.org/goodrelations/includes> <http://db.uwaterloo.ca/~galuc/wsdbm/Product4543> .
+}
+
+SELECT ?v0 WHERE {
+	?v0 <http://purl.org/goodrelations/includes> <http://db.uwaterloo.ca/~galuc/wsdbm/Product3499> .
+}
+
+SELECT ?v0 WHERE {
+	?v0 <http://purl.org/goodrelations/includes> <http://db.uwaterloo.ca/~galuc/wsdbm/Product4061> .
+}
+
+SELECT ?v0 WHERE {
+	?v0 <http://purl.org/goodrelations/includes> <http://db.uwaterloo.ca/~galuc/wsdbm/Product2653> .
+}
+
+SELECT ?v0 WHERE {
+	?v0 <http://purl.org/goodrelations/includes> <http://db.uwaterloo.ca/~galuc/wsdbm/Product4442> .
+}
+
+SELECT ?v0 WHERE {
+	?v0 <http://purl.org/goodrelations/includes> <http://db.uwaterloo.ca/~galuc/wsdbm/Product4095> .
+}
+
+SELECT ?v0 WHERE {
+	?v0 <http://purl.org/goodrelations/includes> <http://db.uwaterloo.ca/~galuc/wsdbm/Product3708> .
+}
+
+SELECT ?v0 WHERE {
+	?v0 <http://purl.org/goodrelations/includes> <http://db.uwaterloo.ca/~galuc/wsdbm/Product4572> .
+}
+
+SELECT ?v0 WHERE {
+	?v0 <http://purl.org/goodrelations/includes> <http://db.uwaterloo.ca/~galuc/wsdbm/Product1214> .
+}
+
+SELECT ?v0 WHERE {
+	?v0 <http://purl.org/goodrelations/includes> <http://db.uwaterloo.ca/~galuc/wsdbm/Product4215> .
+}
+
+SELECT ?v0 WHERE {
+	?v0 <http://purl.org/goodrelations/includes> <http://db.uwaterloo.ca/~galuc/wsdbm/Product2559> .
+}
+
+SELECT ?v0 WHERE {
+	?v0 <http://purl.org/goodrelations/includes> <http://db.uwaterloo.ca/~galuc/wsdbm/Product3706> .
+}
+
+SELECT ?v0 WHERE {
+	?v0 <http://purl.org/goodrelations/includes> <http://db.uwaterloo.ca/~galuc/wsdbm/Product3838> .
+}
+
+SELECT ?v0 WHERE {
+	?v0 <http://purl.org/goodrelations/includes> <http://db.uwaterloo.ca/~galuc/wsdbm/Product2713> .
+}
+
+SELECT ?v0 WHERE {
+	?v0 <http://purl.org/goodrelations/includes> <http://db.uwaterloo.ca/~galuc/wsdbm/Product4147> .
+}
+
+SELECT ?v0 WHERE {
+	?v0 <http://purl.org/goodrelations/includes> <http://db.uwaterloo.ca/~galuc/wsdbm/Product3222> .
+}
+
+SELECT ?v0 WHERE {
+	?v0 <http://purl.org/goodrelations/includes> <http://db.uwaterloo.ca/~galuc/wsdbm/Product1753> .
+}
+
+SELECT ?v0 WHERE {
+	?v0 <http://purl.org/goodrelations/includes> <http://db.uwaterloo.ca/~galuc/wsdbm/Product3972> .
+}
+
+SELECT ?v0 WHERE {
+	?v0 <http://purl.org/goodrelations/includes> <http://db.uwaterloo.ca/~galuc/wsdbm/Product3442> .
+}
+
+SELECT ?v0 WHERE {
+	?v0 <http://purl.org/goodrelations/includes> <http://db.uwaterloo.ca/~galuc/wsdbm/Product3103> .
+}
+
+SELECT ?v0 WHERE {
+	?v0 <http://purl.org/goodrelations/includes> <http://db.uwaterloo.ca/~galuc/wsdbm/Product655> .
+}
+
+SELECT ?v0 WHERE {
+	?v0 <http://purl.org/goodrelations/includes> <http://db.uwaterloo.ca/~galuc/wsdbm/Product4977> .
+}
+
+SELECT ?v0 WHERE {
+	?v0 <http://purl.org/goodrelations/includes> <http://db.uwaterloo.ca/~galuc/wsdbm/Product4855> .
+}
+
+SELECT ?v0 WHERE {
+	?v0 <http://purl.org/goodrelations/includes> <http://db.uwaterloo.ca/~galuc/wsdbm/Product3111> .
+}
+
+SELECT ?v0 WHERE {
+	?v0 <http://purl.org/goodrelations/includes> <http://db.uwaterloo.ca/~galuc/wsdbm/Product3225> .
+}
+
+SELECT ?v0 WHERE {
+	?v0 <http://purl.org/goodrelations/includes> <http://db.uwaterloo.ca/~galuc/wsdbm/Product3328> .
+}
+
+SELECT ?v0 WHERE {
+	?v0 <http://purl.org/goodrelations/includes> <http://db.uwaterloo.ca/~galuc/wsdbm/Product4989> .
+}
+
+SELECT ?v0 WHERE {
+	?v0 <http://purl.org/goodrelations/includes> <http://db.uwaterloo.ca/~galuc/wsdbm/Product472> .
+}
+
+SELECT ?v0 WHERE {
+	?v0 <http://purl.org/goodrelations/includes> <http://db.uwaterloo.ca/~galuc/wsdbm/Product3358> .
+}
+
+SELECT ?v0 WHERE {
+	?v0 <http://purl.org/goodrelations/includes> <http://db.uwaterloo.ca/~galuc/wsdbm/Product3347> .
+}
+
+SELECT ?v0 WHERE {
+	?v0 <http://purl.org/goodrelations/includes> <http://db.uwaterloo.ca/~galuc/wsdbm/Product4338> .
+}
+
+SELECT ?v0 WHERE {
+	?v0 <http://purl.org/goodrelations/includes> <http://db.uwaterloo.ca/~galuc/wsdbm/Product4950> .
+}
+
+SELECT ?v0 WHERE {
+	?v0 <http://purl.org/goodrelations/includes> <http://db.uwaterloo.ca/~galuc/wsdbm/Product3544> .
+}
+
+SELECT ?v0 WHERE {
+	?v0 <http://purl.org/goodrelations/includes> <http://db.uwaterloo.ca/~galuc/wsdbm/Product4918> .
+}
+
+SELECT ?v0 WHERE {
+	?v0 <http://purl.org/goodrelations/includes> <http://db.uwaterloo.ca/~galuc/wsdbm/Product4709> .
+}
+
+SELECT ?v0 WHERE {
+	?v0 <http://purl.org/goodrelations/includes> <http://db.uwaterloo.ca/~galuc/wsdbm/Product4997> .
+}
+
+SELECT ?v0 WHERE {
+	?v0 <http://purl.org/goodrelations/includes> <http://db.uwaterloo.ca/~galuc/wsdbm/Product2812> .
+}
+
+SELECT ?v0 WHERE {
+	?v0 <http://purl.org/goodrelations/includes> <http://db.uwaterloo.ca/~galuc/wsdbm/Product4391> .
+}
+
+SELECT ?v0 WHERE {
+	?v0 <http://purl.org/goodrelations/includes> <http://db.uwaterloo.ca/~galuc/wsdbm/Product3280> .
+}
+
+SELECT ?v0 WHERE {
+	?v0 <http://purl.org/goodrelations/includes> <http://db.uwaterloo.ca/~galuc/wsdbm/Product3853> .
+}
+
+SELECT ?v0 WHERE {
+	?v0 <http://purl.org/goodrelations/includes> <http://db.uwaterloo.ca/~galuc/wsdbm/Product557> .
+}
+
+SELECT ?v0 WHERE {
+	?v0 <http://purl.org/goodrelations/includes> <http://db.uwaterloo.ca/~galuc/wsdbm/Product3086> .
+}
+
+SELECT ?v0 WHERE {
+	?v0 <http://purl.org/goodrelations/includes> <http://db.uwaterloo.ca/~galuc/wsdbm/Product2702> .
+}
+
+SELECT ?v0 WHERE {
+	?v0 <http://purl.org/goodrelations/includes> <http://db.uwaterloo.ca/~galuc/wsdbm/Product3407> .
+}
+
+SELECT ?v0 WHERE {
+	?v0 <http://purl.org/goodrelations/includes> <http://db.uwaterloo.ca/~galuc/wsdbm/Product4175> .
+}
+
+SELECT ?v0 WHERE {
+	?v0 <http://purl.org/goodrelations/includes> <http://db.uwaterloo.ca/~galuc/wsdbm/Product4562> .
+}
+
+SELECT ?v0 WHERE {
+	?v0 <http://purl.org/goodrelations/includes> <http://db.uwaterloo.ca/~galuc/wsdbm/Product3176> .
+}
+
+SELECT ?v0 WHERE {
+	?v0 <http://purl.org/goodrelations/includes> <http://db.uwaterloo.ca/~galuc/wsdbm/Product3324> .
+}
+
+SELECT ?v0 WHERE {
+	?v0 <http://purl.org/goodrelations/includes> <http://db.uwaterloo.ca/~galuc/wsdbm/Product2627> .
+}
+
+SELECT ?v0 WHERE {
+	?v0 <http://purl.org/goodrelations/includes> <http://db.uwaterloo.ca/~galuc/wsdbm/Product3765> .
+}
+
+SELECT ?v0 WHERE {
+	?v0 <http://purl.org/goodrelations/includes> <http://db.uwaterloo.ca/~galuc/wsdbm/Product4226> .
+}
+
+SELECT ?v0 WHERE {
+	?v0 <http://purl.org/goodrelations/includes> <http://db.uwaterloo.ca/~galuc/wsdbm/Product3333> .
+}
+
+SELECT ?v0 WHERE {
+	?v0 <http://purl.org/goodrelations/includes> <http://db.uwaterloo.ca/~galuc/wsdbm/Product4324> .
+}
+
+SELECT ?v0 WHERE {
+	?v0 <http://purl.org/goodrelations/includes> <http://db.uwaterloo.ca/~galuc/wsdbm/Product2847> .
+}
+
+SELECT ?v0 WHERE {
+	?v0 <http://purl.org/goodrelations/includes> <http://db.uwaterloo.ca/~galuc/wsdbm/Product4050> .
+}
+
+SELECT ?v0 WHERE {
+	?v0 <http://purl.org/goodrelations/includes> <http://db.uwaterloo.ca/~galuc/wsdbm/Product1570> .
+}
+
+SELECT ?v0 WHERE {
+	?v0 <http://purl.org/goodrelations/includes> <http://db.uwaterloo.ca/~galuc/wsdbm/Product3588> .
+}
+
+SELECT ?v0 WHERE {
+	?v0 <http://purl.org/goodrelations/includes> <http://db.uwaterloo.ca/~galuc/wsdbm/Product2199> .
+}
+
+SELECT ?v0 WHERE {
+	?v0 <http://purl.org/goodrelations/includes> <http://db.uwaterloo.ca/~galuc/wsdbm/Product3767> .
+}
+
+SELECT ?v0 WHERE {
+	?v0 <http://purl.org/goodrelations/includes> <http://db.uwaterloo.ca/~galuc/wsdbm/Product1797> .
+}
+
+SELECT ?v0 WHERE {
+	?v0 <http://purl.org/goodrelations/includes> <http://db.uwaterloo.ca/~galuc/wsdbm/Product3143> .
+}
+
+SELECT ?v0 WHERE {
+	?v0 <http://purl.org/goodrelations/includes> <http://db.uwaterloo.ca/~galuc/wsdbm/Product2731> .
+}
+
+SELECT ?v0 WHERE {
+	?v0 <http://purl.org/goodrelations/includes> <http://db.uwaterloo.ca/~galuc/wsdbm/Product4809> .
+}
+
+SELECT ?v0 WHERE {
+	?v0 <http://purl.org/goodrelations/includes> <http://db.uwaterloo.ca/~galuc/wsdbm/Product4217> .
+}
+
+SELECT ?v0 WHERE {
+	?v0 <http://purl.org/goodrelations/includes> <http://db.uwaterloo.ca/~galuc/wsdbm/Product3731> .
+}
+
+SELECT ?v0 WHERE {
+	?v0 <http://purl.org/goodrelations/includes> <http://db.uwaterloo.ca/~galuc/wsdbm/Product3717> .
+}
+
+SELECT ?v0 WHERE {
+	?v0 <http://purl.org/goodrelations/includes> <http://db.uwaterloo.ca/~galuc/wsdbm/Product2665> .
+}
+
+SELECT ?v0 WHERE {
+	?v0 <http://purl.org/goodrelations/includes> <http://db.uwaterloo.ca/~galuc/wsdbm/Product4486> .
+}
+
+SELECT ?v0 WHERE {
+	?v0 <http://purl.org/goodrelations/includes> <http://db.uwaterloo.ca/~galuc/wsdbm/Product3012> .
+}
+
+SELECT ?v0 WHERE {
+	?v0 <http://purl.org/goodrelations/includes> <http://db.uwaterloo.ca/~galuc/wsdbm/Product3457> .
+}
+
+SELECT ?v0 WHERE {
+	?v0 <http://purl.org/goodrelations/includes> <http://db.uwaterloo.ca/~galuc/wsdbm/Product3813> .
+}
+
+SELECT ?v0 WHERE {
+	?v0 <http://purl.org/goodrelations/includes> <http://db.uwaterloo.ca/~galuc/wsdbm/Product3526> .
+}
+
+SELECT ?v0 WHERE {
+	?v0 <http://purl.org/goodrelations/includes> <http://db.uwaterloo.ca/~galuc/wsdbm/Product3127> .
+}
+
+SELECT ?v0 WHERE {
+	?v0 <http://purl.org/goodrelations/includes> <http://db.uwaterloo.ca/~galuc/wsdbm/Product4954> .
+}
+
+SELECT ?v0 WHERE {
+	?v0 <http://purl.org/goodrelations/includes> <http://db.uwaterloo.ca/~galuc/wsdbm/Product3180> .
+}
+
+SELECT ?v0 WHERE {
+	?v0 <http://purl.org/goodrelations/includes> <http://db.uwaterloo.ca/~galuc/wsdbm/Product1284> .
+}
+
+SELECT ?v0 WHERE {
+	?v0 <http://purl.org/goodrelations/includes> <http://db.uwaterloo.ca/~galuc/wsdbm/Product366> .
+}
+
+SELECT ?v0 WHERE {
+	?v0 <http://purl.org/goodrelations/includes> <http://db.uwaterloo.ca/~galuc/wsdbm/Product3485> .
+}
+
+SELECT ?v0 WHERE {
+	?v0 <http://purl.org/goodrelations/includes> <http://db.uwaterloo.ca/~galuc/wsdbm/Product4287> .
+}
+
+SELECT ?v0 WHERE {
+	?v0 <http://purl.org/goodrelations/includes> <http://db.uwaterloo.ca/~galuc/wsdbm/Product4399> .
+}
+
+SELECT ?v0 WHERE {
+	?v0 <http://purl.org/goodrelations/includes> <http://db.uwaterloo.ca/~galuc/wsdbm/Product3005> .
+}
+
+SELECT ?v0 WHERE {
+	?v0 <http://purl.org/goodrelations/includes> <http://db.uwaterloo.ca/~galuc/wsdbm/Product2983> .
+}
+
+SELECT ?v0 WHERE {
+	?v0 <http://purl.org/goodrelations/includes> <http://db.uwaterloo.ca/~galuc/wsdbm/Product4840> .
+}
+
+SELECT ?v0 WHERE {
+	?v0 <http://purl.org/goodrelations/includes> <http://db.uwaterloo.ca/~galuc/wsdbm/Product4607> .
+}
+
+SELECT ?v0 WHERE {
+	?v0 <http://purl.org/goodrelations/includes> <http://db.uwaterloo.ca/~galuc/wsdbm/Product788> .
+}
+
+SELECT ?v0 WHERE {
+	?v0 <http://purl.org/goodrelations/includes> <http://db.uwaterloo.ca/~galuc/wsdbm/Product4210> .
+}
+
+SELECT ?v0 WHERE {
+	?v0 <http://purl.org/goodrelations/includes> <http://db.uwaterloo.ca/~galuc/wsdbm/Product3578> .
+}
+
+SELECT ?v0 WHERE {
+	?v0 <http://purl.org/goodrelations/includes> <http://db.uwaterloo.ca/~galuc/wsdbm/Product4389> .
+}
+
+SELECT ?v0 WHERE {
+	?v0 <http://purl.org/goodrelations/includes> <http://db.uwaterloo.ca/~galuc/wsdbm/Product3932> .
+}
+
+SELECT ?v0 WHERE {
+	?v0 <http://purl.org/goodrelations/includes> <http://db.uwaterloo.ca/~galuc/wsdbm/Product2403> .
+}
+
+SELECT ?v0 WHERE {
+	?v0 <http://purl.org/goodrelations/includes> <http://db.uwaterloo.ca/~galuc/wsdbm/Product4064> .
+}
+
+SELECT ?v0 WHERE {
+	?v0 <http://purl.org/goodrelations/includes> <http://db.uwaterloo.ca/~galuc/wsdbm/Product2678> .
+}
+
+SELECT ?v0 WHERE {
+	?v0 <http://purl.org/goodrelations/includes> <http://db.uwaterloo.ca/~galuc/wsdbm/Product3191> .
+}
+
+SELECT ?v0 WHERE {
+	?v0 <http://purl.org/goodrelations/includes> <http://db.uwaterloo.ca/~galuc/wsdbm/Product1361> .
+}
+
+SELECT ?v0 WHERE {
+	?v0 <http://purl.org/goodrelations/includes> <http://db.uwaterloo.ca/~galuc/wsdbm/Product1846> .
+}
+
+SELECT ?v0 WHERE {
+	?v0 <http://purl.org/goodrelations/includes> <http://db.uwaterloo.ca/~galuc/wsdbm/Product2145> .
+}
+
+SELECT ?v0 WHERE {
+	?v0 <http://purl.org/goodrelations/includes> <http://db.uwaterloo.ca/~galuc/wsdbm/Product2903> .
+}
+
+SELECT ?v0 WHERE {
+	?v0 <http://purl.org/goodrelations/includes> <http://db.uwaterloo.ca/~galuc/wsdbm/Product3772> .
+}
+
+SELECT ?v0 WHERE {
+	?v0 <http://purl.org/goodrelations/includes> <http://db.uwaterloo.ca/~galuc/wsdbm/Product3546> .
+}
+
+SELECT ?v0 WHERE {
+	?v0 <http://purl.org/goodrelations/includes> <http://db.uwaterloo.ca/~galuc/wsdbm/Product3239> .
+}
+
+SELECT ?v0 WHERE {
+	?v0 <http://purl.org/goodrelations/includes> <http://db.uwaterloo.ca/~galuc/wsdbm/Product4971> .
+}
+
+SELECT ?v0 WHERE {
+	?v0 <http://purl.org/goodrelations/includes> <http://db.uwaterloo.ca/~galuc/wsdbm/Product4587> .
+}
+
+SELECT ?v0 WHERE {
+	?v0 <http://purl.org/goodrelations/includes> <http://db.uwaterloo.ca/~galuc/wsdbm/Product1526> .
+}
+
+SELECT ?v0 WHERE {
+	?v0 <http://purl.org/goodrelations/includes> <http://db.uwaterloo.ca/~galuc/wsdbm/Product4382> .
+}
+
+SELECT ?v0 WHERE {
+	?v0 <http://purl.org/goodrelations/includes> <http://db.uwaterloo.ca/~galuc/wsdbm/Product4451> .
+}
+
+SELECT ?v0 WHERE {
+	?v0 <http://purl.org/goodrelations/includes> <http://db.uwaterloo.ca/~galuc/wsdbm/Product3721> .
+}
+
+SELECT ?v0 WHERE {
+	?v0 <http://purl.org/goodrelations/includes> <http://db.uwaterloo.ca/~galuc/wsdbm/Product4199> .
+}
+
+SELECT ?v0 WHERE {
+	?v0 <http://purl.org/goodrelations/includes> <http://db.uwaterloo.ca/~galuc/wsdbm/Product4824> .
+}
+
+SELECT ?v0 WHERE {
+	?v0 <http://purl.org/goodrelations/includes> <http://db.uwaterloo.ca/~galuc/wsdbm/Product4046> .
+}
+
+SELECT ?v0 WHERE {
+	?v0 <http://purl.org/goodrelations/includes> <http://db.uwaterloo.ca/~galuc/wsdbm/Product1682> .
+}
+
+SELECT ?v0 WHERE {
+	?v0 <http://purl.org/goodrelations/includes> <http://db.uwaterloo.ca/~galuc/wsdbm/Product3814> .
+}
+
+SELECT ?v0 WHERE {
+	?v0 <http://purl.org/goodrelations/includes> <http://db.uwaterloo.ca/~galuc/wsdbm/Product4238> .
+}
+
+SELECT ?v0 WHERE {
+	?v0 <http://purl.org/goodrelations/includes> <http://db.uwaterloo.ca/~galuc/wsdbm/Product4468> .
+}
+
+SELECT ?v0 WHERE {
+	?v0 <http://purl.org/goodrelations/includes> <http://db.uwaterloo.ca/~galuc/wsdbm/Product3310> .
+}
+
+SELECT ?v0 WHERE {
+	?v0 <http://purl.org/goodrelations/includes> <http://db.uwaterloo.ca/~galuc/wsdbm/Product1368> .
+}
+
+SELECT ?v0 WHERE {
+	?v0 <http://purl.org/goodrelations/includes> <http://db.uwaterloo.ca/~galuc/wsdbm/Product296> .
+}
+
+SELECT ?v0 WHERE {
+	?v0 <http://purl.org/goodrelations/includes> <http://db.uwaterloo.ca/~galuc/wsdbm/Product1607> .
+}
+
+SELECT ?v0 WHERE {
+	?v0 <http://purl.org/goodrelations/includes> <http://db.uwaterloo.ca/~galuc/wsdbm/Product4273> .
+}
+
+SELECT ?v0 WHERE {
+	?v0 <http://purl.org/goodrelations/includes> <http://db.uwaterloo.ca/~galuc/wsdbm/Product2781> .
+}
+
+SELECT ?v0 WHERE {
+	?v0 <http://purl.org/goodrelations/includes> <http://db.uwaterloo.ca/~galuc/wsdbm/Product2754> .
+}
+
+SELECT ?v0 WHERE {
+	?v0 <http://purl.org/goodrelations/includes> <http://db.uwaterloo.ca/~galuc/wsdbm/Product1321> .
+}
+
+SELECT ?v0 WHERE {
+	?v0 <http://purl.org/goodrelations/includes> <http://db.uwaterloo.ca/~galuc/wsdbm/Product3834> .
+}
+
+SELECT ?v0 WHERE {
+	?v0 <http://purl.org/goodrelations/includes> <http://db.uwaterloo.ca/~galuc/wsdbm/Product2826> .
+}
+
+SELECT ?v0 WHERE {
+	?v0 <http://purl.org/goodrelations/includes> <http://db.uwaterloo.ca/~galuc/wsdbm/Product3141> .
+}
+
+SELECT ?v0 WHERE {
+	?v0 <http://purl.org/goodrelations/includes> <http://db.uwaterloo.ca/~galuc/wsdbm/Product4679> .
+}
+
+SELECT ?v0 WHERE {
+	?v0 <http://purl.org/goodrelations/includes> <http://db.uwaterloo.ca/~galuc/wsdbm/Product4768> .
+}
+
+SELECT ?v0 WHERE {
+	?v0 <http://purl.org/goodrelations/includes> <http://db.uwaterloo.ca/~galuc/wsdbm/Product3818> .
+}
+
+SELECT ?v0 WHERE {
+	?v0 <http://purl.org/goodrelations/includes> <http://db.uwaterloo.ca/~galuc/wsdbm/Product2432> .
+}
+
+SELECT ?v0 WHERE {
+	?v0 <http://purl.org/goodrelations/includes> <http://db.uwaterloo.ca/~galuc/wsdbm/Product3952> .
+}
+
+SELECT ?v0 WHERE {
+	?v0 <http://purl.org/goodrelations/includes> <http://db.uwaterloo.ca/~galuc/wsdbm/Product4114> .
+}
+
+SELECT ?v0 WHERE {
+	?v0 <http://purl.org/goodrelations/includes> <http://db.uwaterloo.ca/~galuc/wsdbm/Product866> .
+}
+
+SELECT ?v0 WHERE {
+	?v0 <http://purl.org/goodrelations/includes> <http://db.uwaterloo.ca/~galuc/wsdbm/Product511> .
+}
+
+SELECT ?v0 WHERE {
+	?v0 <http://purl.org/goodrelations/includes> <http://db.uwaterloo.ca/~galuc/wsdbm/Product2993> .
+}
+
+SELECT ?v0 WHERE {
+	?v0 <http://purl.org/goodrelations/includes> <http://db.uwaterloo.ca/~galuc/wsdbm/Product4105> .
+}
+
+SELECT ?v0 WHERE {
+	?v0 <http://purl.org/goodrelations/includes> <http://db.uwaterloo.ca/~galuc/wsdbm/Product497> .
+}
+
+SELECT ?v0 WHERE {
+	?v0 <http://purl.org/goodrelations/includes> <http://db.uwaterloo.ca/~galuc/wsdbm/Product3739> .
+}
+
+SELECT ?v0 WHERE {
+	?v0 <http://purl.org/goodrelations/includes> <http://db.uwaterloo.ca/~galuc/wsdbm/Product3273> .
+}
+
+SELECT ?v0 WHERE {
+	?v0 <http://purl.org/goodrelations/includes> <http://db.uwaterloo.ca/~galuc/wsdbm/Product3845> .
+}
+
+SELECT ?v0 WHERE {
+	?v0 <http://purl.org/goodrelations/includes> <http://db.uwaterloo.ca/~galuc/wsdbm/Product3013> .
+}
+
+SELECT ?v0 WHERE {
+	?v0 <http://purl.org/goodrelations/includes> <http://db.uwaterloo.ca/~galuc/wsdbm/Product4444> .
+}
+
+SELECT ?v0 WHERE {
+	?v0 <http://purl.org/goodrelations/includes> <http://db.uwaterloo.ca/~galuc/wsdbm/Product4761> .
+}
+
+SELECT ?v0 WHERE {
+	?v0 <http://purl.org/goodrelations/includes> <http://db.uwaterloo.ca/~galuc/wsdbm/Product3098> .
+}
+
+SELECT ?v0 WHERE {
+	?v0 <http://purl.org/goodrelations/includes> <http://db.uwaterloo.ca/~galuc/wsdbm/Product3152> .
+}
+
+SELECT ?v0 WHERE {
+	?v0 <http://purl.org/goodrelations/includes> <http://db.uwaterloo.ca/~galuc/wsdbm/Product4510> .
+}
+
+SELECT ?v0 WHERE {
+	?v0 <http://purl.org/goodrelations/includes> <http://db.uwaterloo.ca/~galuc/wsdbm/Product2791> .
+}
+
+SELECT ?v0 WHERE {
+	?v0 <http://purl.org/goodrelations/includes> <http://db.uwaterloo.ca/~galuc/wsdbm/Product179> .
+}
+
+SELECT ?v0 WHERE {
+	?v0 <http://purl.org/goodrelations/includes> <http://db.uwaterloo.ca/~galuc/wsdbm/Product4004> .
+}
+
+SELECT ?v0 WHERE {
+	?v0 <http://purl.org/goodrelations/includes> <http://db.uwaterloo.ca/~galuc/wsdbm/Product3004> .
+}
+
+SELECT ?v0 WHERE {
+	?v0 <http://purl.org/goodrelations/includes> <http://db.uwaterloo.ca/~galuc/wsdbm/Product4276> .
+}
+
+SELECT ?v0 WHERE {
+	?v0 <http://purl.org/goodrelations/includes> <http://db.uwaterloo.ca/~galuc/wsdbm/Product2316> .
+}
+
+SELECT ?v0 WHERE {
+	?v0 <http://purl.org/goodrelations/includes> <http://db.uwaterloo.ca/~galuc/wsdbm/Product3079> .
+}
+
+SELECT ?v0 WHERE {
+	?v0 <http://purl.org/goodrelations/includes> <http://db.uwaterloo.ca/~galuc/wsdbm/Product4438> .
+}
+
+SELECT ?v0 WHERE {
+	?v0 <http://purl.org/goodrelations/includes> <http://db.uwaterloo.ca/~galuc/wsdbm/Product3520> .
+}
+
+SELECT ?v0 WHERE {
+	?v0 <http://purl.org/goodrelations/includes> <http://db.uwaterloo.ca/~galuc/wsdbm/Product2766> .
+}
+
+SELECT ?v0 WHERE {
+	?v0 <http://purl.org/goodrelations/includes> <http://db.uwaterloo.ca/~galuc/wsdbm/Product3519> .
+}
+
+SELECT ?v0 WHERE {
+	?v0 <http://purl.org/goodrelations/includes> <http://db.uwaterloo.ca/~galuc/wsdbm/Product4515> .
+}
+
+SELECT ?v0 WHERE {
+	?v0 <http://purl.org/goodrelations/includes> <http://db.uwaterloo.ca/~galuc/wsdbm/Product1992> .
+}
+
+SELECT ?v0 WHERE {
+	?v0 <http://purl.org/goodrelations/includes> <http://db.uwaterloo.ca/~galuc/wsdbm/Product623> .
+}
+
+SELECT ?v0 WHERE {
+	?v0 <http://purl.org/goodrelations/includes> <http://db.uwaterloo.ca/~galuc/wsdbm/Product3977> .
+}
+
+SELECT ?v0 WHERE {
+	?v0 <http://purl.org/goodrelations/includes> <http://db.uwaterloo.ca/~galuc/wsdbm/Product1141> .
+}
+
+SELECT ?v0 WHERE {
+	?v0 <http://purl.org/goodrelations/includes> <http://db.uwaterloo.ca/~galuc/wsdbm/Product4696> .
+}
+
+SELECT ?v0 WHERE {
+	?v0 <http://purl.org/goodrelations/includes> <http://db.uwaterloo.ca/~galuc/wsdbm/Product3192> .
+}
+
+SELECT ?v0 WHERE {
+	?v0 <http://purl.org/goodrelations/includes> <http://db.uwaterloo.ca/~galuc/wsdbm/Product3429> .
+}
+
+SELECT ?v0 WHERE {
+	?v0 <http://purl.org/goodrelations/includes> <http://db.uwaterloo.ca/~galuc/wsdbm/Product1945> .
+}
+
+SELECT ?v0 WHERE {
+	?v0 <http://purl.org/goodrelations/includes> <http://db.uwaterloo.ca/~galuc/wsdbm/Product397> .
+}
+
+SELECT ?v0 WHERE {
+	?v0 <http://purl.org/goodrelations/includes> <http://db.uwaterloo.ca/~galuc/wsdbm/Product522> .
+}
+
+SELECT ?v0 WHERE {
+	?v0 <http://purl.org/goodrelations/includes> <http://db.uwaterloo.ca/~galuc/wsdbm/Product4067> .
+}
+
+SELECT ?v0 WHERE {
+	?v0 <http://purl.org/goodrelations/includes> <http://db.uwaterloo.ca/~galuc/wsdbm/Product3252> .
+}
+
+SELECT ?v0 WHERE {
+	?v0 <http://purl.org/goodrelations/includes> <http://db.uwaterloo.ca/~galuc/wsdbm/Product4527> .
+}
+
+SELECT ?v0 WHERE {
+	?v0 <http://purl.org/goodrelations/includes> <http://db.uwaterloo.ca/~galuc/wsdbm/Product2041> .
+}
+
+SELECT ?v0 WHERE {
+	?v0 <http://purl.org/goodrelations/includes> <http://db.uwaterloo.ca/~galuc/wsdbm/Product2860> .
+}
+
+SELECT ?v0 WHERE {
+	?v0 <http://purl.org/goodrelations/includes> <http://db.uwaterloo.ca/~galuc/wsdbm/Product3664> .
+}
+
+SELECT ?v0 WHERE {
+	?v0 <http://purl.org/goodrelations/includes> <http://db.uwaterloo.ca/~galuc/wsdbm/Product3028> .
+}
+
+SELECT ?v0 WHERE {
+	?v0 <http://purl.org/goodrelations/includes> <http://db.uwaterloo.ca/~galuc/wsdbm/Product2661> .
+}
+
+SELECT ?v0 WHERE {
+	?v0 <http://purl.org/goodrelations/includes> <http://db.uwaterloo.ca/~galuc/wsdbm/Product4833> .
+}
+
+SELECT ?v0 WHERE {
+	?v0 <http://purl.org/goodrelations/includes> <http://db.uwaterloo.ca/~galuc/wsdbm/Product4310> .
+}
+
+SELECT ?v0 WHERE {
+	?v0 <http://purl.org/goodrelations/includes> <http://db.uwaterloo.ca/~galuc/wsdbm/Product986> .
+}
+
+SELECT ?v0 WHERE {
+	?v0 <http://purl.org/goodrelations/includes> <http://db.uwaterloo.ca/~galuc/wsdbm/Product3443> .
+}
+
+SELECT ?v0 WHERE {
+	?v0 <http://purl.org/goodrelations/includes> <http://db.uwaterloo.ca/~galuc/wsdbm/Product4609> .
+}
+
+SELECT ?v0 WHERE {
+	?v0 <http://purl.org/goodrelations/includes> <http://db.uwaterloo.ca/~galuc/wsdbm/Product2884> .
+}
+
+SELECT ?v0 WHERE {
+	?v0 <http://purl.org/goodrelations/includes> <http://db.uwaterloo.ca/~galuc/wsdbm/Product4164> .
+}
+
+SELECT ?v0 WHERE {
+	?v0 <http://purl.org/goodrelations/includes> <http://db.uwaterloo.ca/~galuc/wsdbm/Product1168> .
+}
+
+SELECT ?v0 WHERE {
+	?v0 <http://purl.org/goodrelations/includes> <http://db.uwaterloo.ca/~galuc/wsdbm/Product3824> .
+}
+
+SELECT ?v0 WHERE {
+	?v0 <http://purl.org/goodrelations/includes> <http://db.uwaterloo.ca/~galuc/wsdbm/Product3507> .
+}
+
+SELECT ?v0 WHERE {
+	?v0 <http://purl.org/goodrelations/includes> <http://db.uwaterloo.ca/~galuc/wsdbm/Product1501> .
+}
+
+SELECT ?v0 WHERE {
+	?v0 <http://purl.org/goodrelations/includes> <http://db.uwaterloo.ca/~galuc/wsdbm/Product3250> .
+}
+
+SELECT ?v0 WHERE {
+	?v0 <http://purl.org/goodrelations/includes> <http://db.uwaterloo.ca/~galuc/wsdbm/Product3728> .
+}
+
+SELECT ?v0 WHERE {
+	?v0 <http://purl.org/goodrelations/includes> <http://db.uwaterloo.ca/~galuc/wsdbm/Product2949> .
+}
+
+SELECT ?v0 WHERE {
+	?v0 <http://purl.org/goodrelations/includes> <http://db.uwaterloo.ca/~galuc/wsdbm/Product2764> .
+}
+
+SELECT ?v0 WHERE {
+	?v0 <http://purl.org/goodrelations/includes> <http://db.uwaterloo.ca/~galuc/wsdbm/Product3593> .
+}
+
+SELECT ?v0 WHERE {
+	?v0 <http://purl.org/goodrelations/includes> <http://db.uwaterloo.ca/~galuc/wsdbm/Product3493> .
+}
+
+SELECT ?v0 WHERE {
+	?v0 <http://purl.org/goodrelations/includes> <http://db.uwaterloo.ca/~galuc/wsdbm/Product3609> .
+}
+
+SELECT ?v0 WHERE {
+	?v0 <http://purl.org/goodrelations/includes> <http://db.uwaterloo.ca/~galuc/wsdbm/Product848> .
+}
+
+SELECT ?v0 WHERE {
+	?v0 <http://purl.org/goodrelations/includes> <http://db.uwaterloo.ca/~galuc/wsdbm/Product3173> .
+}
+
+SELECT ?v0 WHERE {
+	?v0 <http://purl.org/goodrelations/includes> <http://db.uwaterloo.ca/~galuc/wsdbm/Product4888> .
+}
+
+SELECT ?v0 WHERE {
+	?v0 <http://purl.org/goodrelations/includes> <http://db.uwaterloo.ca/~galuc/wsdbm/Product2918> .
+}
+
+SELECT ?v0 WHERE {
+	?v0 <http://purl.org/goodrelations/includes> <http://db.uwaterloo.ca/~galuc/wsdbm/Product1745> .
+}
+
+SELECT ?v0 WHERE {
+	?v0 <http://purl.org/goodrelations/includes> <http://db.uwaterloo.ca/~galuc/wsdbm/Product4252> .
+}
+
+SELECT ?v0 WHERE {
+	?v0 <http://purl.org/goodrelations/includes> <http://db.uwaterloo.ca/~galuc/wsdbm/Product4652> .
+}
+
+SELECT ?v0 WHERE {
+	?v0 <http://purl.org/goodrelations/includes> <http://db.uwaterloo.ca/~galuc/wsdbm/Product2641> .
+}
+
+SELECT ?v0 WHERE {
+	?v0 <http://purl.org/goodrelations/includes> <http://db.uwaterloo.ca/~galuc/wsdbm/Product4986> .
+}
+
+SELECT ?v0 WHERE {
+	?v0 <http://purl.org/goodrelations/includes> <http://db.uwaterloo.ca/~galuc/wsdbm/Product3341> .
+}
+
+SELECT ?v0 WHERE {
+	?v0 <http://purl.org/goodrelations/includes> <http://db.uwaterloo.ca/~galuc/wsdbm/Product3046> .
+}
+
+SELECT ?v0 WHERE {
+	?v0 <http://purl.org/goodrelations/includes> <http://db.uwaterloo.ca/~galuc/wsdbm/Product4580> .
+}
+
+SELECT ?v0 WHERE {
+	?v0 <http://purl.org/goodrelations/includes> <http://db.uwaterloo.ca/~galuc/wsdbm/Product2940> .
+}
+
+SELECT ?v0 WHERE {
+	?v0 <http://purl.org/goodrelations/includes> <http://db.uwaterloo.ca/~galuc/wsdbm/Product2937> .
+}
+
+SELECT ?v0 WHERE {
+	?v0 <http://purl.org/goodrelations/includes> <http://db.uwaterloo.ca/~galuc/wsdbm/Product4159> .
+}
+
+SELECT ?v0 WHERE {
+	?v0 <http://purl.org/goodrelations/includes> <http://db.uwaterloo.ca/~galuc/wsdbm/Product4590> .
+}
+
+SELECT ?v0 WHERE {
+	?v0 <http://purl.org/goodrelations/includes> <http://db.uwaterloo.ca/~galuc/wsdbm/Product4782> .
+}
+
+SELECT ?v0 WHERE {
+	?v0 <http://purl.org/goodrelations/includes> <http://db.uwaterloo.ca/~galuc/wsdbm/Product4555> .
+}
+
+SELECT ?v0 WHERE {
+	?v0 <http://purl.org/goodrelations/includes> <http://db.uwaterloo.ca/~galuc/wsdbm/Product4361> .
+}
+
+SELECT ?v0 WHERE {
+	?v0 <http://purl.org/goodrelations/includes> <http://db.uwaterloo.ca/~galuc/wsdbm/Product2991> .
+}
+
+SELECT ?v0 WHERE {
+	?v0 <http://purl.org/goodrelations/includes> <http://db.uwaterloo.ca/~galuc/wsdbm/Product3743> .
+}
+
+SELECT ?v0 WHERE {
+	?v0 <http://purl.org/goodrelations/includes> <http://db.uwaterloo.ca/~galuc/wsdbm/Product2698> .
+}
+
+SELECT ?v0 WHERE {
+	?v0 <http://purl.org/goodrelations/includes> <http://db.uwaterloo.ca/~galuc/wsdbm/Product3360> .
+}
+
+SELECT ?v0 WHERE {
+	?v0 <http://purl.org/goodrelations/includes> <http://db.uwaterloo.ca/~galuc/wsdbm/Product1260> .
+}
+
+SELECT ?v0 WHERE {
+	?v0 <http://purl.org/goodrelations/includes> <http://db.uwaterloo.ca/~galuc/wsdbm/Product1001> .
+}
+
+SELECT ?v0 WHERE {
+	?v0 <http://purl.org/goodrelations/includes> <http://db.uwaterloo.ca/~galuc/wsdbm/Product4540> .
+}
+
+SELECT ?v0 WHERE {
+	?v0 <http://purl.org/goodrelations/includes> <http://db.uwaterloo.ca/~galuc/wsdbm/Product4906> .
+}
+
+SELECT ?v0 WHERE {
+	?v0 <http://purl.org/goodrelations/includes> <http://db.uwaterloo.ca/~galuc/wsdbm/Product1252> .
+}
+
+SELECT ?v0 WHERE {
+	?v0 <http://purl.org/goodrelations/includes> <http://db.uwaterloo.ca/~galuc/wsdbm/Product2873> .
+}
+
+SELECT ?v0 WHERE {
+	?v0 <http://purl.org/goodrelations/includes> <http://db.uwaterloo.ca/~galuc/wsdbm/Product4926> .
+}
+
+SELECT ?v0 WHERE {
+	?v0 <http://purl.org/goodrelations/includes> <http://db.uwaterloo.ca/~galuc/wsdbm/Product1554> .
+}
+
+SELECT ?v0 WHERE {
+	?v0 <http://purl.org/goodrelations/includes> <http://db.uwaterloo.ca/~galuc/wsdbm/Product4736> .
+}
+
+SELECT ?v0 WHERE {
+	?v0 <http://purl.org/goodrelations/includes> <http://db.uwaterloo.ca/~galuc/wsdbm/Product2736> .
+}
+
+SELECT ?v0 WHERE {
+	?v0 <http://purl.org/goodrelations/includes> <http://db.uwaterloo.ca/~galuc/wsdbm/Product3431> .
+}
+
+SELECT ?v0 WHERE {
+	?v0 <http://purl.org/goodrelations/includes> <http://db.uwaterloo.ca/~galuc/wsdbm/Product3044> .
+}
+
+SELECT ?v0 WHERE {
+	?v0 <http://purl.org/goodrelations/includes> <http://db.uwaterloo.ca/~galuc/wsdbm/Product4713> .
+}
+
+SELECT ?v0 WHERE {
+	?v0 <http://purl.org/goodrelations/includes> <http://db.uwaterloo.ca/~galuc/wsdbm/Product4574> .
+}
+
+SELECT ?v0 WHERE {
+	?v0 <http://purl.org/goodrelations/includes> <http://db.uwaterloo.ca/~galuc/wsdbm/Product4332> .
+}
+
+SELECT ?v0 WHERE {
+	?v0 <http://purl.org/goodrelations/includes> <http://db.uwaterloo.ca/~galuc/wsdbm/Product2988> .
+}
+
+SELECT ?v0 WHERE {
+	?v0 <http://purl.org/goodrelations/includes> <http://db.uwaterloo.ca/~galuc/wsdbm/Product4453> .
+}
+
+SELECT ?v0 WHERE {
+	?v0 <http://purl.org/goodrelations/includes> <http://db.uwaterloo.ca/~galuc/wsdbm/Product3226> .
+}
+
+SELECT ?v0 WHERE {
+	?v0 <http://purl.org/goodrelations/includes> <http://db.uwaterloo.ca/~galuc/wsdbm/Product4042> .
+}
+
+SELECT ?v0 WHERE {
+	?v0 <http://purl.org/goodrelations/includes> <http://db.uwaterloo.ca/~galuc/wsdbm/Product3612> .
+}
+
+SELECT ?v0 WHERE {
+	?v0 <http://purl.org/goodrelations/includes> <http://db.uwaterloo.ca/~galuc/wsdbm/Product4578> .
+}
+
+SELECT ?v0 WHERE {
+	?v0 <http://purl.org/goodrelations/includes> <http://db.uwaterloo.ca/~galuc/wsdbm/Product4740> .
+}
+
+SELECT ?v0 WHERE {
+	?v0 <http://purl.org/goodrelations/includes> <http://db.uwaterloo.ca/~galuc/wsdbm/Product4828> .
+}
+
+SELECT ?v0 WHERE {
+	?v0 <http://purl.org/goodrelations/includes> <http://db.uwaterloo.ca/~galuc/wsdbm/Product4868> .
+}
+
+SELECT ?v0 WHERE {
+	?v0 <http://purl.org/goodrelations/includes> <http://db.uwaterloo.ca/~galuc/wsdbm/Product344> .
+}
+
+SELECT ?v0 WHERE {
+	?v0 <http://purl.org/goodrelations/includes> <http://db.uwaterloo.ca/~galuc/wsdbm/Product2652> .
+}
+
+SELECT ?v0 WHERE {
+	?v0 <http://purl.org/goodrelations/includes> <http://db.uwaterloo.ca/~galuc/wsdbm/Product3618> .
+}
+
+SELECT ?v0 WHERE {
+	?v0 <http://purl.org/goodrelations/includes> <http://db.uwaterloo.ca/~galuc/wsdbm/Product3039> .
+}
+
+SELECT ?v0 WHERE {
+	?v0 <http://purl.org/goodrelations/includes> <http://db.uwaterloo.ca/~galuc/wsdbm/Product4045> .
+}
+
+SELECT ?v0 WHERE {
+	?v0 <http://purl.org/goodrelations/includes> <http://db.uwaterloo.ca/~galuc/wsdbm/Product955> .
+}
+
+SELECT ?v0 WHERE {
+	?v0 <http://purl.org/goodrelations/includes> <http://db.uwaterloo.ca/~galuc/wsdbm/Product4799> .
+}
+
+SELECT ?v0 WHERE {
+	?v0 <http://purl.org/goodrelations/includes> <http://db.uwaterloo.ca/~galuc/wsdbm/Product3876> .
+}
+
+SELECT ?v0 WHERE {
+	?v0 <http://purl.org/goodrelations/includes> <http://db.uwaterloo.ca/~galuc/wsdbm/Product3264> .
+}
+
+SELECT ?v0 WHERE {
+	?v0 <http://purl.org/goodrelations/includes> <http://db.uwaterloo.ca/~galuc/wsdbm/Product3231> .
+}
+
+SELECT ?v0 WHERE {
+	?v0 <http://purl.org/goodrelations/includes> <http://db.uwaterloo.ca/~galuc/wsdbm/Product2514> .
+}
+
+SELECT ?v0 WHERE {
+	?v0 <http://purl.org/goodrelations/includes> <http://db.uwaterloo.ca/~galuc/wsdbm/Product3949> .
+}
+
+SELECT ?v0 WHERE {
+	?v0 <http://purl.org/goodrelations/includes> <http://db.uwaterloo.ca/~galuc/wsdbm/Product4864> .
+}
+
+SELECT ?v0 WHERE {
+	?v0 <http://purl.org/goodrelations/includes> <http://db.uwaterloo.ca/~galuc/wsdbm/Product4234> .
+}
+
+SELECT ?v0 WHERE {
+	?v0 <http://purl.org/goodrelations/includes> <http://db.uwaterloo.ca/~galuc/wsdbm/Product3801> .
+}
+
+SELECT ?v0 WHERE {
+	?v0 <http://purl.org/goodrelations/includes> <http://db.uwaterloo.ca/~galuc/wsdbm/Product3470> .
+}
+
+SELECT ?v0 WHERE {
+	?v0 <http://purl.org/goodrelations/includes> <http://db.uwaterloo.ca/~galuc/wsdbm/Product2722> .
+}
+
+SELECT ?v0 WHERE {
+	?v0 <http://purl.org/goodrelations/includes> <http://db.uwaterloo.ca/~galuc/wsdbm/Product4900> .
+}
+
+SELECT ?v0 WHERE {
+	?v0 <http://purl.org/goodrelations/includes> <http://db.uwaterloo.ca/~galuc/wsdbm/Product4866> .
+}
+
+SELECT ?v0 WHERE {
+	?v0 <http://purl.org/goodrelations/includes> <http://db.uwaterloo.ca/~galuc/wsdbm/Product3232> .
+}
+
+SELECT ?v0 WHERE {
+	?v0 <http://purl.org/goodrelations/includes> <http://db.uwaterloo.ca/~galuc/wsdbm/Product4619> .
+}
+
+SELECT ?v0 WHERE {
+	?v0 <http://purl.org/goodrelations/includes> <http://db.uwaterloo.ca/~galuc/wsdbm/Product3768> .
+}
+
+SELECT ?v0 WHERE {
+	?v0 <http://purl.org/goodrelations/includes> <http://db.uwaterloo.ca/~galuc/wsdbm/Product3686> .
+}
+
+SELECT ?v0 WHERE {
+	?v0 <http://purl.org/goodrelations/includes> <http://db.uwaterloo.ca/~galuc/wsdbm/Product2962> .
+}
+
+SELECT ?v0 WHERE {
+	?v0 <http://purl.org/goodrelations/includes> <http://db.uwaterloo.ca/~galuc/wsdbm/Product871> .
+}
+
+SELECT ?v0 WHERE {
+	?v0 <http://purl.org/goodrelations/includes> <http://db.uwaterloo.ca/~galuc/wsdbm/Product3676> .
+}
+
+SELECT ?v0 WHERE {
+	?v0 <http://purl.org/goodrelations/includes> <http://db.uwaterloo.ca/~galuc/wsdbm/Product3464> .
+}
+
+SELECT ?v0 WHERE {
+	?v0 <http://purl.org/goodrelations/includes> <http://db.uwaterloo.ca/~galuc/wsdbm/Product1879> .
+}
+
+SELECT ?v0 WHERE {
+	?v0 <http://purl.org/goodrelations/includes> <http://db.uwaterloo.ca/~galuc/wsdbm/Product4664> .
+}
+
+SELECT ?v0 WHERE {
+	?v0 <http://purl.org/goodrelations/includes> <http://db.uwaterloo.ca/~galuc/wsdbm/Product3502> .
+}
+
+SELECT ?v0 WHERE {
+	?v0 <http://purl.org/goodrelations/includes> <http://db.uwaterloo.ca/~galuc/wsdbm/Product4432> .
+}
+
+SELECT ?v0 WHERE {
+	?v0 <http://purl.org/goodrelations/includes> <http://db.uwaterloo.ca/~galuc/wsdbm/Product1466> .
+}
+
+SELECT ?v0 WHERE {
+	?v0 <http://purl.org/goodrelations/includes> <http://db.uwaterloo.ca/~galuc/wsdbm/Product1315> .
+}
+
+SELECT ?v0 WHERE {
+	?v0 <http://purl.org/goodrelations/includes> <http://db.uwaterloo.ca/~galuc/wsdbm/Product4002> .
+}
+
+SELECT ?v0 WHERE {
+	?v0 <http://purl.org/goodrelations/includes> <http://db.uwaterloo.ca/~galuc/wsdbm/Product4794> .
+}
+
+SELECT ?v0 WHERE {
+	?v0 <http://purl.org/goodrelations/includes> <http://db.uwaterloo.ca/~galuc/wsdbm/Product1208> .
+}
+
+SELECT ?v0 WHERE {
+	?v0 <http://purl.org/goodrelations/includes> <http://db.uwaterloo.ca/~galuc/wsdbm/Product4425> .
+}
+
+SELECT ?v0 WHERE {
+	?v0 <http://purl.org/goodrelations/includes> <http://db.uwaterloo.ca/~galuc/wsdbm/Product3599> .
+}
+
+SELECT ?v0 WHERE {
+	?v0 <http://purl.org/goodrelations/includes> <http://db.uwaterloo.ca/~galuc/wsdbm/Product1172> .
+}
+
+SELECT ?v0 WHERE {
+	?v0 <http://purl.org/goodrelations/includes> <http://db.uwaterloo.ca/~galuc/wsdbm/Product3608> .
+}
+
+SELECT ?v0 WHERE {
+	?v0 <http://purl.org/goodrelations/includes> <http://db.uwaterloo.ca/~galuc/wsdbm/Product3889> .
+}
+
+SELECT ?v0 WHERE {
+	?v0 <http://purl.org/goodrelations/includes> <http://db.uwaterloo.ca/~galuc/wsdbm/Product1672> .
+}
+
+SELECT ?v0 WHERE {
+	?v0 <http://purl.org/goodrelations/includes> <http://db.uwaterloo.ca/~galuc/wsdbm/Product4849> .
+}
+
+SELECT ?v0 WHERE {
+	?v0 <http://purl.org/goodrelations/includes> <http://db.uwaterloo.ca/~galuc/wsdbm/Product4237> .
+}
+
+SELECT ?v0 WHERE {
+	?v0 <http://purl.org/goodrelations/includes> <http://db.uwaterloo.ca/~galuc/wsdbm/Product4784> .
+}
+
+SELECT ?v0 WHERE {
+	?v0 <http://purl.org/goodrelations/includes> <http://db.uwaterloo.ca/~galuc/wsdbm/Product506> .
+}
+
+SELECT ?v0 WHERE {
+	?v0 <http://purl.org/goodrelations/includes> <http://db.uwaterloo.ca/~galuc/wsdbm/Product2690> .
+}
+
+SELECT ?v0 WHERE {
+	?v0 <http://purl.org/goodrelations/includes> <http://db.uwaterloo.ca/~galuc/wsdbm/Product4447> .
+}
+
+SELECT ?v0 WHERE {
+	?v0 <http://purl.org/goodrelations/includes> <http://db.uwaterloo.ca/~galuc/wsdbm/Product2849> .
+}
+
+SELECT ?v0 WHERE {
+	?v0 <http://purl.org/goodrelations/includes> <http://db.uwaterloo.ca/~galuc/wsdbm/Product3196> .
+}
+
+SELECT ?v0 WHERE {
+	?v0 <http://purl.org/goodrelations/includes> <http://db.uwaterloo.ca/~galuc/wsdbm/Product2626> .
+}
+
+SELECT ?v0 WHERE {
+	?v0 <http://purl.org/goodrelations/includes> <http://db.uwaterloo.ca/~galuc/wsdbm/Product2502> .
+}
+
+SELECT ?v0 WHERE {
+	?v0 <http://purl.org/goodrelations/includes> <http://db.uwaterloo.ca/~galuc/wsdbm/Product2879> .
+}
+
+SELECT ?v0 WHERE {
+	?v0 <http://purl.org/goodrelations/includes> <http://db.uwaterloo.ca/~galuc/wsdbm/Product4309> .
+}
+
+SELECT ?v0 WHERE {
+	?v0 <http://purl.org/goodrelations/includes> <http://db.uwaterloo.ca/~galuc/wsdbm/Product3806> .
+}
+
+SELECT ?v0 WHERE {
+	?v0 <http://purl.org/goodrelations/includes> <http://db.uwaterloo.ca/~galuc/wsdbm/Product2869> .
+}
+
+SELECT ?v0 WHERE {
+	?v0 <http://purl.org/goodrelations/includes> <http://db.uwaterloo.ca/~galuc/wsdbm/Product773> .
+}
+
+SELECT ?v0 WHERE {
+	?v0 <http://purl.org/goodrelations/includes> <http://db.uwaterloo.ca/~galuc/wsdbm/Product1549> .
+}
+
+SELECT ?v0 WHERE {
+	?v0 <http://purl.org/goodrelations/includes> <http://db.uwaterloo.ca/~galuc/wsdbm/Product2943> .
+}
+
+SELECT ?v0 WHERE {
+	?v0 <http://purl.org/goodrelations/includes> <http://db.uwaterloo.ca/~galuc/wsdbm/Product3210> .
+}
+
+SELECT ?v0 WHERE {
+	?v0 <http://purl.org/goodrelations/includes> <http://db.uwaterloo.ca/~galuc/wsdbm/Product2957> .
+}
+
+SELECT ?v0 WHERE {
+	?v0 <http://purl.org/goodrelations/includes> <http://db.uwaterloo.ca/~galuc/wsdbm/Product4388> .
+}
+
+SELECT ?v0 WHERE {
+	?v0 <http://purl.org/goodrelations/includes> <http://db.uwaterloo.ca/~galuc/wsdbm/Product2963> .
+}
+
+SELECT ?v0 WHERE {
+	?v0 <http://purl.org/goodrelations/includes> <http://db.uwaterloo.ca/~galuc/wsdbm/Product3134> .
+}
+
+SELECT ?v0 WHERE {
+	?v0 <http://purl.org/goodrelations/includes> <http://db.uwaterloo.ca/~galuc/wsdbm/Product4446> .
+}
+
+SELECT ?v0 WHERE {
+	?v0 <http://purl.org/goodrelations/includes> <http://db.uwaterloo.ca/~galuc/wsdbm/Product4938> .
+}
+
+SELECT ?v0 WHERE {
+	?v0 <http://purl.org/goodrelations/includes> <http://db.uwaterloo.ca/~galuc/wsdbm/Product4303> .
+}
+
+SELECT ?v0 WHERE {
+	?v0 <http://purl.org/goodrelations/includes> <http://db.uwaterloo.ca/~galuc/wsdbm/Product3265> .
+}
+
+SELECT ?v0 WHERE {
+	?v0 <http://purl.org/goodrelations/includes> <http://db.uwaterloo.ca/~galuc/wsdbm/Product4275> .
+}
+
+SELECT ?v0 WHERE {
+	?v0 <http://purl.org/goodrelations/includes> <http://db.uwaterloo.ca/~galuc/wsdbm/Product4940> .
+}
+
+SELECT ?v0 WHERE {
+	?v0 <http://purl.org/goodrelations/includes> <http://db.uwaterloo.ca/~galuc/wsdbm/Product2896> .
+}
+
+SELECT ?v0 WHERE {
+	?v0 <http://purl.org/goodrelations/includes> <http://db.uwaterloo.ca/~galuc/wsdbm/Product2818> .
+}
+
+SELECT ?v0 WHERE {
+	?v0 <http://purl.org/goodrelations/includes> <http://db.uwaterloo.ca/~galuc/wsdbm/Product474> .
+}
+
+SELECT ?v0 WHERE {
+	?v0 <http://purl.org/goodrelations/includes> <http://db.uwaterloo.ca/~galuc/wsdbm/Product4426> .
+}
+
+SELECT ?v0 WHERE {
+	?v0 <http://purl.org/goodrelations/includes> <http://db.uwaterloo.ca/~galuc/wsdbm/Product4295> .
+}
+
+SELECT ?v0 WHERE {
+	?v0 <http://purl.org/goodrelations/includes> <http://db.uwaterloo.ca/~galuc/wsdbm/Product2558> .
+}
+
+SELECT ?v0 WHERE {
+	?v0 <http://purl.org/goodrelations/includes> <http://db.uwaterloo.ca/~galuc/wsdbm/Product3607> .
+}
+
+SELECT ?v0 WHERE {
+	?v0 <http://purl.org/goodrelations/includes> <http://db.uwaterloo.ca/~galuc/wsdbm/Product4929> .
+}
+
+SELECT ?v0 WHERE {
+	?v0 <http://purl.org/goodrelations/includes> <http://db.uwaterloo.ca/~galuc/wsdbm/Product3496> .
+}
+
+SELECT ?v0 WHERE {
+	?v0 <http://purl.org/goodrelations/includes> <http://db.uwaterloo.ca/~galuc/wsdbm/Product4397> .
+}
+
+SELECT ?v0 WHERE {
+	?v0 <http://purl.org/goodrelations/includes> <http://db.uwaterloo.ca/~galuc/wsdbm/Product1603> .
+}
+
+SELECT ?v0 WHERE {
+	?v0 <http://purl.org/goodrelations/includes> <http://db.uwaterloo.ca/~galuc/wsdbm/Product3206> .
+}
+
+SELECT ?v0 WHERE {
+	?v0 <http://purl.org/goodrelations/includes> <http://db.uwaterloo.ca/~galuc/wsdbm/Product3622> .
+}
+
+SELECT ?v0 WHERE {
+	?v0 <http://purl.org/goodrelations/includes> <http://db.uwaterloo.ca/~galuc/wsdbm/Product2506> .
+}
+
+SELECT ?v0 WHERE {
+	?v0 <http://purl.org/goodrelations/includes> <http://db.uwaterloo.ca/~galuc/wsdbm/Product3181> .
+}
+
+SELECT ?v0 WHERE {
+	?v0 <http://purl.org/goodrelations/includes> <http://db.uwaterloo.ca/~galuc/wsdbm/Product4117> .
+}
+
+SELECT ?v0 WHERE {
+	?v0 <http://purl.org/goodrelations/includes> <http://db.uwaterloo.ca/~galuc/wsdbm/Product4090> .
+}
+
+SELECT ?v0 WHERE {
+	?v0 <http://purl.org/goodrelations/includes> <http://db.uwaterloo.ca/~galuc/wsdbm/Product4629> .
+}
+
+SELECT ?v0 WHERE {
+	?v0 <http://purl.org/goodrelations/includes> <http://db.uwaterloo.ca/~galuc/wsdbm/Product3113> .
+}
+
+SELECT ?v0 WHERE {
+	?v0 <http://purl.org/goodrelations/includes> <http://db.uwaterloo.ca/~galuc/wsdbm/Product4484> .
+}
+
+SELECT ?v0 WHERE {
+	?v0 <http://purl.org/goodrelations/includes> <http://db.uwaterloo.ca/~galuc/wsdbm/Product2554> .
+}
+
+SELECT ?v0 WHERE {
+	?v0 <http://purl.org/goodrelations/includes> <http://db.uwaterloo.ca/~galuc/wsdbm/Product3481> .
+}
+
+SELECT ?v0 WHERE {
+	?v0 <http://purl.org/goodrelations/includes> <http://db.uwaterloo.ca/~galuc/wsdbm/Product3562> .
+}
+
+SELECT ?v0 WHERE {
+	?v0 <http://purl.org/goodrelations/includes> <http://db.uwaterloo.ca/~galuc/wsdbm/Product2916> .
+}
+
+SELECT ?v0 WHERE {
+	?v0 <http://purl.org/goodrelations/includes> <http://db.uwaterloo.ca/~galuc/wsdbm/Product4075> .
+}
+
+SELECT ?v0 WHERE {
+	?v0 <http://purl.org/goodrelations/includes> <http://db.uwaterloo.ca/~galuc/wsdbm/Product2584> .
+}
+
+SELECT ?v0 WHERE {
+	?v0 <http://purl.org/goodrelations/includes> <http://db.uwaterloo.ca/~galuc/wsdbm/Product3223> .
+}
+
+SELECT ?v0 WHERE {
+	?v0 <http://purl.org/goodrelations/includes> <http://db.uwaterloo.ca/~galuc/wsdbm/Product2809> .
+}
+
+SELECT ?v0 WHERE {
+	?v0 <http://purl.org/goodrelations/includes> <http://db.uwaterloo.ca/~galuc/wsdbm/Product4838> .
+}
+
+SELECT ?v0 WHERE {
+	?v0 <http://purl.org/goodrelations/includes> <http://db.uwaterloo.ca/~galuc/wsdbm/Product3796> .
+}
+
+SELECT ?v0 WHERE {
+	?v0 <http://purl.org/goodrelations/includes> <http://db.uwaterloo.ca/~galuc/wsdbm/Product2689> .
+}
+
+SELECT ?v0 WHERE {
+	?v0 <http://purl.org/goodrelations/includes> <http://db.uwaterloo.ca/~galuc/wsdbm/Product3823> .
+}
+
+SELECT ?v0 WHERE {
+	?v0 <http://purl.org/goodrelations/includes> <http://db.uwaterloo.ca/~galuc/wsdbm/Product2591> .
+}
+
+SELECT ?v0 WHERE {
+	?v0 <http://purl.org/goodrelations/includes> <http://db.uwaterloo.ca/~galuc/wsdbm/Product2790> .
+}
+
+SELECT ?v0 WHERE {
+	?v0 <http://purl.org/goodrelations/includes> <http://db.uwaterloo.ca/~galuc/wsdbm/Product4550> .
+}
+
+SELECT ?v0 WHERE {
+	?v0 <http://purl.org/goodrelations/includes> <http://db.uwaterloo.ca/~galuc/wsdbm/Product2585> .
+}
+
+SELECT ?v0 WHERE {
+	?v0 <http://purl.org/goodrelations/includes> <http://db.uwaterloo.ca/~galuc/wsdbm/Product3209> .
+}
+
+SELECT ?v0 WHERE {
+	?v0 <http://purl.org/goodrelations/includes> <http://db.uwaterloo.ca/~galuc/wsdbm/Product2600> .
+}
+
+SELECT ?v0 WHERE {
+	?v0 <http://purl.org/goodrelations/includes> <http://db.uwaterloo.ca/~galuc/wsdbm/Product3229> .
+}
+
+SELECT ?v0 WHERE {
+	?v0 <http://purl.org/goodrelations/includes> <http://db.uwaterloo.ca/~galuc/wsdbm/Product3349> .
+}
+
+SELECT ?v0 WHERE {
+	?v0 <http://purl.org/goodrelations/includes> <http://db.uwaterloo.ca/~galuc/wsdbm/Product4742> .
+}
+
+SELECT ?v0 WHERE {
+	?v0 <http://purl.org/goodrelations/includes> <http://db.uwaterloo.ca/~galuc/wsdbm/Product3715> .
+}
+
+SELECT ?v0 WHERE {
+	?v0 <http://purl.org/goodrelations/includes> <http://db.uwaterloo.ca/~galuc/wsdbm/Product2835> .
+}
+
+SELECT ?v0 WHERE {
+	?v0 <http://purl.org/goodrelations/includes> <http://db.uwaterloo.ca/~galuc/wsdbm/Product4297> .
+}
+
+SELECT ?v0 WHERE {
+	?v0 <http://purl.org/goodrelations/includes> <http://db.uwaterloo.ca/~galuc/wsdbm/Product3771> .
+}
+
+SELECT ?v0 WHERE {
+	?v0 <http://purl.org/goodrelations/includes> <http://db.uwaterloo.ca/~galuc/wsdbm/Product4979> .
+}
+
+SELECT ?v0 WHERE {
+	?v0 <http://purl.org/goodrelations/includes> <http://db.uwaterloo.ca/~galuc/wsdbm/Product4972> .
+}
+
+SELECT ?v0 WHERE {
+	?v0 <http://purl.org/goodrelations/includes> <http://db.uwaterloo.ca/~galuc/wsdbm/Product3942> .
+}
+
+SELECT ?v0 WHERE {
+	?v0 <http://purl.org/goodrelations/includes> <http://db.uwaterloo.ca/~galuc/wsdbm/Product3758> .
+}
+
+SELECT ?v0 WHERE {
+	?v0 <http://purl.org/goodrelations/includes> <http://db.uwaterloo.ca/~galuc/wsdbm/Product3410> .
+}
+
+SELECT ?v0 WHERE {
+	?v0 <http://purl.org/goodrelations/includes> <http://db.uwaterloo.ca/~galuc/wsdbm/Product4186> .
+}
+
+SELECT ?v0 WHERE {
+	?v0 <http://purl.org/goodrelations/includes> <http://db.uwaterloo.ca/~galuc/wsdbm/Product2944> .
+}
+
+SELECT ?v0 WHERE {
+	?v0 <http://purl.org/goodrelations/includes> <http://db.uwaterloo.ca/~galuc/wsdbm/Product2805> .
+}
+
+SELECT ?v0 WHERE {
+	?v0 <http://purl.org/goodrelations/includes> <http://db.uwaterloo.ca/~galuc/wsdbm/Product3805> .
+}
+
+SELECT ?v0 WHERE {
+	?v0 <http://purl.org/goodrelations/includes> <http://db.uwaterloo.ca/~galuc/wsdbm/Product3203> .
+}
+
+SELECT ?v0 WHERE {
+	?v0 <http://purl.org/goodrelations/includes> <http://db.uwaterloo.ca/~galuc/wsdbm/Product2978> .
+}
+
+SELECT ?v0 WHERE {
+	?v0 <http://purl.org/goodrelations/includes> <http://db.uwaterloo.ca/~galuc/wsdbm/Product4134> .
+}
+
+SELECT ?v0 WHERE {
+	?v0 <http://purl.org/goodrelations/includes> <http://db.uwaterloo.ca/~galuc/wsdbm/Product3766> .
+}
+
+SELECT ?v0 WHERE {
+	?v0 <http://purl.org/goodrelations/includes> <http://db.uwaterloo.ca/~galuc/wsdbm/Product3089> .
+}
+
+SELECT ?v0 WHERE {
+	?v0 <http://purl.org/goodrelations/includes> <http://db.uwaterloo.ca/~galuc/wsdbm/Product3780> .
+}
+
+SELECT ?v0 WHERE {
+	?v0 <http://purl.org/goodrelations/includes> <http://db.uwaterloo.ca/~galuc/wsdbm/Product4170> .
+}
+
+SELECT ?v0 WHERE {
+	?v0 <http://purl.org/goodrelations/includes> <http://db.uwaterloo.ca/~galuc/wsdbm/Product4450> .
+}
+
+SELECT ?v0 WHERE {
+	?v0 <http://purl.org/goodrelations/includes> <http://db.uwaterloo.ca/~galuc/wsdbm/Product4528> .
+}
+
+SELECT ?v0 WHERE {
+	?v0 <http://purl.org/goodrelations/includes> <http://db.uwaterloo.ca/~galuc/wsdbm/Product4489> .
+}
+
+SELECT ?v0 WHERE {
+	?v0 <http://purl.org/goodrelations/includes> <http://db.uwaterloo.ca/~galuc/wsdbm/Product4519> .
+}
+
+SELECT ?v0 WHERE {
+	?v0 <http://purl.org/goodrelations/includes> <http://db.uwaterloo.ca/~galuc/wsdbm/Product4557> .
+}
+
+SELECT ?v0 WHERE {
+	?v0 <http://purl.org/goodrelations/includes> <http://db.uwaterloo.ca/~galuc/wsdbm/Product3487> .
+}
+
+SELECT ?v0 WHERE {
+	?v0 <http://purl.org/goodrelations/includes> <http://db.uwaterloo.ca/~galuc/wsdbm/Product4106> .
+}
+
+SELECT ?v0 WHERE {
+	?v0 <http://purl.org/goodrelations/includes> <http://db.uwaterloo.ca/~galuc/wsdbm/Product3566> .
+}
+
+SELECT ?v0 WHERE {
+	?v0 <http://purl.org/goodrelations/includes> <http://db.uwaterloo.ca/~galuc/wsdbm/Product4249> .
+}
+
+SELECT ?v0 WHERE {
+	?v0 <http://purl.org/goodrelations/includes> <http://db.uwaterloo.ca/~galuc/wsdbm/Product4241> .
+}
+
+SELECT ?v0 WHERE {
+	?v0 <http://purl.org/goodrelations/includes> <http://db.uwaterloo.ca/~galuc/wsdbm/Product4248> .
+}
+
+SELECT ?v0 WHERE {
+	?v0 <http://purl.org/goodrelations/includes> <http://db.uwaterloo.ca/~galuc/wsdbm/Product3527> .
+}
+
+SELECT ?v0 WHERE {
+	?v0 <http://purl.org/goodrelations/includes> <http://db.uwaterloo.ca/~galuc/wsdbm/Product1765> .
+}
+
+SELECT ?v0 WHERE {
+	?v0 <http://purl.org/goodrelations/includes> <http://db.uwaterloo.ca/~galuc/wsdbm/Product4962> .
+}
+
+SELECT ?v0 WHERE {
+	?v0 <http://purl.org/goodrelations/includes> <http://db.uwaterloo.ca/~galuc/wsdbm/Product2699> .
+}
+
+SELECT ?v0 WHERE {
+	?v0 <http://purl.org/goodrelations/includes> <http://db.uwaterloo.ca/~galuc/wsdbm/Product4467> .
+}
+
+SELECT ?v0 WHERE {
+	?v0 <http://purl.org/goodrelations/includes> <http://db.uwaterloo.ca/~galuc/wsdbm/Product4185> .
+}
+
+SELECT ?v0 WHERE {
+	?v0 <http://purl.org/goodrelations/includes> <http://db.uwaterloo.ca/~galuc/wsdbm/Product238> .
+}
+
+SELECT ?v0 WHERE {
+	?v0 <http://purl.org/goodrelations/includes> <http://db.uwaterloo.ca/~galuc/wsdbm/Product3812> .
+}
+
+SELECT ?v0 WHERE {
+	?v0 <http://purl.org/goodrelations/includes> <http://db.uwaterloo.ca/~galuc/wsdbm/Product4188> .
+}
+
+SELECT ?v0 WHERE {
+	?v0 <http://purl.org/goodrelations/includes> <http://db.uwaterloo.ca/~galuc/wsdbm/Product2941> .
+}
+
+SELECT ?v0 WHERE {
+	?v0 <http://purl.org/goodrelations/includes> <http://db.uwaterloo.ca/~galuc/wsdbm/Product2934> .
+}
+
+SELECT ?v0 WHERE {
+	?v0 <http://purl.org/goodrelations/includes> <http://db.uwaterloo.ca/~galuc/wsdbm/Product2709> .
+}
+
+SELECT ?v0 WHERE {
+	?v0 <http://purl.org/goodrelations/includes> <http://db.uwaterloo.ca/~galuc/wsdbm/Product2305> .
+}
+
+SELECT ?v0 WHERE {
+	?v0 <http://purl.org/goodrelations/includes> <http://db.uwaterloo.ca/~galuc/wsdbm/Product221> .
+}
+
+SELECT ?v0 WHERE {
+	?v0 <http://purl.org/goodrelations/includes> <http://db.uwaterloo.ca/~galuc/wsdbm/Product3494> .
+}
+
+SELECT ?v0 WHERE {
+	?v0 <http://purl.org/goodrelations/includes> <http://db.uwaterloo.ca/~galuc/wsdbm/Product2115> .
+}
+
+SELECT ?v0 WHERE {
+	?v0 <http://purl.org/goodrelations/includes> <http://db.uwaterloo.ca/~galuc/wsdbm/Product2596> .
+}
+
+SELECT ?v0 WHERE {
+	?v0 <http://purl.org/goodrelations/includes> <http://db.uwaterloo.ca/~galuc/wsdbm/Product4180> .
+}
+
+SELECT ?v0 WHERE {
+	?v0 <http://purl.org/goodrelations/includes> <http://db.uwaterloo.ca/~galuc/wsdbm/Product3702> .
+}
+
+SELECT ?v0 WHERE {
+	?v0 <http://purl.org/goodrelations/includes> <http://db.uwaterloo.ca/~galuc/wsdbm/Product3531> .
+}
+
+SELECT ?v0 WHERE {
+	?v0 <http://purl.org/goodrelations/includes> <http://db.uwaterloo.ca/~galuc/wsdbm/Product4884> .
+}
+
+SELECT ?v0 WHERE {
+	?v0 <http://purl.org/goodrelations/includes> <http://db.uwaterloo.ca/~galuc/wsdbm/Product2573> .
+}
+
+SELECT ?v0 WHERE {
+	?v0 <http://purl.org/goodrelations/includes> <http://db.uwaterloo.ca/~galuc/wsdbm/Product2056> .
+}
+
+SELECT ?v0 WHERE {
+	?v0 <http://purl.org/goodrelations/includes> <http://db.uwaterloo.ca/~galuc/wsdbm/Product3077> .
+}
+
+SELECT ?v0 WHERE {
+	?v0 <http://purl.org/goodrelations/includes> <http://db.uwaterloo.ca/~galuc/wsdbm/Product4445> .
+}
+
+SELECT ?v0 WHERE {
+	?v0 <http://purl.org/goodrelations/includes> <http://db.uwaterloo.ca/~galuc/wsdbm/Product4934> .
+}
+
+SELECT ?v0 WHERE {
+	?v0 <http://purl.org/goodrelations/includes> <http://db.uwaterloo.ca/~galuc/wsdbm/Product2886> .
+}
+
+SELECT ?v0 WHERE {
+	?v0 <http://purl.org/goodrelations/includes> <http://db.uwaterloo.ca/~galuc/wsdbm/Product4414> .
+}
+
+SELECT ?v0 WHERE {
+	?v0 <http://purl.org/goodrelations/includes> <http://db.uwaterloo.ca/~galuc/wsdbm/Product2684> .
+}
+
+SELECT ?v0 WHERE {
+	?v0 <http://purl.org/goodrelations/includes> <http://db.uwaterloo.ca/~galuc/wsdbm/Product4727> .
+}
+
+SELECT ?v0 WHERE {
+	?v0 <http://purl.org/goodrelations/includes> <http://db.uwaterloo.ca/~galuc/wsdbm/Product2888> .
+}
