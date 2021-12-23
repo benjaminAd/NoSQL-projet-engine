@@ -17,11 +17,11 @@ import org.eclipse.rdf4j.rio.Rio;
 import qengine.program.dictionary.Dictionary;
 import qengine.program.index.ops.OPS;
 import qengine.program.index.osp.OSP;
+import qengine.program.index.pos.POS;
 import qengine.program.index.pso.PSO;
 import qengine.program.index.sop.SOP;
 import qengine.program.index.spo.SPO;
 import qengine.program.process.ProcessQuery;
-import qengine.program.index.pos.POS;
 import qengine.program.timers.Timers;
 import qengine.program.utils.Constants;
 
@@ -29,10 +29,8 @@ import java.io.*;
 import java.nio.file.Files;
 import java.nio.file.NoSuchFileException;
 import java.nio.file.Paths;
-import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.Iterator;
-import java.util.List;
+import java.util.*;
+import java.util.stream.Collectors;
 import java.util.stream.Stream;
 
 /**
@@ -70,11 +68,13 @@ final class Main {
     @Parameter(names = "-export_query_result")
     static String resOutput = "";
 
-    static final StringBuilder resStringBuilder = new StringBuilder("\nVoici les réponses à vos requêtes : \n \n");
-
     static List<String> resForCSV = new ArrayList<>();
     static List<Integer> resNumberPerQueries = new ArrayList<>();
     static List<String> request = new ArrayList<>();
+    //    static List<String> resList = new ArrayList<>();
+//    static StringBuilder resString = new StringBuilder("");
+//    static StringBuilder nbPatterns = new StringBuilder("Nombre de Patterns");
+    static HashMap<Integer, Integer> nbConditions = new HashMap<>();
     // ========================================================================
 
     /**
@@ -88,11 +88,23 @@ final class Main {
             PROCESS_QUERY.solve(patterns);
             if (!resOutput.equals("")) resForCSV.add(PROCESS_QUERY.getResWithCsvFormat());
             resNumberPerQueries.add(PROCESS_QUERY.getResSize());
-            resStringBuilder.append(PROCESS_QUERY.getRes()).append("\n----------------------------------\n");
+            if(PROCESS_QUERY.getResSize()==0){
+                if (nbConditions.containsKey(patterns.size())) {
+                    nbConditions.replace(patterns.size(), nbConditions.get(patterns.size()) + 1);
+                } else {
+                    nbConditions.put(patterns.size(), 1);
+                }
+            }
+            logger.info(PROCESS_QUERY.getRes()+"\n----------------------------------\n");
         } catch (NullPointerException e) {
-            resStringBuilder.append("Un élément dans votre requête n'existe pas dans notre dictionnaire.\n----------------------------------\n");
+            logger.info("Un élément dans votre requête n'existe pas dans notre dictionnaire.\n----------------------------------\n");
             resNumberPerQueries.add(0);
             if (!resOutput.equals("")) resForCSV.add("Pas de réponse");
+            if (nbConditions.containsKey(patterns.size())) {
+                nbConditions.replace(patterns.size(), nbConditions.get(patterns.size()) + 1);
+            } else {
+                nbConditions.put(patterns.size(), 1);
+            }
         }
     }
 
@@ -101,10 +113,6 @@ final class Main {
         queries.forEach(Main::processAQuery);
         TIME.addTimerToQueriesProcess();
     }
-
-    /* Remarque du prof
-    - Sauvegarder le dictionnaire (pour pas que l'on le recrée à chaque fois)
-     */
 
     /**
      * Entrée du programme
@@ -128,10 +136,20 @@ final class Main {
             logger.error(e.getMessage());
             System.exit(1);
         }
+        logger.info("Nom du fichier : {} | Nom du dossier de requête : {} | Nombre de triplets rdf : {} | Nombre de requêtes : {}", getQueriesFolderFileName(dataFile), getQueriesFolderFileName(queriesFolder), Dictionary.getInstance().getNbTriplets(), queries.size());
+//        System.out.println(request.size());
+//        System.out.println(request.stream().distinct().count());
+//        shuyffleQuerySet("queries");
+//        System.exit(0);
+//        request = request.stream().distinct().collect(Collectors.toList());
+//        SPARQLParser sparqlParser = new SPARQLParser();
+//        for (int i = 0; i < request.size(); i++) {
+//            ParsedQuery query = sparqlParser.parseQuery(request.get(i), BASE_URI);
+//            queries.add(query);
+//        }
+        logger.info("\nVoici les réponses à vos requêtes : \n \n");
         processQueries(queries);
         TIME.addWorkloadTimer();
-        logger.info("Nom du fichier : {} | Nom du dossier de requête : {} | Nombre de triplets rdf : {} | Nombre de requêtes : {} | Temps de lecture des données : {}ms | Temps de lecture des requêtes : {}ms | Temps de création dico : {}ms | nombre d'index : {} | Temps de créations des index : {}ms | Temps total d'évaluation des requêtes : {}ms | Temps total : {}ms", getQueriesFolderFileName(dataFile), getQueriesFolderFileName(queriesFolder), Dictionary.getInstance().getNbTriplets(), queries.size(), TIME.getParsingDataTimer(), TIME.getQueriesParsingTimer(), TIME.getDictionaryTimer(), PROCESS_QUERY.getNbIndexUsed(), TIME.getIndexesTimer(), TIME.getQueriesProcessTimer(), TIME.getWorkloadTimer());
-        logger.info(resStringBuilder);
         if (!output.equals("")) {
             try {
                 exportToCSV();
@@ -149,15 +167,12 @@ final class Main {
                 System.exit(1);
             }
         }
-//        try {
-//            exportResNumberToCSV();
-//        } catch (Exception e) {
-//            logger.error(e.getMessage());
-//            System.exit(1);
-//        }
         logger.info("Nombre de requêtes sans réponses : " + numberOfNoAnswersRequest() + "/" + queries.size());
         logger.info("Nombre de requêtes avec au moins une réponse : " + numberOfRequestWithAnswer() + "/" + queries.size());
-        saveRequests("first_try2");
+        nbConditions.forEach((key,value)->{
+            System.out.println("key : "+key+" value : "+value);
+        });
+        logger.info("Temps de lecture des données : {}ms | Temps de lecture des requêtes : {}ms | Temps de création dico : {}ms | nombre d'index : {} | Temps de créations des index : {}ms | Temps total d'évaluation des requêtes : {}ms | Temps total : {}ms", TIME.getParsingDataTimer(), TIME.getQueriesParsingTimer(), TIME.getDictionaryTimer(), PROCESS_QUERY.getNbIndexUsed(), TIME.getIndexesTimer(), TIME.getQueriesProcessTimer(), TIME.getWorkloadTimer());
     }
 
     private static void parseQueriesFolder() throws IOException {
@@ -195,7 +210,7 @@ final class Main {
             SPARQLParser sparqlParser = new SPARQLParser();
             Iterator<String> lineIterator = lineStream.iterator();
             StringBuilder queryString = new StringBuilder();
-            StringBuilder queryString2 = new StringBuilder();
+//            StringBuilder queryString2 = new StringBuilder();
 
             while (lineIterator.hasNext())
                 /*
@@ -204,12 +219,12 @@ final class Main {
                  */ {
                 String line = lineIterator.next();
                 queryString.append(line);
-                queryString2.append(line).append("\n");
+//                queryString2.append(line).append("\n");
                 if (line.trim().endsWith("}")) {
                     ParsedQuery query = sparqlParser.parseQuery(queryString.toString(), BASE_URI);
-                    request.add(queryString2.toString());
+//                    request.add(queryString2.toString());
                     queries.add(query);
-                    queryString2.setLength(0);
+//                    queryString2.setLength(0);
                     queryString.setLength(0); // Reset le buffer de la requête en chaine vide
                 }
             }
@@ -312,8 +327,14 @@ final class Main {
 
     private static void saveRequests(String name) throws IOException {
         if (Integer.parseInt(numberOfRequestWithAnswer()) == 0) return;
-        FileWriter myFile = new FileWriter("./data/" + name + ".queryset");
+        int counter = 0;
+        FileWriter myFile = new FileWriter("./data/" + name + "_" + counter + ".queryset");
         for (int i = 0; i < resNumberPerQueries.size(); i++) {
+            if (i % 1000 == 0 && i != 0) {
+                myFile.close();
+                counter += 1;
+                myFile = new FileWriter("./data/" + name + "_" + counter + ".queryset");
+            }
             if (resNumberPerQueries.get(i) > 0) {
                 myFile.write(request.get(i));
             }
@@ -321,4 +342,74 @@ final class Main {
         myFile.close();
         logger.info("Informations enregistrées");
     }
+
+    private static void doubleQuerySet(String name) throws IOException {
+        if (Integer.parseInt(numberOfRequestWithAnswer()) == 0) return;
+        for (int i = 0; i < 5; i++) {
+            Collections.shuffle(request);
+        }
+        int counter = 0;
+        FileWriter myFile = new FileWriter("./queries4/" + name + "_" + counter + ".queryset");
+        int number_of_doublons = 4074;
+        int count = 0;
+        for (int i = 0; i < resNumberPerQueries.size(); i++) {
+            if (count == number_of_doublons) break;
+            if (i % 1000 == 0 && i != 0) {
+                myFile.close();
+                counter += 1;
+                myFile = new FileWriter("./queries4/" + name + "_" + counter + ".queryset");
+            }
+            if (resNumberPerQueries.get(i) > 0) {
+                myFile.write(request.get(i));
+                count += 1;
+            }
+        }
+        myFile.close();
+        logger.info("Informations enregistrées");
+    }
+
+    private static void noResponse(String name) throws IOException {
+        if (Integer.parseInt(numberOfRequestWithAnswer()) == 0) return;
+        int counter = 0;
+        FileWriter myFile = new FileWriter("./queries4/" + name + "_" + counter + ".queryset");
+        int numbers = 5703;
+        int count = 0;
+        for (int i = 0; i < resNumberPerQueries.size(); i++) {
+//            if (count == numbers) break;
+            if (i % 1000 == 0 && i != 0) {
+                myFile.close();
+                counter += 1;
+                myFile = new FileWriter("./queries4/" + name + "_" + counter + ".queryset");
+            }
+            if (resNumberPerQueries.get(i) > 0) {
+                myFile.write(request.get(i));
+                count += 1;
+            }
+        }
+        myFile.close();
+        logger.info("Informations enregistrées");
+    }
+
+    private static void shuyffleQuerySet(String name) throws IOException {
+        System.out.println(request.size());
+        for (int i = 0; i < 10; i++) {
+            Collections.shuffle(request);
+        }
+        System.out.println(request.stream().distinct().count());
+        System.out.println();
+        List<String> requestNew = request.stream().distinct().collect(Collectors.toList());
+        int counter = 0;
+        FileWriter myFile = new FileWriter("./queries2/" + name + "_" + counter + ".queryset");
+        for (int i = 0; i < requestNew.size(); i++) {
+            if (i % 1000 == 0 && i != 0) {
+                myFile.close();
+                counter += 1;
+                myFile = new FileWriter("./queries2/" + name + "_" + counter + ".queryset");
+            }
+            myFile.write(requestNew.get(i));
+        }
+        myFile.close();
+        logger.info("Informations enregistrées");
+    }
+
 }

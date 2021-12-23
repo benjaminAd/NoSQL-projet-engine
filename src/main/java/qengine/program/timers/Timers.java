@@ -1,8 +1,5 @@
 package qengine.program.timers;
 
-import org.apache.logging.log4j.LogManager;
-import org.apache.logging.log4j.Logger;
-
 public class Timers {
     private final Timer timerIndexes;
     private final Timer timerDictionnary;
@@ -11,7 +8,6 @@ public class Timers {
     private final Timer timerworkload;
     private final Timer timerdataparsing;
     private static Timers instance = null;
-    private static final Logger logger = LogManager.getLogger(Timers.class);
 
     private Timers() {
         this.timerDictionnary = new Timer();
