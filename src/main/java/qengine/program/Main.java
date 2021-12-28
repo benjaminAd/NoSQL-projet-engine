@@ -108,8 +108,6 @@ final class Main {
                 .addObject(new Main())
                 .build()
                 .parse(args);
-        String log4ConfPath = System.getProperty("user.dir") + File.separator + "src" + File.separator + "main" + File.separator + "resources" + File.separator + "log4j.properties";
-        PropertyConfigurator.configure(log4ConfPath);
         if (queriesFolder.equals("") || dataFile.equals("")) {
             logger.error(Constants.ERROR_NO_ARGUMENTS);
             System.exit(1);
