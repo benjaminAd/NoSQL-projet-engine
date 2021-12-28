@@ -46,7 +46,7 @@ public class ProcessQuery {
         return res.size();
     }
 
-    // Formate et affiche renvoie le résultat affichable
+    // Formate le résultat
     public String resFormat(List<String> list) {
         StringBuilder st = new StringBuilder("Voici les résultats de votre requêtes\n");
         for (int i = 0; i < list.size(); i++) {
@@ -56,6 +56,7 @@ public class ProcessQuery {
         return st.toString();
     }
 
+    //Formate le resultat pour être insérer dans le CSV
     public String resCSVFormat(List<String> list){
         StringBuilder st = new StringBuilder();
         for (String s : list) {
@@ -97,7 +98,7 @@ public class ProcessQuery {
         if (!object.equals("")) objectIndex = dictionary.getIndexFromElement(object);
     }
 
-    // Récupère l'instance du bon index via la valeur des ids
+    // Récupère l'instance du bon index hexastore via la valeur des différents indexes
     private void setIndex() {
         if (subjectIndex != -1) {
             if (predicateIndex != -1) {
@@ -115,10 +116,15 @@ public class ProcessQuery {
     }
 
     public void solve(List<StatementPattern> statementPatterns) {
+        //Résolution sur la première condition
         firstRes();
         indexList.add(index);
         this.resetValues();
         if (!statementPatterns.isEmpty()) {
+            //S'il y a d'autres condition
+            //Vérification d'un potentiel index hexastore plus "opti"
+            //Puis traitement pour récupérer le résultat
+            //Si la liste est vide on arrête tout traitement
             for (StatementPattern statementPattern : statementPatterns) {
                 setIndex();
                 indexList.add(index);
